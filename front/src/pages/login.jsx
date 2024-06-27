@@ -7,7 +7,7 @@ import { sha256 } from 'js-sha256';
 
 
 
-function Index() {
+function Login() {
 
 
 
@@ -16,7 +16,7 @@ function Index() {
     return (
         <div id='index-cuerpo'>
             <Navbar />
-            <h2>Index</h2>
+            <h2>Login</h2>
 
 
 
@@ -28,5 +28,5 @@ function Index() {
 
 
 export {
-    Index
+    Login
 }

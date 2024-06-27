@@ -14,7 +14,9 @@ const Navbar = () => {
     return (
         <div id='navbar-global'>
             <nav>
-                    <NavLink to="/index" className='link'>Index</NavLink>
+                    <NavLink to="/escaner" className='link'>Escaner</NavLink>
+                    <NavLink to="/analisis" className="link">Analisis</NavLink>
+                    <NavLink to="/login" className='link'>Login / Logout</NavLink>
             </nav>
             <Outlet />
         </div>
