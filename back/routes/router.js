@@ -1,14 +1,14 @@
 import { Router } from "express";
 
-const router  =  Router();
+const router  =  userRouter();
 
 
 
-import Router from "./Router.js";
+import userRouter from "./userRouter.js";
 
 
 
-router.use("/", Router);
+router.use("/user", userRouter);
 
 
 
