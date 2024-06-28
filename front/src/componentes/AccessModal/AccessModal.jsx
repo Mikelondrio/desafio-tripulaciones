@@ -20,10 +20,10 @@ function AccessModal(){
 
           <div className='accessModalContainer'>
             
-            <dialog ref={accessModalRef}>
-                <button><ion-icon name="close"></ion-icon></button>
-                <p>modal content</p>
-            </dialog>
+              <dialog ref={accessModalRef}>
+                  <button onClick={toggleAccessModal}><ion-icon name="close"></ion-icon></button>
+                  <p>modal content</p>
+              </dialog>
           
           </div>
       </>
