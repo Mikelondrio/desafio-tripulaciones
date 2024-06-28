@@ -17,6 +17,27 @@ const getByProperty=async(req,res)=>{
     res.json({data:propiedad})
 }
 
+const register = async(req,res)=>{
+    const user = await userController.register(req.body);
+    
+    if(!user){
+        return res.json({error:"User with that email or username already exists"});
+    }
+
+    if(user.error){
+        return res.json({error:user.error});
+    }
+    res.json({data:user})
+}
+const login = async(req,res) => {
+    const data = await userController.login(req.body);
+    console.log('Login request body:', req.body);
+    if(data.error){
+        return res.status(data.status).json({error:data.error});
+    }
+    res.json(data)
+}
+
 const create = async(req,res)=>{
     const propiedad = await userController.create(req.body);
     res.json({data:propiedad})
@@ -38,6 +59,8 @@ export default{
     getAll,
     getById,
     getByProperty,
+    register,
+    login,
     create,
     update,
     remove

@@ -12,6 +12,8 @@ router.post("/remove/:id",userAPIController.remove);
 router.post("/update/:id",userAPIController.update);
 
 
+
+
 router.get("/",userAPIController.getAll);
 
 
