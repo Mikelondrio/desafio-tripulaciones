@@ -1,4 +1,6 @@
 import userModel from "../../models/userModel.js";
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 
 const getAll = async(userId=null)=> {
@@ -41,44 +43,38 @@ const getByProperty = async(property,value) =>{
         return null;
     }
 }
-const login = async(data) =>{
-    console.log("datalogin",data)
-    const {email,username,password} = data;
-    if((!email && !username ) || !password){
-        return {error:"faltan datos",status:400};
+//modificado para que no pida en el login el email y varios console log de comprobacion, aparte expiresIn modificado a '24h'
+const login = async (data) => {
+    console.log("datalogin", data);
+    const { username, password } = data;
+    if (!username || !password) {
+        return { error: "faltan datos", status: 400 };
     }
     try {
-        let user;
-        if(email){
-            const users = await getByProperty("email",email,true);
-            user = users[0];
+        const users = await getByProperty("username", username);
+        const user = users[0];
+        console.log("usuario encontrado", user);
+        if (!user) {
+            return { error: "No existe el usuario", status: 400 };
         }
-        else{
-            const users = await getByProperty("username",username,true);
-            user = users[0];
+        const isPasswordCorrect = await bcrypt.compare(password, user.password);
+        if (!isPasswordCorrect) {
+            return { error: "Combinación de usuario y contraseña erróneos", status: 400 };
         }
-        console.log("usurio",user);
-        if(!user){
-            return {error:"No existe el usurio",status:400};
-        }
-        console.log("contraseña",password,user.password);
-        const isPasswordCorrect = await bcrypt.compare(password,user.password);
-        if(!isPasswordCorrect){
-            return {error:"Combinación de usuario y contraseña erroneos",status:400};
-        }
-        console.log("login user",user)
-        const token = jwt.sign({_id:user._id,username:user.username,role:user.role},process.env.JWT_SECRET,{expiresIn: 60 * 60 * 24})
-        const userData ={
+        const token = jwt.sign(
+            { _id: user._id, username: user.username, role: user.role },
+            process.env.JWT_SECRET,
+            { expiresIn: '24h' }
+        );
+        const userData = {
             _id: user._id,
             username: user.username,
             role: user.role,
-        }
-        return {token,user:userData};
-
-        
+        };
+        return { token, user: userData };
     } catch (error) {
-        console.error(error);
-        return {error:"Ha habido un error",status:500};
+        console.error("Error en la función login", error);
+        return { error: "Ha habido un error", status: 500 };
     }
 }
 const register = async(data) => {
@@ -100,10 +96,22 @@ const register = async(data) => {
     return user;
 }
 
-const create = async(data) =>{
+/* const create = async(data) =>{
     try {
         const datos = await userModel.create(data);
         return datos;
+    } catch (error) {
+        console.error(error); 
+        return null;  
+    }
+} */
+//Añadido el hash para encriptar la contraseña
+const create = async(data) =>{
+    try {
+        const hash = await bcrypt.hash(data.password,10);
+        data.password= hash;
+        const user = await userModel.create(data);
+        return user;
     } catch (error) {
         console.error(error); 
         return null;  
