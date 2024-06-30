@@ -7,7 +7,9 @@ import { sha256 } from 'js-sha256'
 
 const Navbar = () => {
 
-
+    async function logout() {
+        // Aqui ira las instrucciones para cerrar sesion
+    }
 
 
 
@@ -16,6 +18,9 @@ const Navbar = () => {
             <nav>
                     <NavLink to="/escaner" className='link'>Escaner</NavLink>
                     <NavLink to="/analisis" className="link">Analisis</NavLink>
+                    <NavLink to="/perfil" className="link">Usuario </NavLink>
+                    isLogin ? <NavLink to="/perfil" className="link">Usuario </NavLink> : <></>
+                    isLogin ? <NavLink to="/login" className='link' onClick={logout}>Login / Logout</NavLink> : <></>
                     <NavLink to="/login" className='link'>Login / Logout</NavLink>
             </nav>
             <Outlet />
