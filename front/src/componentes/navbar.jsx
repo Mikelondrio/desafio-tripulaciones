@@ -1,6 +1,4 @@
 import { Outlet, NavLink, useSearchParams } from "react-router-dom";
-import Cookies from 'js-cookie'
-import { sha256 } from 'js-sha256'
 
 
 
