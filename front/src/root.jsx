@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { sha256 } from 'js-sha256';
-import Cookies from 'js-cookie';
 import { Navbar } from './componentes/navbar';
 
 

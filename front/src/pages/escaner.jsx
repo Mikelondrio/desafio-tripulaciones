@@ -25,7 +25,9 @@ function Escaner() {
       }
 
       async function buttonWebSend(e) {
-        const webArraySend = {'': ''}
+        const URL = e.target.form[0].value
+
+        const webArraySend = {'': URL}
 
         const data = {
             method: 'POST',
@@ -46,6 +48,13 @@ function Escaner() {
         <div id='index-cuerpo'>
             <Navbar />
             <h2>Escaner</h2>
+
+            <div id='form-div'>
+                <form id='form'>
+                    <input type="text" id="url-send" />
+                    <input type="button" value="Escanear" onClick={buttonWebSend}/>
+                </form>
+            </div>
 
 
 

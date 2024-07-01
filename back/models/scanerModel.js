@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 
-const userSchema  = new mongoose.Schema({
+const scanerSchema  = new mongoose.Schema({
 
     userID: {
-        type: String,
-        required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users',
+        required: true
     },
 
     date: {
@@ -12,11 +13,21 @@ const userSchema  = new mongoose.Schema({
         required: true
     },
 
+    url: {
+        type: String,
+        required: true
+    },
+
+    data: {
+        type: Object,
+        required: true
+    }
+
 
 
 })
 
 
-const userModel = mongoose.model("",userSchema);
+const scanerModel = mongoose.model("scaners",scanerSchema);
 
-export default userModel;
+export default scanerModel;
