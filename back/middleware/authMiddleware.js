@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import userController from "../controllers/users/userController.js";
+import userController from "../controllers/controllers/userController";
 
 const verifyToken = async (req, res, next) => {
   const authorization = req.headers.authorization;
