@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navbar } from "../componentes/navbar.jsx";
-import Cookies from 'js-cookie';
-import { sha256 } from 'js-sha256';
+import { Navbar } from "../componentes/navbar/navbar.jsx";
 
 
 
