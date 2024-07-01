@@ -3,6 +3,7 @@ import { Root } from './root.jsx'
 import { Escaner } from "./pages/escaner.jsx";
 import { Login } from "./pages/login.jsx";
 import { Analisis } from "./pages/analisis.jsx";
+import { PerfilUsuario } from "./pages/perfil.jsx";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
           path: "/login",
           element: <Login />
         },
+
+        {
+          path: "/perfil",
+          element: <PerfilUsuario />
+        }
 
 
       ]
