@@ -74,7 +74,23 @@ const Register = ({ onLogin }) => {
                     <>
                         <label htmlFor="passwordRepeat">Repeat Password</label>
                         <input name="passwordRepeat" type="password" value={userData.passwordRepeat} onChange={handleUserData} />
+                        <label htmlFor="company">Company</label>
+                        <input name="company" type="text" value={userData.company} onChange={handleUserData} />
+                        <label htmlFor="sector">Sector</label>
+                        <select name="company" type="text" value={userData.sector} onChange={handleUserData} >
+                            <option value="it">Tecnología de la Información</option>
+                            <option value="finance">Finanzas</option>
+                            <option value="healthcare">Cuidado de la Salud</option>
+                            <option value="education">Educación</option>
+                            <option value="engineering">Ingeniería</option>
+                            <option value="government">Gobierno</option>
+                            <option value="media">Medios de Comunicación</option>
+                            <option value="retail">Venta al por Menor</option>
+                            <option value="manufacturing">Manufactura</option>
+                            <option value="transportation">Transporte</option>
+                        </select>
                     </>
+                    
                 }
                 <button>{isRegister ? "Register" : "Login"}</button>
             </form>
