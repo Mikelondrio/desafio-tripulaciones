@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navbar } from "../componentes/navbar/navbar.jsx";
+import { Navbar } from "../componentes/Header/navbar.jsx";
 
 
 
