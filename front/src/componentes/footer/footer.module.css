@@ -3,9 +3,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  margin-inline-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
 }
 
 .container{
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,9 +18,10 @@
 }
 
 .logo{
-  /* display: none; */
+  display: none;
   width: 100%;
-  height: 40%;  
+  justify-content: center;
+  align-items: center;  
   object-fit: cover;
 }
 
@@ -30,11 +35,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
+
 }
 
 .bottomBar ul{
   width: 100%;
-  padding-inline-start: 0;
+  height: 100%;
+  padding: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,6 +53,7 @@
 
 .bottomBar ul li{
   width: 100%;
+  height: 100%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -67,7 +78,7 @@
 /* Responsividad */
 @media (min-width: 600px) {
   .bottomBar ul {
-    flex-direction: row; /* Cambia los elementos a una fila en pantallas más grandes */
+    flex-direction: row; 
   }
 
   .bottomBar ul li {
@@ -79,13 +90,13 @@
   .container {
     flex-direction: row; /* Los elementos se alinean en fila en pantallas grandes */
     justify-content: space-between;
+    max-height: 10vh;
   }
 
   .logo {
-    margin-top: 0;
-    margin-left: 1rem;
-    max-width: 150px; /* Ajustar el tamaño máximo del logo para pantallas grandes */
+    display: flex;
   }
+
 
   .bottomBar {
     width: auto;
@@ -98,5 +109,6 @@
 
   .bottomBar ul li {
     width: auto;
+    height: 100%;
   }
 }
