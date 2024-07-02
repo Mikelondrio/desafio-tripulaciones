@@ -29,14 +29,12 @@ function Escaner() {
 
       async function URLInfoData(data) {
         const URLSave = data.url
-        const URLDate = Date.now()
 
 
-        const URLArraySave = {'date': URLDate,
-                                'url': URLSave,
+        const URLArraySave = {'url': URLSave,
                                 'data': data}
 
-        const URLdata = {
+        const URLData = {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
