@@ -1,6 +1,6 @@
 import { Outlet, NavLink, useSearchParams } from "react-router-dom";
 import styles from './footer.module.css'
-import logoFooter from '../../assets/seniority_logoblanco_footer.png'
+import logoFooter from '../../assets/seniority_logoblanco_sinfondo_uso_en_fondo oscuro.png'
 
 
 export const Footer = () => {
@@ -8,10 +8,6 @@ export const Footer = () => {
     return (
         <>
             <div className={styles.container}> 
-                    <div className={styles.logo}>
-                        <img className={styles.image} src={logoFooter}/>
-                    </div>
-                
                     <div className={styles.bottomBar}>
                         <ul>
                             <li><a href="">Seniority 2024</a></li>
@@ -19,6 +15,9 @@ export const Footer = () => {
                             <li><a href="">Política de Privacidad</a></li>
                             <li><a href="">Política de Cookies</a></li>
                         </ul>
+                    </div>
+                    <div className={styles.logo}>
+                        <img className={styles.image} src={logoFooter}/>
                     </div>
             </div>
         </>
