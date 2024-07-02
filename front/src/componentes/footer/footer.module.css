@@ -63,3 +63,40 @@
   color: white;
   text-decoration: none;
 }
+
+/* Responsividad */
+@media (min-width: 600px) {
+  .bottomBar ul {
+    flex-direction: row; /* Cambia los elementos a una fila en pantallas más grandes */
+  }
+
+  .bottomBar ul li {
+    flex: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row; /* Los elementos se alinean en fila en pantallas grandes */
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-top: 0;
+    margin-left: 1rem;
+    max-width: 150px; /* Ajustar el tamaño máximo del logo para pantallas grandes */
+  }
+
+  .bottomBar {
+    width: auto;
+  }
+
+  .bottomBar ul {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .bottomBar ul li {
+    width: auto;
+  }
+}
