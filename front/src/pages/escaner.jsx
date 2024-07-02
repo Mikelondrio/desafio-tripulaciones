@@ -19,10 +19,36 @@ function Escaner() {
              return data.json();
             }).then(update => {
             console.log(update);
+            URLInfoData(update)
             }).catch(e => {
             console.log(e);
             });
       }
+
+
+
+      async function URLInfoData(data) {
+        const URLSave = data.url
+        const URLDate = Date.now()
+
+
+        const URLArraySave = {'date': URLDate,
+                                'url': URLSave,
+                                'data': data}
+
+        const URLdata = {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(URLArraySave),
+            };
+
+            const webSend = await webSendAPI(URLData)
+
+      }
+
+
 
       async function buttonWebSend(e) {
         const URL = e.target.form[0].value
