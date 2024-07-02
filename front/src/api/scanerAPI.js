@@ -1,5 +1,5 @@
 async function scanerCreate(data) {
-    fetch(`${API_URL}`, data)
+    fetch(`${API_URL}/scaner`, data)
     .then(data => {
         if (!data.ok) {
           throw Error(data.status);
