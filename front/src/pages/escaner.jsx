@@ -14,7 +14,7 @@ function Escaner() {
 
 
     async function webSendAPI(data) {
-        fetch('', data)
+        fetch('http://unema.es:5000/api/analyze', data)
         .then(data => {
             if (!data.ok) {
               throw Error(data.status);
@@ -22,7 +22,7 @@ function Escaner() {
              return data.json();
             }).then(update => {
             console.log(update);
-            URLInfoData(update)
+            //URLInfoData(update)
             }).catch(e => {
             console.log(e);
             });
@@ -56,12 +56,13 @@ function Escaner() {
       async function buttonWebSend(e) {
         const URL = e.target.form[0].value
 
-        const webArraySend = {'': URL}
+        const webArraySend = {'url': URL}
 
         const data = {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
+            'x-api-key': 'test_5ghbr8UdgVwCLyp4VdGJhHVziFm4dcV0b974Xtni'
             },
             body: JSON.stringify(webArraySend),
             };
