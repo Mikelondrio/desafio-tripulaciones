@@ -18,7 +18,9 @@ const getByProperty=async(req,res)=>{
 }
 
 const create = async(req,res)=>{
-    const propiedad = await scanerController.create(req.body);
+    const userId = req.user._id
+    const data = {...req.body,userId}
+    const propiedad = await scanerController.create(data);
     res.json({data:propiedad})
 }
 
