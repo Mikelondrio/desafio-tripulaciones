@@ -1,6 +1,6 @@
 import { Outlet, NavLink, useSearchParams } from "react-router-dom";
 import styles from './footer.module.css'
-import logoFooter from '../../assets/seniority_logoblanco_sinfondo_uso_en_fondo oscuro.png'
+import logoFooter from '../../assets/logo_footer.png'
 
 
 export const Footer = () => {

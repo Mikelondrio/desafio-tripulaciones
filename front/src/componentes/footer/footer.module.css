@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: #050E3C;
+  background-color: #040A2A;
 }
 
 .logo{
@@ -27,7 +27,7 @@
 
 .image{
   width: 30%;
-  background-color: #050E3C;
+  background-color: #040A2A;
 }
   
 .bottomBar{
@@ -57,7 +57,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem 1rem;
-  background-color: #050E3C;
+  background-color: #040A2A;
 }
 
 
