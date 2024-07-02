@@ -1,19 +1,3 @@
-/* Aseguramos que el HTML y el body ocupen toda la altura */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-/* El contenedor principal que envolverá todo el contenido de la página */
-#app-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
-}
-
-/* El contenido principal debe crecer para ocupar el espacio disponible */
-main {
-  flex: 1;
-  padding: 20px; /* Añade algo de relleno para el contenido principal */
-  background-color: #eef; /* Color de fondo para visualizar mejor */
+body{
+  list-style-type: none;
 }

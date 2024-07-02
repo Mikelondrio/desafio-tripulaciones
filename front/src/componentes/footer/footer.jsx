@@ -1,30 +1,28 @@
 import { Outlet, NavLink, useSearchParams } from "react-router-dom";
+import styles from './footer.module.css'
+import logoFooter from '../../assets/seniority_logoblanco_footer.png'
 
-import './footer.css'
 
-import logo from '../../assets/seniority_logoblanco_sinfondo_uso_en_fondo oscuro.png';
-
-const Footer = () => {
+export const Footer = () => {
 
     return (
         <>
-            <div class="container-footer">
-                <div class="logo-container">
-                    <div class="logo-background">
-                        <div class="logo">
-                            <img src={logo} alt="Logo" />
-                        </div>
+            <div className={styles.container}> 
+                    <div className={styles.logo}>
+                        <img className={styles.image} src={logoFooter}/>
                     </div>
-                </div>
-                <div class="footer">
-                    <div class="footer-text">© Seniority 2024</div>
-                    <div class="footer-link">Condiciones de Uso</div>
-                    <div class="footer-link">Política de privacidad</div>
-                    <div class="footer-link">Política de cookies</div>
-                </div>
+                
+                    <div className={styles.bottomBar}>
+                        <ul>
+                            <li><a href="">Seniority 2024</a></li>
+                            <li><a href="">Condiciones de Uso</a></li>
+                            <li><a href="">Política de Privacidad</a></li>
+                            <li><a href="">Política de Cookies</a></li>
+                        </ul>
+                    </div>
             </div>
         </>
     )
 }
 
-export { Footer }
+export default Footer 

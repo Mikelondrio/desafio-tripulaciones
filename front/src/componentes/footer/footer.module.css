@@ -1,0 +1,47 @@
+*{
+  list-style-type: none;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.logo{
+  /* display: none; */  
+  padding: 1rem;
+  object-fit: cover;
+}
+
+.image{
+  width: 10vw;
+}
+  
+.bottomBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomBar ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomBar ul li{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+  background-color: #050E3C;
+}
+
+.bottomBar ul li a{
+  color: white;
+  text-decoration: none;
+}

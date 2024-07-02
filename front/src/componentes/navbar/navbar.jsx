@@ -2,7 +2,7 @@ import { Outlet, NavLink, useSearchParams } from "react-router-dom";
 
 import './navbar.css'
 
-import logo from '../../assets/seniority_logo.png';
+import logo from '../../assets/seniority_logo_header.png';
 
 
 

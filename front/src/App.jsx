@@ -1,6 +1,6 @@
 import router from './router.jsx'
 import { RouterProvider } from 'react-router-dom'
-import AccessModal from './componentes/AccessModal/AccessModal.jsx'
+import Footer from './componentes/footer/footer.jsx'
 
 
 function App() {
@@ -9,8 +9,7 @@ function App() {
     <>
         <RouterProvider router={router} />
 
-        <AccessModal />
-
+        <Footer />
 
     </>
   )
