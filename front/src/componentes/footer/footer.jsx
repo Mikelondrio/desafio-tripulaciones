@@ -8,6 +8,9 @@ export const Footer = () => {
     return (
         <>
             <div className={styles.container}> 
+                    <div className={styles.logo}>
+                        <img className={styles.image} src={logoFooter}/>
+                    </div>
                     <div className={styles.bottomBar}>
                         <ul>
                             <li><a href="">Seniority 2024</a></li>
@@ -16,9 +19,7 @@ export const Footer = () => {
                             <li><a href="">Política de Cookies</a></li>
                         </ul>
                     </div>
-                    <div className={styles.logo}>
-                        <img className={styles.image} src={logoFooter}/>
-                    </div>
+                   
             </div>
         </>
     )
