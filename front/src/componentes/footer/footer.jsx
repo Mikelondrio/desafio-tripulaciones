@@ -7,18 +7,19 @@ export const Footer = () => {
 
     return (
         <>
-            <div className={styles.container}> 
-                    <div className={styles.bottomBar}>
-                        <ul>
-                            <li><a href="">Seniority 2024</a></li>
-                            <li><a href="">Condiciones de Uso</a></li>
-                            <li><a href="">Política de Privacidad</a></li>
-                            <li><a href="">Política de Cookies</a></li>
-                        </ul>
-                    </div>
-                    <div className={styles.logo}>
-                        <img className={styles.image} src={logoFooter}/>
-                    </div>
+            <div className={styles.container}>
+                <div className={styles.logo}>
+                    <img className={styles.image} src={logoFooter} />
+                </div>
+                <div className={styles.bottomBar}>
+                    <ul>
+                        <li><a href="">Seniority 2024</a></li>
+                        <li><a href="">Condiciones de Uso</a></li>
+                        <li><a href="">Política de Privacidad</a></li>
+                        <li><a href="">Política de Cookies</a></li>
+                    </ul>
+                </div>
+
             </div>
         </>
     )
