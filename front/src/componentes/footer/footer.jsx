@@ -13,10 +13,10 @@ export const Footer = () => {
                     </div>
                     <div className={styles.bottomBar}>
                         <ul>
-                            <li><a href="">© Seniority 2024</a></li>
-                            <li><a href="">Condiciones de Uso</a></li>
-                            <li><a href="">Política de Privacidad</a></li>
-                            <li><a href="">Política de Cookies</a></li>
+                            <li><span>© Seniority 2024</span></li>
+                            <li><a href="https://www.seniorityai.com/?page_id=2574">Condiciones de Uso</a></li>
+                            <li><a href="https://www.seniorityai.com/politica-de-privacidad/">Política de Privacidad</a></li>
+                            <li><a href="https://www.seniorityai.com/politica-de-cookies/">Política de Cookies</a></li>
                         </ul>
                     </div>
                    
