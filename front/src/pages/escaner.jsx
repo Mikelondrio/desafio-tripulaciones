@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "../componentes/navbar.jsx";
 import { scanerCreate } from "../api/scanerAPI.js";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 
 
 
 function Escaner() {
+    const navigate = useNavigate()
 
 
 
@@ -45,6 +47,7 @@ function Escaner() {
             };
 
             const webSend = await scanerCreate(URLData)
+            navigate('/analisis')
       }
 
 
