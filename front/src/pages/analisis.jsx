@@ -30,6 +30,10 @@ function Analisis() {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        plugins: {
+            legend: {
+              display: false
+            },
         scales: {
           y: {
             beginAtZero: true,
@@ -39,7 +43,10 @@ function Analisis() {
           }
         }
       }
-    });
+    }
+})
+
+
 
     // Limpiar el gráfico al desmontar el componente
     return () => {
