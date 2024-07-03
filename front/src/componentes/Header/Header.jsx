@@ -9,7 +9,6 @@ function Header() {
     const [burgerMenuIsOpen, setBurgerMenuIsOpen] = useState(false);
 
     function burgerMenuHandler(e){
-
         setBurgerMenuIsOpen(true);
     }
 
@@ -20,7 +19,7 @@ function Header() {
         </div>
 
         {!burgerMenuIsOpen && <button className={styles.burgerBtn} onClick={burgerMenuHandler} ><ion-icon name="menu"></ion-icon></button>}
-            
+
         {burgerMenuIsOpen && <Navbar />}
     </div>
   )
