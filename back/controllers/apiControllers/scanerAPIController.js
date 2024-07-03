@@ -24,6 +24,11 @@ const create = async(req,res)=>{
     res.json({data:propiedad})
 }
 
+/* const create = async(req,res)=>{
+    const propiedad = await scanerController.create(req.body);
+    res.json({data:propiedad})
+} */
+
 const update = async(req,res)=>{
     const id = eq.params.id;
     const propiedad = await scanerController.update(id,req.body);

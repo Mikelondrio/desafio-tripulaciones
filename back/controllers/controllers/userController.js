@@ -1,5 +1,5 @@
 import userModel from "../../models/userModel.js";
-import bcrypt from 'bcrypt';
+import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 
@@ -57,7 +57,7 @@ const login = async (data) => {
         if (!user) {
             return { error: "No existe el usuario", status: 400 };
         }
-        const isPasswordCorrect = await bcrypt.compare(password, user.password);
+        const isPasswordCorrect = await bcryptjs.compare(password, user.password);
         if (!isPasswordCorrect) {
             return { error: "Combinación de usuario y contraseña erróneos", status: 400 };
         }
@@ -108,7 +108,7 @@ const register = async(data) => {
 //Añadido el hash para encriptar la contraseña
 const create = async(data) =>{
     try {
-        const hash = await bcrypt.hash(data.password,10);
+        const hash = await bcryptjs.hash(data.password,10);
         data.password= hash;
         const user = await userModel.create(data);
         return user;

@@ -21,10 +21,10 @@ function Escaner() {
              }
              return data.json();
             }).then(update => {
-            console.log(update);
-            //URLInfoData(update)
+            //console.log(update);
+            URLInfoData(update)
             }).catch(e => {
-            console.log(e);
+            //console.log(e);
             });
       }
 
@@ -32,8 +32,7 @@ function Escaner() {
 
 
       async function URLInfoData(data) {
-        const URLSave = data.url
-
+        const URLSave = data.result.url
 
         const URLArraySave = {'url': URLSave,
                                 'data': data}
@@ -47,7 +46,7 @@ function Escaner() {
             };
 
             const webSend = await scanerCreate(URLData)
-            //navigate('/analisis')
+            navigate('/analisis')
       }
 
 

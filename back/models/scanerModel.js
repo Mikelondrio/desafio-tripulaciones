@@ -4,12 +4,12 @@ const scanerSchema  = new mongoose.Schema({
 
     userID: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
+        ref: 'users'
     },
 
     date: {
         type: Date,
-        default: Date.now,
+        default: Date.now()
     },
 
     url: {
