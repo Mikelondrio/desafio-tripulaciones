@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/seniority_logo_header.png';
+import logo from '../../assets/logo_navbar.png';
 import styles from './Header.module.css'
 import Navbar from './Navbar'
 
