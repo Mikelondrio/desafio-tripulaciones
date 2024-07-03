@@ -10,12 +10,6 @@ function App() {
   return (
     <>
         <RouterProvider router={router} />
-<<<<<<< HEAD
-        
-
-=======
-        <Header />
->>>>>>> 71f344f0be7e65d2143fe5509bccaf9c8951ce5b
         <Footer />
 
     </>
