@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar  from 'Navbar'
 import logo from '../../assets/seniority_logo_header.png';
 import styles from './Header.module.css'
+import Navbar from './Navbar'
 
 function Header() {
   return (
