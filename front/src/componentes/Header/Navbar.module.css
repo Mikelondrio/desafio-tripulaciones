@@ -20,9 +20,6 @@
   align-items: center;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  animation-name: slideDown;
-  transition: all 200ms ease;
-  /* gap: 1rem; */
 }
 
 .container{
@@ -31,11 +28,24 @@
   justify-content: center;
 }
 
-@keyframes slideDown{
-  0%{
-    opacity: 0;
+
+@media (min-width: 768px) {
+  .container {
+    justify-content: space-between;
   }
-  100%{
-    opacity: 1;
+
+  .burgerBtn {
+    display: none;  
+  }
+
+  .navbar {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .navbar > * {
+    margin: 0 1rem; 
   }
 }
