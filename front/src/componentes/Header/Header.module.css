@@ -15,3 +15,14 @@
     align-items: center;
     justify-content: center;
   }
+
+  .logo{
+    /* display: none;    */
+    justify-content: center;
+    align-items: center;  
+    object-fit: cover;
+  }
+
+.image{
+    width: 30%;
+  }
