@@ -3,18 +3,39 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-decoration: none;
   margin-inline-end: 0;
   margin-block-start: 0;
   padding-inline-start: 0;
   font-family: Montserrat;
 }
 .navbar {
-  background-color: white;
-  border-bottom: 2px solid #E0E0E0;
-  
+  width: 100%;
+  position: absolute;
+  right: 0;
+  transform: translateY(100%);
   display: flex;
+  background-color: white;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
   font-family: Arial, sans-serif;
+  animation-name: slideDown;
+  transition: all 200ms ease;
+  /* gap: 1rem; */
 }
 
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slideDown{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
