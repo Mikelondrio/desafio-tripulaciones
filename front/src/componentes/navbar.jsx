@@ -24,9 +24,8 @@ const Navbar = () => {
                     <NavLink to="/escaner" className='link'>Escaner</NavLink>
                     <NavLink to="/analisis" className="link">Analisis</NavLink>
                     <NavLink to="/perfil" className="link">Usuario </NavLink>
-                    isLogin ? <NavLink to="/perfil" className="link">Usuario </NavLink> : <></>
-                    isLogin ? <NavLink to="/login" className='link' onClick={logout}>Login / Logout</NavLink> : <></>
                     <NavLink to="/login" className='link'>Login / Logout</NavLink>
+                    
             </nav>
             <Outlet />
         </div>

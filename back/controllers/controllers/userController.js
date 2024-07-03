@@ -19,6 +19,8 @@ function getUserData(user){
         username: user.username,
         email: user.email,
         password: user.password,
+        company: user.company,
+        sector: user.sector,
         role: user.role
         
     }
@@ -79,8 +81,8 @@ const login = async (data) => {
 }
 const register = async(data) => {
     console.log("dataregister",data)
-    const {email,username,password,passwordRepeat} = data;
-    if(!email || !username || !password || !passwordRepeat){
+    const {email,username,password,passwordRepeat,company,sector} = data;
+    if(!email || !username || !password || !passwordRepeat || !company || !sector){
         return {error:"Falta alguno de los campos"};
     }
     if(password !== passwordRepeat){
@@ -90,6 +92,8 @@ const register = async(data) => {
         email,
         username,
         password,
+        company,
+        sector,
         role:"user"
     }
     const user = await create(userData);
