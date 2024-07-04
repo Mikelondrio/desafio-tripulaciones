@@ -17,7 +17,7 @@ function getscanerData(scaner){
         userID: scaner.userID,
         date: scaner.date,
         url: scaner.url,
-        data: scaner.sata        
+        data: scaner.data        
     }
 }
 

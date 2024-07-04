@@ -7,8 +7,8 @@ async function scanerCreate(data) {
           throw Error(data.status);
          }
          return data.json();
-        }).then(create => {
-        console.log(create);
+        }).then(update => {
+        console.log(update);
         }).catch(e => {
         console.log(e);
         });

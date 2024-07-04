@@ -29,6 +29,7 @@ const register = async(req,res)=>{
     }
     res.json({data:user})
 }
+
 const login = async(req,res) => {
     const data = await userController.login(req.body);
     console.log('Login request body:', req.body);
