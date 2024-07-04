@@ -14,15 +14,12 @@ function HeaderSection() {
 
     const handleChange = (e) => {
         const value = e.target.value;
-        console.log(value)
-        setUrl(value);
+        setUrl(value)
 
         if (urlRegex.test(value)) {
-            console.log(urlRegex.test(value));
-            setIsValid(urlRegex.test(value));
-            console.log(value);
+            setIsValid(urlRegex.test(value))
+
         } else {
-            console.log(urlRegex.test(value));
             setIsValid(false);
         }
     };
