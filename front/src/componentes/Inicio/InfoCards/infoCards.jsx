@@ -1,25 +1,44 @@
 // src/components/InfoCards.jsx
 import React from 'react';
-import './infoCards.css'; // Asegúrate de tener una hoja de estilos para este componente
+import './infoCards.css';
+
+const infoCardsData = [
+    {
+        title: '¿QUÉ HACEMOS?',
+        description: 'Nuestra herramienta te ayuda a hacer accesible tu sitio web detectando fallos y proponiendo mejoras.',
+        image: '/path/to/what-we-do.jpg',
+        buttonText: 'Más información +',
+        buttonLink: '#'
+    },
+    {
+        title: 'RESULTADOS',
+        description: 'Podrás ver todas las mejoras que necesita tu web para que pueda ser accesible al público Senior.',
+        image: '/path/to/results.jpg',
+        buttonText: 'Más información +',
+        buttonLink: '#'
+    },
+    {
+        title: 'HERRAMIENTAS',
+        description: 'Si necesitas ampliar tu formación para aplicar los cambios a tu web o necesitas recursos para mejorarla, tenemos la solución.',
+        image: '/path/to/tools.jpg',
+        buttonText: 'Más información +',
+        buttonLink: '#'
+    }
+];
 
 function InfoCards() {
     return (
         <div className="info-cards">
-            <div className="card">
-                <h2>QUÉ HACEMOS</h2>
-                <p>Nuestra herramienta te ayuda a hacer accesible tu sitio web detectando fallos y proponiendo mejoras.</p>
-                <button>Más información +</button>
-            </div>
-            <div className="card">
-                <h2>RESULTADOS</h2>
-                <p>Podrás ver todas las mejoras que necesita tu web para que pueda ser accesible al público Senior.</p>
-                <button>Más información +</button>
-            </div>
-            <div className="card">
-                <h2>HERRAMIENTAS</h2>
-                <p>Si necesitas ampliar tu formación para aplicar los cambios a tu web o necesitas recursos para mejorarla, tenemos la solución.</p>
-                <button>Más información +</button>
-            </div>
+            {infoCardsData.map((card, index) => (
+                <div key={index} className="info-card">
+                    <img src={card.image} alt={card.title} className="info-card-image" />
+                    <div className="info-card-content">
+                        <h2 className="info-card-title">{card.title}</h2>
+                        <p className="info-card-description">{card.description}</p>
+                        <a href={card.buttonLink} className="info-card-button">{card.buttonText}</a>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }

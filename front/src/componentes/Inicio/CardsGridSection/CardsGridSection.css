@@ -1,7 +1,10 @@
 /* src/components/CardsGridSection.css */
+
+/* Diseño básico para móviles */
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
     padding: 20px;
 }
@@ -12,6 +15,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%; /* Ocupa todo el ancho disponible en móviles */
+    max-width: 350px; /* Limita el tamaño máximo en móviles */
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -23,7 +29,7 @@
 
 .card-image {
     width: 100%;
-    height: 200px;
+    height: auto;
     object-fit: cover;
 }
 
@@ -42,16 +48,54 @@
     margin-bottom: 20px;
 }
 
-.card-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+/* Media Queries para pantallas más grandes */
+
+/* Tablets en modo retrato */
+@media (min-width: 768px) {
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
 }
 
-.card-button:hover {
-    background-color: #0056b3;
+/* Tablets en modo paisaje y desktops pequeños */
+@media (min-width: 992px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Desktops medianos */
+@media (min-width: 1200px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* Desktops grandes */
+@media (min-width: 1400px) {
+    .cards-grid {
+        display: flex;
+        flex-direction: row; /* Cambia a disposición horizontal */
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .card {
+        width: calc(33.333% - 20px); /* Cada tarjeta ocupa un tercio del ancho */
+        max-width: none; /* Elimina la limitación de ancho máximo */
+        flex-direction: column;
+    }
+
+    .card-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-content {
+        text-align: left; /* Alinea el texto a la izquierda */
+        padding: 20px;
+    }
 }
