@@ -1,6 +1,4 @@
-    /* src/components/headerSection.css */
-
-    .header-section {
+    .headerSection {
         background-image: url('/path/to/your/background-image.jpg'); /* Cambia esta ruta a la imagen que estés usando */
         background-size: cover;
         background-position: center;
@@ -9,22 +7,22 @@
         color: white;
     }
 
-    .header-content {
+    .headerContent {
         max-width: 800px; /* Ancho máximo para que no se extienda demasiado en pantallas grandes */
         margin: 0 auto;
     }
 
-    .header-content h1 {
+    .headerContent h1 {
         font-size: 2rem;
         margin-bottom: 20px;
     }
 
-    .header-content p {
+    .headerContent p {
         font-size: 1.2rem;
         margin-bottom: 40px;
     }
 
-    .url-input-wrapper {
+    .urlInputWrapper {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,7 +30,7 @@
         flex-direction: column;
     }
 
-    .url-input {
+    .urlInput {
         padding: 15px;
         width: 80%;
         max-width: 400px; /* Limita el ancho del input */
@@ -41,7 +39,7 @@
         font-size: 1rem;
     }
 
-    .analyze-button {
+    .analyzeButton {
         padding: 15px 30px;
         background-color: #ff9800; /* Color naranja para el botón */
         color: white;
@@ -52,40 +50,42 @@
         margin-top: 20px; /* Espacio entre el input y el botón */
     }
 
-    .analyze-button:hover {
+    .analyzeButton:hover {
         background-color: #e68a00; /* Color más oscuro para el hover */
     }
 
     /* Indicadores de validez */
-    .url-input.valid {
+    .valid {
         border-color: green;
+        border: 2px solid green;
     }
 
-    .url-input.invalid {
+    .invalid {
         border-color: red;
+        border: 2px solid red;
     }
 
     /* Media Queries para pantallas más grandes */
     @media (min-width: 768px) {
-        .url-input-wrapper {
+        .urlInputWrapper {
             flex-direction: row;
         }
 
-        .analyze-button {
+        .analyzeButton {
             margin-top: 0;
         }
     }
 
     @media (min-width: 1200px) {
-        .header-content h1 {
+        .headerContent h1 {
             font-size: 2.5rem;
         }
 
-        .header-content p {
+        .headerContent p {
             font-size: 1.5rem;
         }
 
-        .url-input-wrapper {
+        .urlInputWrapper {
             gap: 20px;
         }
     }

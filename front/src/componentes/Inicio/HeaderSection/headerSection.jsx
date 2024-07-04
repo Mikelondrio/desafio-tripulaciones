@@ -26,7 +26,6 @@ function HeaderSection() {
                     />
                     <button className={styles.analyzeButton}>Analizar</button>
                 </div>
-                {isValid ? <p>URL válida!</p> : <p>URL inválida!</p>}
             </div>
         </div>
     );

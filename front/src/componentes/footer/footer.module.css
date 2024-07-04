@@ -139,17 +139,17 @@
     display: flex;
   }
 
-/* 
+
   .bottomBar {
     width: auto;
-  } */
+  }
 
   .bottomBar ul {
     flex-direction: row;
-    /* width: auto; */
+    width: auto;
   }
 
-  /* .bottomBar ul li {
+  .bottomBar ul li {
     width: auto;
-  }*/
+  }
 }
