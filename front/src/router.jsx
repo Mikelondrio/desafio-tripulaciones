@@ -25,6 +25,10 @@ const router = createBrowserRouter([
         path: "/contactar",
         element: <Contactar />,
       },
+      {
+        path: "/register",
+        element: <Contactar />,
+      },
     ],
   },
 ]);
