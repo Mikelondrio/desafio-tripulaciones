@@ -21,7 +21,7 @@ function Escaner() {
              }
              return data.json();
             }).then(update => {
-            console.log(update);
+            //console.log(update);
             URLInfoData(update)
             }).catch(e => {
             console.log(e);
@@ -48,8 +48,7 @@ function Escaner() {
             };
 
             const webSend = await scanerCreate(URLData)
-            //navigate('/analisis');
-            //return webSend;
+            navigate('/analisis');
       }
 
 

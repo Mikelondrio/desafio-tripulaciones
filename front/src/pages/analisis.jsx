@@ -9,6 +9,7 @@ function Analisis() {
   const scanData = useLoaderData();
 
   useEffect(() => {
+    const dataAnalisis = localStorage.getItem('data')
     const ctx = canvasRef.current.getContext("2d");
 
     if (chartRef.current) {
