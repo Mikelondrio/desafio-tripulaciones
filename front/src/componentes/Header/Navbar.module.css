@@ -10,10 +10,6 @@
   font-family: Montserrat;
 }
 .navbar {
-  /* width: 100%;
-  position: absolute;
-  right: 0;
-  transform: translateY(100%); */
   display: none;
   background-color: white;
   justify-content: space-between;

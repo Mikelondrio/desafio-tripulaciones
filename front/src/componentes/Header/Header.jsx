@@ -18,7 +18,7 @@ function Header() {
             </div>
 
             <div className={styles.rightComponent}>
-                <button className={styles.burgerBtn} ><ion-icon name="menu"></ion-icon></button>
+                <button className={styles.burgerBtn} on><ion-icon name="menu"></ion-icon></button>
                 <Navbar />
             </div>
     </div>
