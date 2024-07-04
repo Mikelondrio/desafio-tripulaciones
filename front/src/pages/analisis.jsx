@@ -1,50 +1,59 @@
 import React, { useEffect, useRef } from "react";
 import { Navbar } from "../componentes/navbar.jsx";
 import { Chart } from "chart.js/auto";
-import { useLoaderData } from "react-router-dom";
+import { scanerGetAll} from "../api/scanerAPI.js";
 
 function Analisis() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
-  const scanData = useLoaderData();
 
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
 
-    if (chartRef.current) {
-      chartRef.current.destroy();
-    }
-
-    chartRef.current = new Chart(ctx, {
-      type: "radar",
-      data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [
-          {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-              display: false
-            },
-        scales: {
-          y: {
-            beginAtZero: true,
-            grid: {
-              display: false // Oculta las líneas horizontales
+    
+getLastResearch();
+    async function getLastResearch() {
+      let data = await scanerGetAll();
+      data = data.data;
+      data.reverse();
+      data = data[0];
+      if (chartRef.current) {
+        chartRef.current.destroy();
+      }
+      chartRef.current = new Chart(ctx, {
+        type: "radar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [data.data.fragment_or_non_http_link, data.data.js_timeout_or_interval, data.data.missing_h1, data.data.missing_label],
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+              legend: {
+                display: false
+              },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                display: false // Oculta las líneas horizontales
+              }
             }
           }
         }
       }
+  })
     }
-})
+
+
+
 
 
 
