@@ -39,22 +39,24 @@
         font-size: 1rem;
     }
 
-    .analyzeButton {
-        padding: 15px 30px;
+    .analyzeButton{
+        font-weight: 500;
+        padding: 1rem 1rem;
         background-color: #ff9800; 
         color: white;
         border: none;
-        border-radius: 5px;
+        border-radius: 8px;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-top: 20px; 
+        transition: all 200ms ease;
     }
 
-    .analyzeButton:hover {
+    .analyzeButton:hover{
+        border-radius: 18px;
         background-color: #e68a00; 
     }
 
-    /* Indicadores de validez */
     .valid {
         border-color: rgb(14, 190, 14);
         border: 2px solid rgb(14, 190, 14);
@@ -65,7 +67,6 @@
         border: 2px solid red;
     }
 
-    /* Media Queries para pantallas más grandes */
     @media (min-width: 768px) {
         .urlInputWrapper {
             flex-direction: row;
