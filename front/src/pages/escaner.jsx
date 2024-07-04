@@ -47,7 +47,8 @@ function Escaner() {
             };
 
             const webSend = await scanerCreate(URLData)
-            navigate('/analisis')
+            navigate('/analisis');
+            return webSend;
       }
 
 
@@ -68,6 +69,7 @@ function Escaner() {
             };
 
             const webSend = await webSendAPI(data)
+            return webSend;
     }
 
 
