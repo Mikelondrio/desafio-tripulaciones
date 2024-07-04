@@ -1,7 +1,7 @@
 import scanerModel from "../../models/scanerModel.js";
 
 
-const getAll = async(scanerId=null)=> {
+const getAll = async()=> {
     try {
         const datos = await scanerModel.find();
         return datos;
