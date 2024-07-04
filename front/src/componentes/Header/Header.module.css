@@ -32,18 +32,21 @@
   }
 
   .logo{
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: left;  
     object-fit: cover;
 }
-/* 
+
 .link{
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
+  cursor: pointer;
+  color: var(--primary900);
+}
+
+ion-icon{
+ color: var(--primary900);
+ font-size: 2rem;
+}
 
 .image{
   padding: 1rem 0rem;
