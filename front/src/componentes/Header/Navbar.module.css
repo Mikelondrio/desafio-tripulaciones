@@ -28,6 +28,13 @@
   justify-content: center;
 }
 
+.entrarBtn{
+  cursor: pointer;
+}
+
+.link{
+  color: var(--primary900);
+}
 
 @media (min-width: 768px) {
   .container {

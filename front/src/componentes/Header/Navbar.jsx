@@ -13,7 +13,7 @@ export const Navbar = () => {
                     <div className={styles.navbar}>
                         <NavLink to="/resultados" className={styles.link}>Resultados</NavLink>
                         <NavLink to="/contactar" className={styles.link}>Contactar</NavLink>
-                        <button type="button" className="menu-button-text">Entrar</button>
+                        <button type="button" className={styles.entrarBtn}>Entrar</button>
                     </div>
                 </div>
             </nav>

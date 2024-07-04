@@ -40,12 +40,11 @@
 
 .link{
   cursor: pointer;
-  color: var(--primary900);
 }
 
 ion-icon{
  color: var(--primary900);
- font-size: 2rem;
+ font-size: 1 rem;
 }
 
 .image{
