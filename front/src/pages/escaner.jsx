@@ -49,6 +49,7 @@ function Escaner() {
 
             const webSend = await scanerCreate(URLData)
             navigate('/analisis');
+         
       }
 
 

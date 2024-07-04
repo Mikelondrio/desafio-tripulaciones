@@ -14,8 +14,15 @@ async function scanerCreate(data) {
         });
   }
 
+  async function scanerGetAll() {
+    const response = await fetch(`${API_URL}/scaner`);
+    const data = await response.json();
+    return data;
+  }
+
 
 
   export {
-    scanerCreate
+    scanerCreate,
+    scanerGetAll
   }
