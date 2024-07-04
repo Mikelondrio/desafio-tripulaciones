@@ -1,6 +1,8 @@
-import dotenv from 'dotenv';
+import { API_URL } from "./API.js";
+import { getToken } from "../utils/local.js";
 
 const fetchData = async(route,method,inputData=null)=>{
+
   const url = new URL(API_URL + route);
   const fetchOptions = {
       method:method,
@@ -31,12 +33,12 @@ const fetchData = async(route,method,inputData=null)=>{
 }
 
 const register = async(userData)=>{
-  const result = await fetchData("/register","post",userData);
+  const result = await fetchData("/user/register","post",userData);
   
   return result;
 }
 const login = async(userData)=>{
-  const result = await fetchData("/login","post",userData);
+  const result = await fetchData("/user/login","post",userData);
   console.log("login",result);
   return result;
 }
