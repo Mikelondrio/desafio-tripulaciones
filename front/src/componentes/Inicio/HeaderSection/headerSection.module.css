@@ -1,14 +1,14 @@
     .headerSection {
-        background-image: url('/path/to/your/background-image.jpg'); /* Cambia esta ruta a la imagen que estés usando */
+        background-image: url('/path/to/your/background-image.jpg'); 
         background-size: cover;
         background-position: center;
-        padding: 60px 20px; /* Añade suficiente padding para la sección */
+        padding: 60px 20px; 
         text-align: center;
         color: white;
     }
 
     .headerContent {
-        max-width: 800px; /* Ancho máximo para que no se extienda demasiado en pantallas grandes */
+        max-width: 800px; 
         margin: 0 auto;
     }
 
@@ -26,14 +26,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px; /* Espacio entre el input y el botón */
+        gap: 10px;
         flex-direction: column;
     }
 
     .urlInput {
         padding: 15px;
         width: 80%;
-        max-width: 400px; /* Limita el ancho del input */
+        max-width: 400px; 
         border: 1px solid #ddd;
         border-radius: 5px;
         font-size: 1rem;
@@ -41,23 +41,23 @@
 
     .analyzeButton {
         padding: 15px 30px;
-        background-color: #ff9800; /* Color naranja para el botón */
+        background-color: #ff9800; 
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         font-size: 1rem;
-        margin-top: 20px; /* Espacio entre el input y el botón */
+        margin-top: 20px; 
     }
 
     .analyzeButton:hover {
-        background-color: #e68a00; /* Color más oscuro para el hover */
+        background-color: #e68a00; 
     }
 
     /* Indicadores de validez */
     .valid {
-        border-color: green;
-        border: 2px solid green;
+        border-color: rgb(14, 190, 14);
+        border: 2px solid rgb(14, 190, 14);
     }
 
     .invalid {

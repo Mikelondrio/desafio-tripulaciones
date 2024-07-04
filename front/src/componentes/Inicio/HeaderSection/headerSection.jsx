@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import styles from './headerSection.module.css'; // Importar estilos desde el módulo CSS
+import styles from './headerSection.module.css'; 
 
 function HeaderSection() {
     const [url, setUrl] = useState('');
     const [isValid, setIsValid] = useState(false);
 
-    const urlRegex = new RegExp(/^(ftp|http|https|https):\/\/[^ "]+$/i); // Regex simplificado para validación básica de URL
+    // const urlRegex = new RegExp(/^(ftp|http|https|https):\/\/[^ "]+$/i); 
+    // const urlRegex = new RegExp(/^(ftp|http|https):\/\/(?:www\.)?[\w\-]+(?:\.[\w\-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/i);
+    // const urlRegex = new RegExp(/^(ftp|http|https):\/\/(?:www\.)?[\w\-]+(?:\.[\w\-]+)*\.(?:com|org|dev|net|edu|gov|mil|co\.uk|io|info|biz|online|name|asia|me|tv|[a-z]{2,})(?:\/[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]*)?$/i);
+    // const urlRegex = new RegExp(/^(ftp|http|https):\/\/(?:www\.)?[\w\-]+(?:\.[\w\-]+)+\.(com|org|dev|net|edu|gov|mil|co\.uk|io|info|biz|online|name|asia|me|tv|[a-z]{2,})(?:\/[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]*)?$/i);
+    const urlRegex = new RegExp(/^(?:(ftp|http|https):\/\/)?(?:www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(?:\/[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]*)?$/);
+
 
     const handleChange = (e) => {
         const value = e.target.value;
