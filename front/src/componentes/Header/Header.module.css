@@ -1,65 +1,64 @@
-
-*{
-    list-style-type: none;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    margin-inline-end: 0;
-    margin-block-start: 0;
-    padding-inline-start: 0;
-    font-family: Montserrat;
-  }
-
-.container{
-    width: 100%;  
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    transition: all 200ms ease;
-  }
-
-  .rightComponent{
-    padding-right: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    width: 50%;
-  }
-
-  .logo{
-    padding-left: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: left;    
+* {
+  list-style-type: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  margin-inline-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+  font-family: Montserrat;
 }
 
+.container {
+  width: 100%;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  transition: all 200ms ease;
+}
+
+.rightComponent {
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 50%;
+}
+
+.logo {
+  padding-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: left;    
+}
 
 .burgerBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-    cursor: pointer;
-    appearance: none;
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    padding: .2rem .2rem;
-    background-color: #F8A800;
-    transition: all 200ms ease;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 0.2rem 0.2rem;
+  background-color: #F8A800;
+  transition: all 200ms ease;
 }
 
-ion-icon{
+ion-icon {
   color: white;
   font-size: 1.2rem;
 }
 
 .burgerBtn:hover {
-    border-radius: 8px;
-    background-color: #df9800; 
+  border-radius: 8px;
+  background-color: #df9800; 
 }
 
-
-.image{
+.image {
   padding: 1rem 0rem;
   display: flex;
   align-items: center;
@@ -67,9 +66,29 @@ ion-icon{
   width: 10rem;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 200ms ease;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
 
 @media (min-width: 768px) {
-  .burgerBtn{
+  .burgerBtn {
     display: none;
   }
-} 
+
+  .navbar {
+    display: flex !important; /* Ensure the navbar is always displayed on large screens */
+    flex-direction: row;
+  }
+}

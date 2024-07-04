@@ -1,37 +1,35 @@
-// src/components/HeaderSection.jsx
 import React, { useState } from 'react';
-import './headerSection.css'; // Asegúrate de tener una hoja de estilos para este componente
-
-
-
+import styles from './headerSection.module.css'; // Importar estilos desde el módulo CSS
 
 function HeaderSection() {
-
     const [url, setUrl] = useState('');
     const [isValid, setIsValid] = useState(false);
 
-    // Usando el literal de expresión regular
-    const urlRegex = /^(https?:\/\/(www\.)?|www\.)[\w-]+(\.[\w-]+)+([\w-]*)*(\?.*)?(#.*)?$/i;
+    const urlRegex = new RegExp(/^(ftp|http|https|https):\/\/[^ "]+$/i); // Regex simplificado para validación básica de URL
 
     const handleChange = (e) => {
-        const { value } = e.target;
+        const value = e.target.value;
         setUrl(value);
-        if (urlRegex.test(value)) {
-            console.log(urlRegex.test(value));
-            setIsValid(urlRegex.test(value));
-            console.log(value);
-        } else {
-            setIsValid(false);
-        }
+        setIsValid(urlRegex.test(value));
     };
 
     return (
-        <div>
-            <input type="text" value={url} onChange={handleChange} placeholder="Enter URL" />
-            {isValid ? <p>URL is valid!</p> : <p>URL is invalid!</p>}
+        <div className={styles.headerSection}>
+            <div className={styles.headerContent}>
+                <div className={styles.urlInputWrapper}>
+                    <input
+                        type="text"
+                        className={`${styles.urlInput} ${isValid ? styles.valid : styles.invalid}`}
+                        value={url}
+                        onChange={handleChange}
+                        placeholder="Introducir una URL aquí"
+                    />
+                    <button className={styles.analyzeButton}>Analizar</button>
+                </div>
+                {isValid ? <p>URL válida!</p> : <p>URL inválida!</p>}
+            </div>
         </div>
     );
 }
-
 
 export default HeaderSection;
