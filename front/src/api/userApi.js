@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+
 
 const fetchData = async(route,method,inputData=null)=>{
   const url = new URL(API_URL + route);

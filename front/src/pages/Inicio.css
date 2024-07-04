@@ -1,0 +1,6 @@
+/* src/pages/Inicio.css */
+.inicio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
