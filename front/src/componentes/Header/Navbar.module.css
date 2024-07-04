@@ -10,11 +10,11 @@
   font-family: Montserrat;
 }
 .navbar {
-  width: 100%;
+  /* width: 100%;
   position: absolute;
   right: 0;
-  transform: translateY(100%);
-  display: flex;
+  transform: translateY(100%); */
+  display: none;
   background-color: white;
   justify-content: space-between;
   align-items: center;
@@ -28,9 +28,18 @@
   justify-content: center;
 }
 
+.entrarBtn{
+  cursor: pointer;
+}
+
+.link{
+  color: var(--primary900);
+}
 
 @media (min-width: 768px) {
   .container {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -39,6 +48,7 @@
   }
 
   .navbar {
+    height: 100%;
     display: flex; 
     flex-direction: row;
     align-items: center;
@@ -48,4 +58,4 @@
   .navbar > * {
     margin: 0 1rem; 
   }
-}
+} 

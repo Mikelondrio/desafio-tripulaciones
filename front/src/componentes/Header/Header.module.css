@@ -11,23 +11,53 @@
   }
 
 .container{
+  /* border: 1px solid red; */
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 1rem 1rem;
-   
+    justify-content:right;
+  }
+
+  .leftComponent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-right: 3rem;
+  }
+
+  .rightComponent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .logo{
-    /* border: 1px solid red; */
+    display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: left;  
     object-fit: cover;
-  }
+}
+
+.link{
+  cursor: pointer;
+}
+
+ion-icon{
+ color: var(--primary900);
+ font-size: 1 rem;
+}
 
 .image{
+  padding: 1rem 0rem;
   display: flex;
   align-items: center;
-  justify-content: center   ;
-    width: 80%;
+  justify-content: center;
+  width: 10rem;
+}
+
+
+@media (min-width: 768px) {
+  .burgerBtn{
+    display: none;
   }
+} 
