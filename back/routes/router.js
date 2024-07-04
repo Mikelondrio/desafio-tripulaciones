@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { isAuthenticated } from "../middleware/authMiddleware.js";
 
 const router  =  Router();
 
@@ -10,7 +11,7 @@ import scanerRouter from "./scanerRouter.js";
 
 
 router.use("/user", userRouter);
-router.use("/scaner", scanerRouter);
+router.use("/scaner", isAuthenticated, scanerRouter);
 
 
 

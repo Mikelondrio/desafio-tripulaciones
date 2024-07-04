@@ -24,7 +24,7 @@ function Escaner() {
             console.log(update);
             URLInfoData(update)
             }).catch(e => {
-            //console.log(e);
+            console.log(e);
             });
       }
 
@@ -32,22 +32,24 @@ function Escaner() {
 
 
       async function URLInfoData(data) {
+        const token = localStorage.getItem('token')
         const URLSave = data.result.url
 
         const URLArraySave = {'url': URLSave,
-                                'data': data}
+                                'data': data.result}
 
         const URLData = {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
+            'authorization': token,
             },
             body: JSON.stringify(URLArraySave),
             };
 
             const webSend = await scanerCreate(URLData)
-            navigate('/analisis');
-            return webSend;
+            //navigate('/analisis');
+            //return webSend;
       }
 
 

@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import userController from "../controllers/controllers/userController";
+import userController from '../controllers/controllers/userController.js'
 
 const verifyToken = async (req, res, next) => {
   const authorization = req.headers.authorization;
@@ -7,8 +7,7 @@ const verifyToken = async (req, res, next) => {
     return res.status(401).json({ error: "No hay token jwt" });
   }
 
-  //const token = authorization.split(" ")[1];
-  const token =authorization.includes("Bearer")  ? authorization.split("Bearer ")[1] : authorization;
+  const token = authorization.includes("Bearer")  ? authorization.split("Bearer ")[1] : authorization;
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await userController.getById(decoded._id);
@@ -23,9 +22,18 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
+
+
 const isAuthenticated = (req, res, next) => {
-  verifyToken(req, res, next);
+  if (req.user === undefined || req.user === null) {
+    next()
+  } else {
+    verifyToken(req, res, next);
+  }
+  
 };
+
+
 
 const isAdmin = (req, res, next) => {
   verifyToken(req, res, (error) => {

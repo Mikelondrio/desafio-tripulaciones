@@ -45,15 +45,16 @@ const getByProperty = async(property,value) =>{
         return null;
     }
 }
+
 //modificado para que no pida en el login el email y varios console log de comprobacion, aparte expiresIn modificado a '24h'
 const login = async (data) => {
     console.log("datalogin", data);
-    const { username, password } = data;
-    if (!username || !password) {
+    const { email, password } = data;
+    if (!email || !password) {
         return { error: "faltan datos", status: 400 };
     }
     try {
-        const users = await getByProperty("username", username);
+        const users = await getByProperty("email", email);
         const user = users[0];
         console.log("usuario encontrado", user);
         if (!user) {
@@ -64,13 +65,13 @@ const login = async (data) => {
             return { error: "Combinación de usuario y contraseña erróneos", status: 400 };
         }
         const token = jwt.sign(
-            { _id: user._id, username: user.username, role: user.role },
+            { _id: user._id, email: user.email, role: user.role },
             process.env.JWT_SECRET,
             { expiresIn: '24h' }
         );
         const userData = {
             _id: user._id,
-            username: user.username,
+            email: user.email,
             role: user.role,
         };
         return { token, user: userData };
@@ -79,6 +80,7 @@ const login = async (data) => {
         return { error: "Ha habido un error", status: 500 };
     }
 }
+
 const register = async(data) => {
     console.log("dataregister",data)
     const {email,username,password,passwordRepeat,company,sector} = data;
