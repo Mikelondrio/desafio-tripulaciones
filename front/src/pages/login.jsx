@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "../componentes/navbar.jsx";
+import Register from "../componentes/formRegister.jsx";
 
 
 
@@ -15,7 +16,7 @@ function Login() {
         <div id='index-cuerpo'>
             <Navbar />
             <h2>Login</h2>
-
+            <Register/>
 
 
         </div>

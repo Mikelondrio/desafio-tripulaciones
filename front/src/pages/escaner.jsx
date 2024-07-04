@@ -9,7 +9,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 function Escaner() {
     const navigate = useNavigate()
-
+    
 
 
 
@@ -21,7 +21,7 @@ function Escaner() {
              }
              return data.json();
             }).then(update => {
-            //console.log(update);
+            console.log(update);
             URLInfoData(update)
             }).catch(e => {
             //console.log(e);
@@ -46,7 +46,8 @@ function Escaner() {
             };
 
             const webSend = await scanerCreate(URLData)
-            navigate('/analisis')
+            navigate('/analisis');
+            return webSend;
       }
 
 
@@ -67,6 +68,7 @@ function Escaner() {
             };
 
             const webSend = await webSendAPI(data)
+            return webSend;
     }
 
 

@@ -1,4 +1,4 @@
-import { API_URL } from './API.js'
+import { API_URL } from "./API.js";
 
 async function scanerCreate(data) {
     fetch(`${API_URL}/scaner`, data)
