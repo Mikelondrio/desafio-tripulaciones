@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768); 
 
   const burgerBtnToggle = () => {
     setIsOpen(prevState => !prevState);
@@ -13,17 +13,18 @@ function Header() {
 
   const handleResize = () => {
     const isLarge = window.innerWidth >= 768;
+
     setIsLargeScreen(isLarge);
     if (isLarge) {
-      setIsOpen(true); // Ensure navbar is visible on large screens
+      setIsOpen(true); 
     } else {
-      setIsOpen(false); // Ensure navbar is hidden on small screens
+      setIsOpen(false)
     }
   };
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize);
