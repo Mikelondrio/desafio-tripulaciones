@@ -9,7 +9,7 @@ export const Navbar = ({ className }) => {
           <NavLink to="/inicio" className={styles.link}>Inicio</NavLink>
           <NavLink to="/resultados" className={styles.link}>Resultados</NavLink>
           <NavLink to="/contactar" className={styles.link}>Contactar</NavLink>
-          <button type="button" className={styles.entrarBtn}>Entrar</button>
+          <NavLink to="/registro" className={styles.entrarBtn}>Entrar</NavLink>
         </div>
       </div>
     </nav>

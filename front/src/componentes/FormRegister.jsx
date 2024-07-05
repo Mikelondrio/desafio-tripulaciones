@@ -99,9 +99,18 @@ const Register = () => {
 
     return (
         <section className="register-login">
-            <h2>{isRegister ? "Register" : "Login"}</h2>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
+                {isRegister && (
+                    <div>
+                        <h2>¡Te damos la bienvenida a Silver Site!
+
+                        </h2>
+                        <p>Nos gustaría saber un poco sobre ti.</p>
+                        <p>De esta forma garantizamos la seguridad de las personas que confían en Senority.</p>
+                        <br></br>
+                    </div>
+                )}
                 <label htmlFor="email">Email</label>
                 <input name="email" type="text" value={userData.email} onChange={handleUserData} required />
                 {isRegister && (
