@@ -73,7 +73,7 @@ const Register = () => {
             setError("Login successful.");
             setUser(result.user);
             saveToken(result.token);
-            navigate("/escaner");
+            navigate("/inicio");
         } else {
             setError(result.error);
         }

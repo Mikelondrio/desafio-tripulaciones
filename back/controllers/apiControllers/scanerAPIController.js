@@ -20,6 +20,7 @@ const getByProperty=async(req,res)=>{
 const create = async(req,res)=>{
     let userID;
     let data;
+    console.log('lkjsalkfjsldkjlkdsjfs  ' + req.user)
     if (req.user === undefined || req.user === null) {
         data = req.body
     } else {

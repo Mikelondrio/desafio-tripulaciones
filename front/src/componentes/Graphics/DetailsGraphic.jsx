@@ -1,35 +1,32 @@
 import React, { useEffect, useRef } from "react";
-import { Navbar } from "../componentes/navbar.jsx";
 import { Chart } from "chart.js/auto";
-import { scanerGetAll} from "../api/scanerAPI.js";
+import { scanerGetAll} from "../../api/scanerAPI.js";
 
-function Analisis() {
+function AnalysisDetail() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
 
   useEffect(() => {
-    const dataAnalisis = localStorage.getItem('data')
     const ctx = canvasRef.current.getContext("2d");
 
     
-  getLastResearch();
+getLastResearch();
     async function getLastResearch() {
       let data = await scanerGetAll();
       data = data.data;
       data.reverse();
       data = data[0];
-
       if (chartRef.current) {
         chartRef.current.destroy();
       }
       chartRef.current = new Chart(ctx, {
-        type: "radar",
+        type: "bar",
         data: {
-          labels: ["Red", "Blue", "Yellow", "Green"],
+          labels: ["Red", "Blue", "Yellow", "Green","Red", "Blue", "Yellow", "Green","Red", "Blue", "Yellow", "Green","Red", "Blue", "Yellow", "Green"],
           datasets: [
             {
               label: "# of Votes",
-              data: [data.data.missing_href, data.data.missing_h2, data.data.missing_h1, data.data.missing_label],
+              data: [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
               borderWidth: 1
             }
           ]
@@ -54,11 +51,6 @@ function Analisis() {
   })
     }
 
-
-
-
-
-
     // Limpiar el gráfico al desmontar el componente
     return () => {
       if (chartRef.current) {
@@ -68,15 +60,12 @@ function Analisis() {
   }, []);
 
   return (
-    <div id="index-cuerpo">
-      <Navbar />
-      <h2>Análisis</h2>
+    
       <div>
         <canvas ref={canvasRef} id="myChart"></canvas>
       </div>
-    </div>
   );
 }
 
-export { Analisis };
+export default  AnalysisDetail;
 
