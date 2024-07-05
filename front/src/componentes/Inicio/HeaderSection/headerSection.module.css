@@ -1,0 +1,93 @@
+    .headerSection {
+        background-image: url('../../../assets/images/home/analizar.jpg'); 
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        padding: 50px 10px; 
+        text-align: center;
+        color: white;
+    }
+
+    .headerContent {
+        max-width: 800px; 
+        margin: 0 auto;
+    }
+
+    .headerContent h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .headerContent p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+    }
+
+    .urlInputWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .urlInput {
+        padding: 15px;
+        width: 80%;
+        max-width: 400px; 
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .analyzeButton{
+        font-weight: 500;
+        padding: 1rem 1rem;
+        background-color: #ff9800; 
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        margin-top: 20px; 
+        transition: all 200ms ease;
+    }
+
+    .analyzeButton:hover{
+        border-radius: 18px;
+        background-color: #e68a00; 
+    }
+
+    .valid {
+        border-color: rgb(14, 190, 14);
+        border: 2px solid rgb(14, 190, 14);
+    }
+
+    .invalid {
+        border-color: red;
+        border: 2px solid red;
+    }
+
+    @media (min-width: 768px) {
+        .urlInputWrapper {
+            flex-direction: row;
+        }
+
+        .analyzeButton {
+            margin-top: 0;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .headerContent h1 {
+            font-size: 2.5rem;
+        }
+
+        .headerContent p {
+            font-size: 1.5rem;
+        }
+
+        .urlInputWrapper {
+            gap: 20px;
+        }
+    }

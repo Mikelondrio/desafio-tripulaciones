@@ -1,0 +1,30 @@
+/* src/components/ImageTextSection.css */
+.image-text-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.section-text {
+    max-width: 800px;
+}
+
+.section-text h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.section-text p {
+    color: #555;
+    line-height: 1.6;
+}
