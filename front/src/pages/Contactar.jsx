@@ -1,19 +1,14 @@
-import { useState, useEffect } from "react";
-import { Navbar } from "../componentes/Header/Navbar.jsx";
+import React from 'react'
+import Contacto from '../componentes/Contactar/Contacto'
 
 
-
-
-
-export function Contactar() {
-
-
-
-
+function Contactar() {
 
     return (
         <div id='index-cuerpo'>
-            <h2>Contactar</h2>
+            
+            <Contacto />
+
         </div>
     )
 }
