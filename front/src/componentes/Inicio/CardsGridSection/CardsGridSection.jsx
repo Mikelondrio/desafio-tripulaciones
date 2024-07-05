@@ -1,22 +1,27 @@
 // src/components/CardsGridSection.jsx
 import React from 'react';
 import './CardsGridSection.css';
+import Senora_con_ordenador from '../../../assets/Home/Senora_con_ordenador.jpg';
+import Madurito_sexy  from '../../../assets/Home/Madurito_sexy.jpg';
+import ordenador from '../../../assets/Home/ordenador.jpg';
+
 
 const cardsData = [
     {
-        title: 'Card 1',
-        description: 'This is the first card.',
-        image: '/path/to/card1-image.jpg',
+        title: '¿ QUE HACE SILVER SITE ?',
+        description: 'Te permite loren impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        image: Senora_con_ordenador,
+        
     },
     {
-        title: 'Card 2',
+        title: '¿ QUE RESULTADOS RECIBIRÁS ?',
         description: 'This is the second card.',
-        image: '/path/to/card2-image.jpg',
+        image: ordenador,
     },
     {
-        title: 'Card 3',
+        title: '¿ QUE NECESITAS ?',
         description: 'This is the third card.',
-        image: '/path/to/card3-image.jpg',
+        image: Madurito_sexy,
     }
 ];
 
