@@ -14,7 +14,7 @@
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     width: 100%; /* Ocupa todo el ancho disponible en móviles */
-    max-width: 350px; /* Limita el tamaño máximo en móviles */
+    max-width: 400px; /* Limita el tamaño máximo en móviles */
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
