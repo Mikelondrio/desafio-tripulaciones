@@ -12,12 +12,13 @@ function Analisis() {
     const ctx = canvasRef.current.getContext("2d");
 
     
-getLastResearch();
+  getLastResearch();
     async function getLastResearch() {
       let data = await scanerGetAll();
       data = data.data;
       data.reverse();
       data = data[0];
+
       if (chartRef.current) {
         chartRef.current.destroy();
       }
@@ -28,7 +29,7 @@ getLastResearch();
           datasets: [
             {
               label: "# of Votes",
-              data: [data.data.fragment_or_non_http_link, data.data.js_timeout_or_interval, data.data.missing_h1, data.data.missing_label],
+              data: [data.data.missing_href, data.data.missing_h2, data.data.missing_h1, data.data.missing_label],
               borderWidth: 1
             }
           ]

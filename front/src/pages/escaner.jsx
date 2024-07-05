@@ -21,7 +21,7 @@ function Escaner() {
              }
              return data.json();
             }).then(update => {
-            //console.log(update);
+            console.log(update);
             URLInfoData(update)
             }).catch(e => {
             console.log(e);
@@ -33,10 +33,10 @@ function Escaner() {
 
       async function URLInfoData(data) {
         const token = localStorage.getItem('token')
-        const URLSave = data.result.url
+        const URLSave = data.url
 
         const URLArraySave = {'url': URLSave,
-                                'data': data.result}
+                                'data': data}
 
         const URLData = {
             method: 'POST',
