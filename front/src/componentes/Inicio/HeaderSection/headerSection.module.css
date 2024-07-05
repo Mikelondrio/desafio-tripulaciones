@@ -1,8 +1,9 @@
     .headerSection {
-        background-image: url('/path/to/your/background-image.jpg'); 
+        background-image: url('../../../assets/images/home/analizar.jpg'); 
         background-size: cover;
         background-position: center;
-        padding: 60px 20px; 
+        width: 100%;
+        padding: 50px 10px; 
         text-align: center;
         color: white;
     }
