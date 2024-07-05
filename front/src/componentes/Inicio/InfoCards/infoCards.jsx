@@ -6,21 +6,21 @@ const infoCardsData = [
     {
         title: '¿QUÉ HACEMOS?',
         description: 'Nuestra herramienta te ayuda a hacer accesible tu sitio web detectando fallos y proponiendo mejoras.',
-        image: '/path/to/what-we-do.jpg',
+        image: '../../../assets/images/home/queHacemos.jpg',
         buttonText: 'Más información +',
         buttonLink: '#'
     },
     {
         title: 'RESULTADOS',
         description: 'Podrás ver todas las mejoras que necesita tu web para que pueda ser accesible al público Senior.',
-        image: '/path/to/results.jpg',
+        image: '../../../assets/images/home/resultados.jpg',
         buttonText: 'Más información +',
         buttonLink: '#'
     },
     {
         title: 'HERRAMIENTAS',
         description: 'Si necesitas ampliar tu formación para aplicar los cambios a tu web o necesitas recursos para mejorarla, tenemos la solución.',
-        image: '/path/to/tools.jpg',
+        image: '../../../assets/images/home/herramientas.jpg',
         buttonText: 'Más información +',
         buttonLink: '#'
     }
