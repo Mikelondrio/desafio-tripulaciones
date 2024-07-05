@@ -1,0 +1,83 @@
+.contacto {
+  background-image: url('../../assets/Contacto.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px;
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+ 
+  justify-content: space-between;
+ 
+  gap: 20px; /* Ajusta este valor para aumentar o disminuir la separación */
+  padding: 20px; /* Añade padding al contenedor si es necesario */
+  
+
+}
+
+.contacto h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+
+.contacto-seccion {
+  background-color: rgb(250, 245, 245);
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  width: 45%;
+
+  flex: 1; /* Hace que ambos divs ocupen el mismo espacio */
+  background-color: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Opcional: añade una sombra suave */
+}
+
+/* Asegura que el contenido dentro de los divs se alinee de manera similar */
+.contacto-seccion h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #4a4a4a;
+}
+
+.contacto-seccion ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contacto-seccion li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Estilos para los iconos (necesitarás una fuente de iconos o SVGs) */
+.icon-email:before { content: '📧'; }
+.icon-phone:before { content: '📞'; }
+.icon-location:before { content: '📍'; }
+.icon-facebook:before { content: 'f'; }
+.icon-instagram:before { content: 'I'; }
+.icon-youtube:before { content: 'Y'; }
+.icon-linkedin:before { content: 'in'; }
+
+@media (max-width: 768px) {
+  .contacto-contenido {
+    flex-direction: column;
+  }
+
+  .contacto-seccion {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
