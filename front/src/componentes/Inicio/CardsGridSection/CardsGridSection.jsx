@@ -1,6 +1,6 @@
 // src/components/CardsGridSection.jsx
 import React from 'react';
-import './CardsGridSection.css';
+import styles from './CardsGridSection.module.css';
 import Senora_con_ordenador from '../../../assets/Home/Senora_con_ordenador.jpg';
 import Madurito_sexy  from '../../../assets/Home/Madurito_sexy.jpg';
 import ordenador from '../../../assets/Home/ordenador.jpg';
@@ -27,13 +27,13 @@ const cardsData = [
 
 function CardsGridSection() {
     return (
-        <div className="cards-grid">
+        <div className={styles.cardsGrid}>
             {cardsData.map((card, index) => (
-                <div key={index} className="card">
-                    <img src={card.image} alt={card.title} className="card-image" />
-                    <div className="card-content">
-                        <h2 className="card-title">{card.title}</h2>
-                        <p className="card-description">{card.description}</p>
+                <div key={index} className={styles.card}>
+                    <img src={card.image} alt={card.title} className={styles.cardImage} />
+                    <div className={styles.cardContent}>
+                        <h2 className={styles.cardTitle}>{card.title}</h2>
+                        <p className={styles.cardDescription}>{card.description}</p>
                     </div>
                 </div>
             ))}
