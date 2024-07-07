@@ -1,101 +1,75 @@
-/* src/components/CardsGridSection.css */
-
-/* Diseño básico para móviles */
+* {
+    list-style-type: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    margin-inline-end: 0;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    font-family: Montserrat;
+  }
 .cardsGrid {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+    width: 100%;
 }
 
 .card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 100%; /* Ocupa todo el ancho disponible en móviles */
-    max-width: 350px; /* Limita el tamaño máximo en móviles */
-    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.cardImage {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
     width: 100%;
-    height: auto;
-    object-fit: cover;
+}
+
+.card.reversed {
+    flex-direction: row-reverse;
 }
 
 .cardContent {
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 0 2rem;
 }
 
 .cardTitle {
-    color: #007bff;
-    margin-bottom: 10px;
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .cardDescription {
-    color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-align: center;
 }
 
+.cardButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 50%;
+    align-self: center;
+}
+
+.imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardImage {
+    max-width: 100%;
+    height: auto;
+}
 /* Media Queries para pantallas más grandes */
 
-/* Tablets en modo retrato */
-@media (min-width: 768px) {
-    .cardsGrid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-}
-
-/* Tablets en modo paisaje y desktops pequeños */
-@media (min-width: 992px) {
-    .cardsGrid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-/* Desktops medianos */
-@media (min-width: 1200px) {
-    .cardsGrid {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-}
-
-/* Desktops grandes */
-@media (min-width: 1400px) {
-    .cardsGrid {
-        display: flex;
-        flex-direction: row; /* Cambia a disposición horizontal */
-        justify-content: space-between;
-        align-items: stretch;
-        gap: 30px;
-    }
-
-    .card {
-        width: calc(33.333% - 20px); /* Cada tarjeta ocupa un tercio del ancho */
-        max-width: none; /* Elimina la limitación de ancho máximo */
-        flex-direction: column;
-    }
-
-    .cardImage {
-        width: 100%;
-        height: auto;
-    }
-
-    .cardContent {
-        text-align: left; /* Alinea el texto a la izquierda */
-        padding: 20px;
-    }
-}
