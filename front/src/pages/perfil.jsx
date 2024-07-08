@@ -1,6 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Navbar } from "../componentes/Header/Navbar.jsx";
+import Profile from '../componentes/users/Profile'
 
 
 function Perfil() {
@@ -8,22 +7,21 @@ function Perfil() {
 
     return (
         <>
-            <Navbar />
 
-            <div id='perfil-cuerpo'>
-            
+            <div className="container" >
+                <Profile />
 
             </div>
-        
-        
-        
-        
+
+
+
+
         </>
 
     )
 }
 
 
-export {
-    Perfil
-}
+export default Perfil
+
+

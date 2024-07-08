@@ -5,7 +5,7 @@ import Contactar from "./pages/Contactar.jsx";
 import Resultados from "./pages/Resultados.jsx";
 import Registro from "./pages/Registro.jsx";
 import { GestionUsuarios } from './pages/GestionUsuarios.jsx'
-import UserPage from "./pages/user.jsx";
+import Perfil from "./pages/perfil.jsx";
 import {ListRegisteredUsers} from "./pages/userlist.jsx"
 
 const router = createBrowserRouter([
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/registro/gestionusuarios/profile",
-        element: <UserPage />,
+        element: <Perfil />,
       }, 
       {
       path: "/registro/gestionusuarios/list",

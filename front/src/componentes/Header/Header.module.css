@@ -18,6 +18,13 @@
   justify-content: space-between;
   background-color: white;
   transition: all 200ms ease;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Ajusta según sea necesario */
+  z-index: 10;
 }
 
 .rightComponent {
