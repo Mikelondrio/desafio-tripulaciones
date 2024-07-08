@@ -43,8 +43,8 @@ const login = async(userData)=>{
   return result;
 }
 
-const getUserById = async(id, userData)=>{
-  const result = await fetchData(`/user/find/${id}`,"get",userData);
+const getUserById = async(id)=>{
+  const result = await fetchData(`/user/find/${id}`);
   return result;
  }
 
