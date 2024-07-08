@@ -3,14 +3,51 @@ import styles from './Navbar.module.css';
 import { useState } from "react";
 
 export const Navbar = ({ className }) => {
-  const [recarga, setRecarga] = useState(false)
+  const [token, setToken] = useState('')
+  const [buttonClass, setButtonClass] = useState('')
+  const [buttonName, setButtonName] = useState('')
 
-    setTimeout(() => {
-      setRecarga(true)
+
+
+
+    setInterval(() => {
+      setToken(localStorage.getItem('token'))
+      buttonLog()
     }, 1000);
 
-  const token = localStorage.getItem('token')
 
+
+
+
+
+    async function logout() {
+      const localToken = localStorage.getItem('token')
+      const localUserID = localStorage.getItem('userID')
+
+      if (localToken || localUserID) {
+        localStorage.removeItem('token')
+        localStorage.removeItem('userID')
+      }
+    }
+
+
+
+    async function buttonLog() {
+      const localToken = localStorage.getItem('token')
+      const localUserID = localStorage.getItem('userID')
+
+      if (localToken || localUserID) {
+        setButtonClass(styles.salirBtn)
+        setButtonName('Salir')
+      } else {
+        setButtonClass(styles.entrarBtn)
+        setButtonName('Entrar')
+      }
+    }
+
+
+
+    
   return (
     <nav className={className}>
       <div className={styles.container}>
@@ -19,7 +56,7 @@ export const Navbar = ({ className }) => {
           <NavLink to="/resultados" className={styles.link}>Resultados</NavLink>
           {token ? <NavLink to="/registro/gestionusuarios" className={styles.link}>Perfil</NavLink> : <></>}
           <NavLink to="/contactar" className={styles.link}>Contactar</NavLink>
-          <NavLink to="/registro" className={styles.entrarBtn}>Entrar</NavLink>
+          <NavLink to="/registro" className={buttonClass} onClick={logout}>{buttonName}</NavLink>
         </div>
       </div>
     </nav>
