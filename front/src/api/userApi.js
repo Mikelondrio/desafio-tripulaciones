@@ -23,7 +23,7 @@ const fetchData = async(route,method,inputData=null)=>{
   }
   try {
       const result = await fetch(url.toString(),fetchOptions);
-      console.log("register",result)
+      //console.log("register",result)
       const data  = await result.json();
       return data;
   } catch (error) {
@@ -39,7 +39,7 @@ const register = async(userData)=>{
 }
 const login = async(userData)=>{
   const result = await fetchData("/user/login","post",userData);
-  console.log("login",result);
+  //console.log("login",result);
   return result;
 }
 
