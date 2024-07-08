@@ -20,9 +20,16 @@ async function scanerCreate(data) {
     return data;
   }
 
+  async function scanerByProperty(property, data) {
+    const response = await fetch(`${API_URL}/scaner/find?${property}=${data}`);
+    const dataScaner = await response.json();
+    return dataScaner;
+  }
+
 
 
   export {
     scanerCreate,
-    scanerGetAll
+    scanerGetAll,
+    scanerByProperty
   }
