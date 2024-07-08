@@ -43,6 +43,11 @@ const login = async(userData)=>{
   return result;
 }
 
+const getUserById = async(id)=>{
+  const result = await fetchData(`/user/find/${id}`);
+  return result;
+ }
+
 async function getDato() {
   let dato = await fetch(`${API_URL}/dato`);
   dato = await dato.json();
@@ -111,7 +116,22 @@ async function datoCreate(data) {
   }
 
 
-
+  const getCurrentUser = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const userId = localStorage.getItem('userId'); // Asumimos que guardas el ID del usuario al iniciar sesión
+      if (!token || !userId) {
+        throw new Error('No authentication token or user ID found');
+      }
+  
+      const result = await getUserById(userId);
+  
+      return result;
+    } catch (error) {
+      console.error('Error fetching current user:', error);
+      throw error;
+    }
+  };
 
   export {
     register,
@@ -120,5 +140,7 @@ async function datoCreate(data) {
     getDatoByID,
     datoCreate,
     datoDelete,
-    datoUpdate
+    datoUpdate,
+    getUserById,
+    getCurrentUser
   }
