@@ -3,14 +3,14 @@ import styles from './Navbar.module.css';
 import { useState } from "react";
 
 export const Navbar = ({ className }) => {
-  const [recarga, setRecarga] = useState(false)
+  const [token, setToken] = useState('')
 
-    setTimeout(() => {
-      setRecarga(true)
+    setInterval(() => {
+      setToken(localStorage.getItem('token'))
     }, 1000);
 
-  const token = localStorage.getItem('token')
 
+    
   return (
     <nav className={className}>
       <div className={styles.container}>
