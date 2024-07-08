@@ -4,7 +4,6 @@ import Inicio from "./pages/Inicio.jsx";
 import Contactar from "./pages/Contactar.jsx";
 import Resultados from "./pages/Resultados.jsx";
 import Registro from "./pages/Registro.jsx";
-import { Perfil } from "./pages/perfil.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/registro",
         element: <Registro />,
+      },
+      {
+        path: "/registro/gestionusuarios",
+        element: <GestionUsuarios />,
       },
     ],
   },
