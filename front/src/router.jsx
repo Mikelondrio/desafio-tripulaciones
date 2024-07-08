@@ -4,6 +4,7 @@ import Inicio from "./pages/Inicio.jsx";
 import Contactar from "./pages/Contactar.jsx";
 import Resultados from "./pages/Resultados.jsx";
 import Registro from "./pages/Registro.jsx";
+import { GestionUsuarios } from './pages/GestionUsuarios.jsx'
 import UserPage from "./pages/user.jsx";
 
 const router = createBrowserRouter([
@@ -28,12 +29,16 @@ const router = createBrowserRouter([
         element: <Contactar />,
       },
       {
-        path: "/user",
+        path: "/registro/gestionusuarios/profile",
         element: <UserPage />,
       }, 
       {
         path: "/registro",
         element: <Registro />,
+      },
+      {
+        path: "/registro/gestionusuarios",
+        element: <GestionUsuarios />,
       },
     ],
   },

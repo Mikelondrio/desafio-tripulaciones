@@ -27,11 +27,14 @@ const UserProfile = () => {
   return (
     <div className="profile-container">
       <article className="section-containeruser-card" key={user._id}>
-        <h1>HOLA</h1>
-        <h2>{user.email}</h2>
+        <div>
+        <h2>Email:{user.email}</h2>
         <p>Name: {user.username}</p>
-        <p>Phone: {user.company}</p>
-        <p>Address: {user.sector}</p>
+        </div>
+        <div>
+        <p>Company: {user.company}</p>
+        <p>Sector: {user.sector}</p>
+        </div>
       </article>
     </div>
   );

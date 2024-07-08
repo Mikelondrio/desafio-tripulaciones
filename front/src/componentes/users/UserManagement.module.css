@@ -1,0 +1,11 @@
+/* UserManagement.module.css */
+.userManagement {
+    padding: 20px;
+  }
+  
+  .userCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  

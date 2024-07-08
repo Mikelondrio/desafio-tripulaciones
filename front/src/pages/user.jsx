@@ -1,4 +1,4 @@
-import { UserProfile } from "../componentes/UserAdmin/Profile.jsx";
+import { UserProfile } from "../componentes/users/Profile.jsx";
 
 
 function UserPage() {
