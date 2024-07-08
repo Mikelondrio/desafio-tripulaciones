@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { register, login } from "../api/userApi";
-import { saveToken } from "../utils/local";
+import { saveToken, saveUserId } from "../utils/local";
 import { useNavigate } from "react-router-dom";
 import Joi from "joi";
 import UserContext from "../context/UserContext";
@@ -73,6 +73,7 @@ const Register = () => {
             setError("Login successful.");
             setUser(result.user);
             saveToken(result.token);
+            saveUserId(result.user._id);
             navigate("/inicio");
         } else {
             setError(result.error);
