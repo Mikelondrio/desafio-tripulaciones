@@ -4,7 +4,7 @@ import Inicio from "./pages/Inicio.jsx";
 import Contactar from "./pages/Contactar.jsx";
 import Resultados from "./pages/Resultados.jsx";
 import Registro from "./pages/Registro.jsx";
-import GestionUsuarios from '../src/pages/GestionUsuarios.jsx'
+import { GestionUsuarios } from './pages/GestionUsuarios.jsx'
 
 const router = createBrowserRouter([
   {
