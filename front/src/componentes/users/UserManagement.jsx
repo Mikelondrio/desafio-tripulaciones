@@ -1,6 +1,6 @@
 // UserManagement.js
 import React, { useState } from 'react';
-import Header from './Header';
+import HeaderUsermanagement from './headerUserManagement';
 import UserCard from './UserCard';
 import styles from './UserManagement.module.css';
 
@@ -27,7 +27,7 @@ const UserManagement = () => {
 
   return (
     <div className={styles.userManagement}>
-      <Header user={user} />
+      <HeaderUsermanagement user={user} />
       <h1>Usuarios</h1>
       <div className={styles.userCardsContainer}>
         {users.map((user, index) => (
