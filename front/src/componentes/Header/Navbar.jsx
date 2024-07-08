@@ -17,7 +17,7 @@ export const Navbar = ({ className }) => {
         <div className={styles.navbar}>
           <NavLink to="/inicio" className={styles.link}>Inicio</NavLink>
           <NavLink to="/resultados" className={styles.link}>Resultados</NavLink>
-          {token ? <NavLink to="/user" className={styles.link}>Perfil</NavLink> : <></>}
+          {token ? <NavLink to="/registro/gestionusuarios" className={styles.link}>Perfil</NavLink> : <></>}
           <NavLink to="/contactar" className={styles.link}>Contactar</NavLink>
           <NavLink to="/registro" className={styles.entrarBtn}>Entrar</NavLink>
         </div>
