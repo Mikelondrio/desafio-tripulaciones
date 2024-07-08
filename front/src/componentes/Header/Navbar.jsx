@@ -10,6 +10,12 @@ export const Navbar = ({ className }) => {
     }, 1000);
 
 
+    async function logout() {
+      localStorage.removeItem('token')
+      localStorage.removeItem('userID')
+    }
+
+
     
   return (
     <nav className={className}>
@@ -20,6 +26,7 @@ export const Navbar = ({ className }) => {
           {token ? <NavLink to="/registro/gestionusuarios" className={styles.link}>Perfil</NavLink> : <></>}
           <NavLink to="/contactar" className={styles.link}>Contactar</NavLink>
           <NavLink to="/registro" className={styles.entrarBtn}>Entrar</NavLink>
+          <NavLink to="/registro" className={styles.salirBtn} onClick={logout}>Salir</NavLink>
         </div>
       </div>
     </nav>
