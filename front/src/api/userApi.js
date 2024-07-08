@@ -48,8 +48,8 @@ const getUserById = async(id)=>{
   return result;
  }
 
-async function getDato() {
-  let dato = await fetch(`${API_URL}/dato`);
+async function getAllUsers() {
+  let dato = await fetch(`${API_URL}/user`);
   dato = await dato.json();
   return (dato)
 }
@@ -136,7 +136,7 @@ async function datoCreate(data) {
   export {
     register,
     login,
-    getDato,
+    getAllUsers,
     getDatoByID,
     datoCreate,
     datoDelete,
