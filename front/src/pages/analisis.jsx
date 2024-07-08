@@ -1,3 +1,5 @@
+import './analisis.css'
+
 import React, { useEffect, useRef } from "react";
 import { Navbar } from "../componentes/navbar.jsx";
 import { Chart } from "chart.js/auto";
@@ -70,10 +72,13 @@ function Analisis() {
   return (
     <div id="index-cuerpo">
       <Navbar />
-      <h2>Análisis</h2>
-      <div>
-        <canvas ref={canvasRef} id="myChart"></canvas>
+      <div id="result-canvas">
+        <h2>Análisis</h2>
+          <div>
+            <canvas ref={canvasRef} id="myChart"></canvas>
+          </div>
       </div>
+
     </div>
   );
 }

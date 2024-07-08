@@ -38,8 +38,27 @@
   transition: all 250ms ease;
 }
 
+.salirBtn {
+  font-size: 1rem;
+  font-weight: 500;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  background-color: #f80000;
+  border-radius: 8px;
+  padding: 0.3rem;
+  transition: all 250ms ease;
+}
+
 .entrarBtn:hover {
   background-color: #df9800;
+  border-radius: 20px;
+}
+
+.salirBtn:hover {
+  background-color: #ca0303;
   border-radius: 20px;
 }
 
