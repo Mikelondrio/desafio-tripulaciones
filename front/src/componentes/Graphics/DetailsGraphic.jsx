@@ -117,8 +117,8 @@ function AnalysisDetail() {
               ],
               borderRadius: 50,
               backgroundColor: [
-                '#ff0000', // verde
-                '#ffffff', // Blanco para el espacio restante
+                '#ff0000', // Rojo
+                '#ff0000', // Rojo
               ],
               borderWidth: 1
             }
