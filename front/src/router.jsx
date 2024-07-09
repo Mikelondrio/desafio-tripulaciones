@@ -2,12 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from './componentes/Layout.jsx'
 import Inicio from "./pages/Inicio.jsx";
 import Contactar from "./pages/Contactar.jsx";
-import Resultados from "./pages/Resultados.jsx";
+import Results from "./pages/Results.jsx";
 import Registro from "./pages/Registro.jsx";
+import {Perfil} from "./pages/perfil.jsx";
 import {ListRegisteredUsers} from "./pages/userlist.jsx"
 import { GraphicHistory } from "./pages/history.jsx"
 import UserManagement from "./componentes/users/UserManagement.jsx";
-import { Perfil } from "./pages/perfil.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,8 +23,14 @@ const router = createBrowserRouter([
         element: <Inicio />,
       },
       {
-        path: "/resultados",
-        element: <Resultados />,
+        path: "/formaciones",
+        element: <Inicio />,
+        // element: <Formaciones />, hay que crear el componente
+      },
+      {
+        path: "/recursos",
+        element: <Inicio />,
+        // element: <Resources />, hay que crear el componente
       },
       {
         path: "/contactar",
@@ -47,12 +54,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/registro/gestionusuarios",
-        element: <UserManagement />,
+        element: <Perfil />,
       },
       {
         path: "/profile",
         element: <Perfil />,
-      }
+      },{
+        path: "/resultados",
+        element: <Results/>,
+      },
     ],
   },
 ]);

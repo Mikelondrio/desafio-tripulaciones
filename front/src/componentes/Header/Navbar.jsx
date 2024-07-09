@@ -7,17 +7,10 @@ export const Navbar = ({ className }) => {
   const [buttonClass, setButtonClass] = useState('')
   const [buttonName, setButtonName] = useState('')
 
-
-
-
     setInterval(() => {
       setToken(localStorage.getItem('token'))
       buttonLog()
     }, 1000);
-
-
-
-
 
 
     async function logout() {
@@ -29,7 +22,6 @@ export const Navbar = ({ className }) => {
         localStorage.removeItem('userID')
       }
     }
-
 
 
     async function buttonLog() {
@@ -46,17 +38,16 @@ export const Navbar = ({ className }) => {
     }
 
 
-
-    
   return (
     <nav className={className}>
       <div className={styles.container}>
         <div className={styles.navbar}>
           <NavLink to="/inicio" className={styles.link}>Inicio</NavLink>
-          <NavLink to="/resultados" className={styles.link}>Resultados</NavLink>
-          {token ? <NavLink to="/registro/gestionusuarios" className={styles.link}>Perfil</NavLink> : <></>}
+          <NavLink to="/formaciones" className={styles.link}>Formaciones</NavLink>
+          <NavLink to="/recursos" className={styles.link}>Recursos</NavLink>
           <NavLink to="/contactar" className={styles.link}>Contactar</NavLink>
-          <NavLink to="/registro" className={buttonClass} onClick={logout}>{buttonName}</NavLink>
+          {token ? <NavLink to="/registro/gestionusuarios" className={styles.link}>Perfil</NavLink> : <></>}
+          <NavLink to="/registro" className={buttonClass} onClick={logout}>{buttonName}</NavLink>     
         </div>
       </div>
     </nav>

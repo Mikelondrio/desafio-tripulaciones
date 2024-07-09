@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './headerSection.module.css'; 
+import { NavLink } from "react-router-dom";
 
 function HeaderSection() {
     const [url, setUrl] = useState('');
@@ -25,7 +26,7 @@ function HeaderSection() {
                         onChange={handleChange}
                         placeholder="Introducir una URL aquí"
                     />
-                    <button className={styles.analyzeButton}>Analizar</button>
+                    <NavLink to="/resultados"><button className={styles.analyzeButton}>Analizar</button></NavLink>
                 </div>
             </div>
         </div>
