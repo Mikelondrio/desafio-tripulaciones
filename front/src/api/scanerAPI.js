@@ -51,7 +51,7 @@ async function scanerCreate(data) {
       }
   
       const result = await response.json();
-      //console.log('Datos enviados:', result);
+      console.log('Datos enviados:', result);
 
 
       // Guardar en MongoDB
