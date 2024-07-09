@@ -8,7 +8,6 @@ function HeaderSection() {
 
     const urlRegex = new RegExp(/^(?:(ftp|http|https):\/\/)?(?:www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(?:\/[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]*)?$/);
    
-
     const handleChange = (e) => {
         const value = e.target.value;
         setUrl(value);
@@ -18,6 +17,9 @@ function HeaderSection() {
     return (
         <div className={styles.headerSection}>
             <div className={styles.headerContent}>
+                <h1>¿Tu web es accesible?</h1>
+                <p>Analiza la accesibilidad en un solo click</p>
+                <p>Introduce a continuación la URL de tu sitio web</p>
                 <div className={styles.urlInputWrapper}>
                     <input
                         type="text"

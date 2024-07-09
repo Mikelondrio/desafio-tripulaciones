@@ -92,7 +92,7 @@ const FormRegister = () => {
         <div className={`${styles.container} ${isRegister ? styles.registerBackground : styles.loginBackground}`}>
             <div className={styles.formContainer}>
                 <form onSubmit={handleSubmit}>
-                    <h2 className={styles.title}>¡Te damos la bienvenida a Silver Test!</h2>
+                    <h2 className={styles.title}>¡Te damos la bienvenida a Silver Site!</h2>
                     <p className={styles.description}>Nos gustaría saber un poco sobre ti.</p>
                     <p className={styles.description}>De esta forma garantizamos la seguridad de las personas que confían en Seniority.</p>
                     
