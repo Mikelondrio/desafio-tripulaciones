@@ -1,7 +1,6 @@
 import './analisis.css'
 
 import React, { useEffect, useRef } from "react";
-import { Navbar } from "../componentes/navbar.jsx";
 import { Chart } from "chart.js/auto";
 import { scanerGetAll} from "../api/scanerAPI.js";
 
@@ -27,11 +26,11 @@ function Analisis() {
       chartRef.current = new Chart(ctx, {
         type: "radar",
         data: {
-          labels: ["Red", "Blue", "Yellow", "Green"],
+          labels: ["Red"],
           datasets: [
             {
               label: "# of Votes",
-              data: [data.data.missing_href, data.data.missing_h2, data.data.missing_h1, data.data.missing_label],
+              data: [data.data.evaluation.score],
               borderWidth: 1
             }
           ]
@@ -71,7 +70,6 @@ function Analisis() {
 
   return (
     <div id="index-cuerpo">
-      <Navbar />
       <div id="result-canvas">
         <h2>Análisis</h2>
           <div>

@@ -1,0 +1,8 @@
+#result-canvas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* Asegura que los elementos no se envuelvan en una nueva línea */
+}

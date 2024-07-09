@@ -3,6 +3,7 @@ import Layout from './componentes/Layout.jsx'
 import Inicio from "./pages/Inicio.jsx";
 import Contactar from "./pages/Contactar.jsx";
 import Results from "./pages/Results.jsx";
+import {Analisis} from "./pages/analisis.jsx";
 import Registro from "./pages/Registro.jsx";
 import  {Perfil}  from "./pages/perfil.jsx";
 import Formaciones from "./pages/Formaciones.jsx";
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
         path: "/analisis",
         element: <Results />,
       },
+      {
+        path: "/analize",
+        element: <Analisis />,
+      },
+
       {
         path: "/registro",
         element: <Registro />,

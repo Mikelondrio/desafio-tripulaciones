@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const scanerSchema  = new mongoose.Schema({
 
+
     userID: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
+        type: String,
     },
 
     date: {
