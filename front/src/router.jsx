@@ -4,8 +4,6 @@ import Inicio from "./pages/Inicio.jsx";
 import Contactar from "./pages/Contactar.jsx";
 import Resultados from "./pages/Resultados.jsx";
 import Registro from "./pages/Registro.jsx";
-// import { GestionUsuarios } from './pages/GestionUsuarios.jsx'
-import UserPage from "./pages/user.jsx";
 import {ListRegisteredUsers} from "./pages/userlist.jsx"
 import { GraphicHistory } from "./pages/history.jsx"
 import UserManagement from "./componentes/users/UserManagement.jsx";
@@ -31,10 +29,10 @@ const router = createBrowserRouter([
         path: "/contactar",
         element: <Contactar />,
       },
-      {
+    /*   {
         path: "/registro/gestionusuarios/profile",
-        element: <UserPage />,
-      }, 
+        element: <Perfil />,
+      }, */ 
       {
       path: "/registro/gestionusuarios/list",
       element: <ListRegisteredUsers/>,
@@ -52,7 +50,7 @@ const router = createBrowserRouter([
         element: <UserManagement />,
       },
       {
-        path: "/perfil",
+        path: "/profile",
         element: <Perfil />,
       }
     ],

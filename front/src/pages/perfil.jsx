@@ -1,41 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "../componentes/Header/Navbar.jsx";
-import { UserProfile } from "../componentes/users/Profile.jsx";
+import { Profile } from "../componentes/users/Profile.jsx";
 import { UserList } from "../componentes/users/UsersForAdmin.jsx";
 import { GraphicHistoric } from "../componentes/GraphicHistoric.jsx";
-import './perfil.css';
+import { getCurrentUser } from "../api/userApi.js";
+import "./perfil.css";
 
 function Perfil() {
-    const [component, setComponent] = useState("A");
+  const [component, setComponent] = useState("A");
+  const [user, setUser] = useState({});
+  const navigate = useNavigate();
 
-    const componentRender = () => {
-        switch (component) {
-            case "A":
-                return <UserProfile />;
-            case "B":
-                return <GraphicHistoric />;
-            case "C":
-                return <UserList />;
-            default:
-                return <UserProfile />;
-        }
-    };
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const userData = await getCurrentUser();
+        setUser(userData.data);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    }
+    fetchUser();
+  }, []);
 
-    return (
-        <>
-            <Navbar />
-            <div id='perfil-cuerpo'>
-                <div className="button-container">
-                    <button onClick={() => setComponent("A")}>Informacion del usuario</button>
-                    <button onClick={() => setComponent("B")}>Historial de busquedas</button>
-                    <button onClick={() => setComponent("C")}>Usuarios registrados</button>
-                </div>
-                <div>
-                    {componentRender()}
-                </div>
+  const componentRender = () => {
+    switch (component) {
+      case "A": return <Profile />;
+      case "B": return <GraphicHistoric />;
+      case "C": return <UserList />;
+      default: return <Profile />;
+    }
+  };
+
+  async function logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userID');
+    navigate('/inicio');
+  }
+
+  const avatarUrl = `https://unavatar.io/${user.email}`;
+
+  return (
+    <div className="profile-page">
+      <Navbar />
+      <div className="profile-content">
+        <div className="headerImage"></div>
+        <div className="profile-main">
+          <aside className="sidebar">
+            <div className="user-info">
+              <img src={avatarUrl} alt="Profile" className="profileImage" />
+              <h2>{user.username}</h2>
             </div>
-        </>
-    );
+            <nav>
+              <ul>
+                <li className={component === "A" ? "active" : ""} onClick={() => setComponent("A")}>Tus datos</li>
+                <li className={component === "B" ? "active" : ""} onClick={() => setComponent("B")}>Material de proyecto</li>
+                <li className={component === "C" ? "active" : ""} onClick={() => setComponent("C")}>Usuarios</li>
+                <li onClick={logout}>Cerrar Sesión</li>
+              </ul>
+            </nav>
+          </aside>
+          <main className="main-content">
+            {componentRender()}
+          </main>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export { Perfil };
