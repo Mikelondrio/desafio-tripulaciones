@@ -10,6 +10,7 @@ import "./perfil.css";
 function Perfil() {
   const [component, setComponent] = useState("A");
   const [user, setUser] = useState({});
+  const [role, setRole] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +18,7 @@ function Perfil() {
       try {
         const userData = await getCurrentUser();
         setUser(userData.data);
+        setRole(userData.data.role);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -56,7 +58,7 @@ function Perfil() {
               <ul>
                 <li className={component === "A" ? "active" : ""} onClick={() => setComponent("A")}>Tus datos</li>
                 <li className={component === "B" ? "active" : ""} onClick={() => setComponent("B")}>Material de proyecto</li>
-                <li className={component === "C" ? "active" : ""} onClick={() => setComponent("C")}>Usuarios</li>
+                {role=="admin" ? <li className={component === "C" ? "active" : ""} onClick={() => setComponent("C")}>Usuarios</li> : <></>}
                 <li onClick={logout}>Cerrar Sesión</li>
               </ul>
             </nav>

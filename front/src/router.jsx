@@ -4,9 +4,6 @@ import Inicio from "./pages/Inicio.jsx";
 import Contactar from "./pages/Contactar.jsx";
 import Results from "./pages/Results.jsx";
 import Registro from "./pages/Registro.jsx";
-import {ListRegisteredUsers} from "./pages/userlist.jsx"
-import { GraphicHistory } from "./pages/history.jsx"
-import UserManagement from "./componentes/users/UserManagement.jsx";
 import  {Perfil}  from "./pages/perfil.jsx";
 
 
@@ -37,32 +34,18 @@ const router = createBrowserRouter([
         path: "/contactar",
         element: <Contactar />,
       },
-    /*   {
-    /*   {
-        path: "/registro/gestionusuarios/profile",
-        element: <Perfil />,
-      }, */ 
-      
       {
-      path: "/registro/gestionusuarios/list",
-      element: <ListRegisteredUsers/>,
+        path: "/analisis",
+        element: <Results />,
       },
-      {
-        path: "/registro/gestionusuarios/history",
-        element: <GraphicHistory/>,
-        },
       {
         path: "/registro",
         element: <Registro />,
       },
       {
         path: "/registro/gestionusuarios",
-        element: <UserManagement />,
+        element: <Perfil/>,
       },
-      {
-        path: "/profile",
-        element: <Perfil />,
-      }
     ],
   },
 ]);
