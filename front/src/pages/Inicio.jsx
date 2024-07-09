@@ -5,6 +5,8 @@ import HeaderSection from '../componentes/Inicio/HeaderSection/headerSection';
 import InfoCards from '../componentes/Inicio/InfoCards/infoCards';
 import CardsGridSection from '../componentes/Inicio/CardsGridSection/CardsGridSection';
 import ImageTextSection from '../componentes/Inicio/ImageTextSection/ImageTextSection';
+import { NavLink } from "react-router-dom";
+
 
 function Inicio() {
     return (
