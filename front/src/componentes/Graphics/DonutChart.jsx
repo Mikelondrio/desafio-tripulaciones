@@ -2,12 +2,21 @@ import React, { useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
 import { scanerGetAll} from "../../api/scanerAPI.js";
 
-function AnalysisGeneral(number) {
+function AnalysisGeneral({number}) {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
 
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
+
+    let color;
+    if (number >= 75) {
+      color = '#3fb58f'
+    } else if (number >= 50) {
+      color = '#ffcc00'
+    } else {
+      color = '#ff0000'
+    }
 
     
 getLastResearch();
@@ -26,14 +35,14 @@ getLastResearch();
       chartRef.current = new Chart(ctx, {
         type: "doughnut",
         data: {
-          labels: [ "Green"],
+          labels: [ 'Operable' ],
           datasets: [
             {
               label: "# of Votes",
-              data: [categoryCatcher.operable, 1 - categoryCatcher.operable],
+              data: [number, number-100],
               borderRadius: 50,
               backgroundColor: [
-                '#3fb58f',
+                color,
                 '#ffffff',
               
               ],
@@ -62,9 +71,6 @@ getLastResearch();
       }
   })
     }
-
-
-
 
 
 

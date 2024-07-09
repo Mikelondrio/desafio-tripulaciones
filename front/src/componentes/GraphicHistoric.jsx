@@ -4,14 +4,11 @@ import { Chart } from "chart.js/auto";
 import { AnalysisGeneral } from "./Graphics/DonutChart.jsx";
 import './GraphicHistoric.css'
 
-const GraphicHistoric = () => {
-    const canvasRef = useRef(null);
-    const chartRef = useRef(null);
 
+const GraphicHistoric = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-      //const ctx = canvasRef.current.getContext("2d");
       const fetchData = async () => {
         try {
           const userId = localStorage.getItem('userId');
@@ -28,7 +25,7 @@ const GraphicHistoric = () => {
                   <p className="history-data">Score: {data.data.data.evaluation.score * 100}%</p>
                 </div>
                 <div id="history-div-graphic">
-                  <AnalysisGeneral />
+                  <AnalysisGeneral number={data.data.data.evaluation.score * 100} />
                 </div>
               </article>
             

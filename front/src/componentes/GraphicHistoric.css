@@ -7,10 +7,14 @@
 #history-div-data {
     display: flex;
     flex-direction: column;
+    margin: 15px;
 }
 
 #history-article {
     margin: 12px 0;
+    border: solid 5px beige;
+    border-radius: 25px;
+    margin: 15px;
 }
 
 .history-data {
@@ -23,5 +27,6 @@
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    height: 10rem;
 }
