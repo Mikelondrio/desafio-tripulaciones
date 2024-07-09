@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "../componentes/navbar.jsx";
-import { scanerCreate } from "../api/scanerAPI.js";
+import { scanerCreate, scraperAPI } from "../api/scanerAPI.js";
 import { Navigate, useNavigate } from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ function Escaner() {
     
 
     async function webSendAPI(data) {
-        fetch('http://unema.es:5000/api/analyze', data)
+        fetch('https://www.unema.es/api/analyze', data)
         .then(data => {
             if (!data.ok) {
               throw Error(data.status);
@@ -24,12 +24,12 @@ function Escaner() {
             }).catch(e => {
             console.log(e);
             });
-      }
+    }
 
 
 
 
-      async function URLInfoData(data) {
+    async function URLInfoData(data) {
         const token = localStorage.getItem('token')
         const URLSave = data.url
 
@@ -47,15 +47,20 @@ function Escaner() {
 
             const webSend = await scanerCreate(URLData)
             navigate('/analisis');
-      }
+    }
 
 
-      async function buttonWebSend(e) {
+    async function buttonWebSend(e) {
         const URL = e.target.form[0].value
 
         const webArraySend = {'url': URL}
 
-        const data = {
+        const sendURLScraper = await scraperAPI(URL)
+        console.log(url)
+        console.log(sendURLScraper)
+        console.log('lkjlsajlajlksad')
+
+/*         const data = {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -65,8 +70,12 @@ function Escaner() {
             };
 
             const webSend = await webSendAPI(data)
-            return webSend;
+            console.log('linea 68   ' + webSend)
+            console.log('linea 69   ' + data) */
     }
+
+
+
 
     return (
         <div id='index-cuerpo'>

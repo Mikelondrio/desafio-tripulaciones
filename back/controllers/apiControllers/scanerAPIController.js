@@ -1,5 +1,9 @@
 import scanerController from "../controllers/scanerController.js";
 
+import axios from 'axios'
+
+
+
 const getAll = async(req,res)=>{
     const propiedad = await scanerController.getAll();
     res.json({data:propiedad})
@@ -20,7 +24,6 @@ const getByProperty=async(req,res)=>{
 const create = async(req,res)=>{
     let userID;
     let data;
-    console.log('lkjsalkfjsldkjlkdsjfs  ' + req.user)
     if (req.user === undefined || req.user === null) {
         data = req.body
     } else {
@@ -43,11 +46,52 @@ const remove = async(req,res)=>{
     res.json({data:propiedad})
 }
 
+
+
+
+
+async function scraper(req, res) {
+    const URL = req.body;
+
+    let data = JSON.stringify({
+        "url": URL.url
+        });
+        
+        let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'https://www.unema.es/api/analyze',
+        headers: { 
+            'x-api-key': 'test_5ghbr8UdgVwCLyp4VdGJhHVziFm4dcV0b974Xtni', 
+            'Content-Type': 'application/json'
+        },
+        data : data
+        };
+        
+        axios.request(config)
+        .then((response) => {
+        console.log(JSON.stringify(response.data));
+        res.json({data:response.data})
+        })
+        .catch((error) => {
+        console.log(error);
+        }); 
+}
+
+
+
+  
+
+
+
+
+
 export default{
     getAll,
     getById,
     getByProperty,
     create,
     update,
-    remove
+    remove,
+    scraper
 }
