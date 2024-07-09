@@ -34,6 +34,7 @@ async function scanerCreate(data) {
 
 
 
+
   async function scraperAPI(data) {
     try {
       const response = await fetch(`${API_URL}/scaner/scraper`,
@@ -50,11 +51,34 @@ async function scanerCreate(data) {
       }
   
       const result = await response.json();
-      console.log('Datos enviados:', result);
+      //console.log('Datos enviados:', result);
+
+
+      // Guardar en MongoDB
+      const userID = localStorage.getItem('userId')
+      const token = localStorage.getItem('token')
+      const resultData = await result
+
+      const URLArraySave = {'url': resultData.data.critical_index.url,
+                          'data': resultData,
+                          'userID': userID}
+
+      const URLData = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'authorization': token,
+          },
+              body: JSON.stringify(URLArraySave),
+          };
+
+      const webSend = await scanerCreate(URLData)
+
     } catch (error) {
       console.error('Error al enviar los datos:', error);
     }
   }
+
 
 
 

@@ -52,6 +52,7 @@ const remove = async(req,res)=>{
 
 async function scraper(req, res) {
     const URL = req.body;
+    let dataResponse = []
 
     let data = JSON.stringify({
         "url": URL.url
@@ -70,8 +71,9 @@ async function scraper(req, res) {
         
         axios.request(config)
         .then((response) => {
-        console.log(JSON.stringify(response.data));
-        res.json({data:response.data})
+        dataResponse = response.data
+        console.log(JSON.stringify(dataResponse));
+        res.json({data:dataResponse})
         })
         .catch((error) => {
         console.log(error);
