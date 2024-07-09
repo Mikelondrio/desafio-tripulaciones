@@ -7,6 +7,8 @@ import Registro from "./pages/Registro.jsx";
 import { GestionUsuarios } from './pages/GestionUsuarios.jsx'
 import Perfil from "./pages/perfil.jsx";
 import {ListRegisteredUsers} from "./pages/userlist.jsx"
+import { GraphicHistory } from "./pages/history.jsx"
+import UserManagement from "./componentes/users/UserManagement.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,14 +38,18 @@ const router = createBrowserRouter([
       {
       path: "/registro/gestionusuarios/list",
       element: <ListRegisteredUsers/>,
-    },
+      },
+      {
+        path: "/registro/gestionusuarios/history",
+        element: <GraphicHistory/>,
+        },
       {
         path: "/registro",
         element: <Registro />,
       },
       {
         path: "/registro/gestionusuarios",
-        element: <GestionUsuarios />,
+        element: <UserManagement />,
       },
     ],
   },
