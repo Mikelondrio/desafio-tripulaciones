@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from './componentes/Layout.jsx'
 import Inicio from "./pages/Inicio.jsx";
 import Contactar from "./pages/Contactar.jsx";
-import Resultados from "./pages/Resultados.jsx";
+import Results from "./pages/Results.jsx";
 import Registro from "./pages/Registro.jsx";
 import {ListRegisteredUsers} from "./pages/userlist.jsx"
 import { GraphicHistory } from "./pages/history.jsx"
@@ -24,17 +24,25 @@ const router = createBrowserRouter([
         element: <Inicio />,
       },
       {
-        path: "/resultados",
-        element: <Resultados />,
+        path: "/formaciones",
+        element: <Inicio />,
+        // element: <Formaciones />, hay que crear el componente
+      },
+      {
+        path: "/recursos",
+        element: <Inicio />,
+        // element: <Resources />, hay que crear el componente
       },
       {
         path: "/contactar",
         element: <Contactar />,
       },
     /*   {
+    /*   {
         path: "/registro/gestionusuarios/profile",
         element: <Perfil />,
       }, */ 
+      
       {
       path: "/registro/gestionusuarios/list",
       element: <ListRegisteredUsers/>,

@@ -1,45 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import  { getAllUsers } from '../../api/userApi.js';
+import { getAllUsers, remove } from '../../api/userApi.js';
 import './UsersForAdmin.css';
 
 const UserList = () => {
-
-  const [AllUser, setAllUser] = useState([]);
-
+  const [allUser, setAllUser] = useState([]);
+  const [reboot, setReboot] = useState(true);
 
   useEffect(() => {
+    if(reboot){
     const fetchUser = async () => {
       try {
-        let userData = await getAllUsers();
-        userData = userData.data;
-        const DataAllUsers = await userData.map((data)=>
-            <article key={data._id}>
+        const userData = await getAllUsers();
+        const dataAllUsers = userData.data.map((data) => (
+          <article key={data._id} className="user-card">
             <div>
-                <h2>Email:{data.email}</h2>
-                <p>Name: {data.username}</p>
+              <p>Email: {data.email}</p>
+              <p>Name: {data.username}</p>
+              <p>Company: {data.company}</p>
+              <p>Sector: {data.sector}</p>
+              <button className="deleteBtn" onClick={() => handleRemoveUser(data._id)}>Borrar</button>
             </div>
-            <div>
-                <p>Company: {data.company}</p>
-                <p>Sector: {data.sector}</p>
-            </div>
-            </article>
-        );
-      setAllUser(DataAllUsers);
+          </article>
+        ));
+        setAllUser(dataAllUsers);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
-    }
+    };
     fetchUser();
-  }, []);
+  };
+    setReboot(false);
+  }, [reboot]);
 
+  const handleRemoveUser = async (id) => {
+    try {
+      const result = await remove(id);
+      console.log('User deleted:', result);
+      setReboot(true);
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
+  };
 
   return (
     <div className="profile-container">
-      <article className="section-containeruser-card">
-        {AllUser}
-      </article>
+      {allUser}
     </div>
   );
 };
 
-export {UserList};
+export { UserList };

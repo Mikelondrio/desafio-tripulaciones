@@ -3,20 +3,15 @@ import AnalysisGeneral from "../componentes/Graphics/GeneralGraphic"
 import AnalysisDetail  from "../componentes/Graphics/DetailsGraphic"
 
 
-function Analisis() {
-
+export function Results() {
 
     return (
         <div id='index-cuerpo'>
-            <h2>Resultados</h2>
-            
+            <h2>Resultados</h2>     
             <AnalysisGeneral/>
             <AnalysisDetail/>
-
-
         </div>
     )
 }
 
-
-export default Analisis
+export default Results

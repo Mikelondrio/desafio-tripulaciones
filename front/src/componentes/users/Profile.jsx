@@ -23,27 +23,14 @@ const Profile = () => {
   }
 
   // Genera la URL del avatar usando unavatar.io
-  const avatarUrl = `https://unavatar.io/${user.email}`;
-
+  
+  
   return (
     <div className={styles.profileContainer}>
-      <div className={styles.headerImage}></div>
-      <div className={styles.profileHeader}>
-        <img src={avatarUrl} alt="Profile" className={styles.profileImage} />
-        <h2>{user.username}</h2>
-      </div>
+     
       {/* El resto del componente permanece igual */}
       <div className={styles.profileContent}>
-        <aside className={styles.sidebar}>
-          <nav>
-            <ul>
-              <li className={styles.active}>Tus datos</li>
-              <li>Material de proyecto</li>
-              <li>Usuarios</li>
-              <li>Cerrar Sesión</li>
-            </ul>
-          </nav>
-        </aside>
+        
         <main className={styles.mainContent}>
           <section className={styles.userDataSection}>
             <h3>TUS DATOS DE USUARIO <FaEdit className={styles.editIcon} /></h3>
@@ -77,4 +64,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export { Profile};
