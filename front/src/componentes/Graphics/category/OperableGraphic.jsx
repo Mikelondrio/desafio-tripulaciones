@@ -1,13 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { scanerGetAll } from "../../api/scanerAPI.js";
+import { scanerGetAll} from "../../../api/scanerAPI.js";
 
-function AnalysisGeneral() {
+function AnalysisOperable() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
 
-  // Función para determinar el color basado en el puntaje
   const getColorBasedOnScore = (score) => {
     if (score >= 0.75) {
       return '#3fb58f'; // Verde
@@ -21,6 +19,8 @@ function AnalysisGeneral() {
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
 
+    
+getLastResearch();
     async function getLastResearch() {
       let response = await scanerGetAll();
       let data = response.data;
@@ -28,31 +28,31 @@ function AnalysisGeneral() {
       let latestData = data[0];
       console.log(latestData);
 
-      let categoryCatcher = latestData.data.data.evaluation;
-
+      let categoryCatcher = latestData.data.data.category;
+     
       if (chartRef.current) {
         chartRef.current.destroy();
       }
 
-      // Registrar el plugin
-      Chart.register(ChartDataLabels);
+      const backgroundColor = getColorBasedOnScore(categoryCatcher.operable);
 
-      // Obtener el color basado en el puntaje
-      const backgroundColor = getColorBasedOnScore(categoryCatcher.score);
 
       chartRef.current = new Chart(ctx, {
         type: "doughnut",
         data: {
-          labels: ["Operable"],
+          labels: [ "Operable"],
           datasets: [
             {
               label: "# of Votes",
-              data: [categoryCatcher.score, 1 - categoryCatcher.score],
+              data: [categoryCatcher.operable, 1 - categoryCatcher.operable],
               borderRadius: 50,
               backgroundColor: [
                 backgroundColor,
                 '#ffffff', // Blanco para el espacio restante
+              
               ],
+          
+
               borderWidth: 1
             }
           ]
@@ -60,34 +60,28 @@ function AnalysisGeneral() {
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          cutout: '80%', // Hace el doughnut más fino
+          cutout: '70%',
           plugins: {
-            legend: {
-              display: false
-            },
-            datalabels: {
-              color: '#000',
-              formatter: (value, context) => {
-                // Mostrar solo la etiqueta del primer segmento (score)
-                if (context.dataIndex === 0) {
-                  let percentage = (value * 100).toFixed(2) + '%';
-                  return percentage;
-                }
-                return null;
+              legend: {
+                display: false
               },
-              font: {
-                weight: 'bold',
-                size: '16'
-              },
-              anchor: 'center', // Mueve la etiqueta a la parte externa
-              align: 'start' // Alinea la etiqueta al inicio
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                display: false // Oculta las líneas horizontales
+              }
             }
           }
         }
-      });
+      }
+  })
     }
 
-    getLastResearch();
+
+
+
+
 
     // Limpiar el gráfico al desmontar el componente
     return () => {
@@ -98,12 +92,12 @@ function AnalysisGeneral() {
   }, []);
 
   return (
-    <div>
-      <canvas ref={canvasRef} id="myChart"></canvas>
-    </div>
+
+      <div>
+        <canvas ref={canvasRef} id="myChart"></canvas>
+      </div>
+
   );
 }
 
-export default AnalysisGeneral;
-
-
+export default AnalysisOperable;
