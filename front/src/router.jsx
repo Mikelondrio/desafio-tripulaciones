@@ -7,7 +7,7 @@ import Registro from "./pages/Registro.jsx";
 import {ListRegisteredUsers} from "./pages/userlist.jsx"
 import { GraphicHistory } from "./pages/history.jsx"
 import UserManagement from "./componentes/users/UserManagement.jsx";
-import  Perfil  from "./pages/perfil.jsx";
+import  {Perfil}  from "./pages/perfil.jsx";
 
 
 const router = createBrowserRouter([
