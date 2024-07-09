@@ -16,6 +16,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .container {
@@ -46,7 +47,7 @@
   outline: none;
   cursor: pointer;
   color: white;
-  background-color: #f80000;
+  background-color: #F8A800;
   border-radius: 8px;
   padding: 0.3rem;
   transition: all 250ms ease;
@@ -58,7 +59,7 @@
 }
 
 .salirBtn:hover {
-  background-color: #ca0303;
+  background-color: #F8A800;
   border-radius: 20px;
 }
 
