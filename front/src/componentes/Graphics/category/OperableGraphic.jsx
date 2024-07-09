@@ -65,6 +65,13 @@ getLastResearch();
               legend: {
                 display: false
               },
+              title: {
+                display: true,
+                text: 'Operable',
+                position: 'bottom',
+                font: {
+                  size: '20'
+                }},
           scales: {
             y: {
               beginAtZero: true,

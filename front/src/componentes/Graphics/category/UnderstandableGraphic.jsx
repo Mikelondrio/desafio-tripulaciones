@@ -64,6 +64,13 @@ getLastResearch();
               legend: {
                 display: false
               },
+              title: {
+                display: true,
+                text: 'Entendible',
+                position: 'bottom',
+                font: {
+                  size: '20'
+                }},
           scales: {
             y: {
               beginAtZero: true,

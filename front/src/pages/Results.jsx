@@ -12,14 +12,30 @@ export function Results() {
 
     return (
         <div id='index-cuerpo'>
-            <h2>Resultados</h2>     
-            <AnalysisGeneral/>
-                <div id="result-canvas">
-                    <AnalysisOperable/>
-                    <AnalysisPerceptible/>
-                    <AnalysisRobust/>
-                    <AnalysisUnderstandable/>
+            <h2>Resultados</h2>    
+                <div id="analysis-genral">
+                    <AnalysisGeneral/>
+                  
                 </div>
+                <div id="result-canvas">
+                    <div className="analysis-item">
+                        <AnalysisOperable/>
+                       
+                    </div>
+                    <div className="analysis-item">
+                        <AnalysisPerceptible/>
+                     
+                    </div>
+                    <div className="analysis-item">
+                        <AnalysisRobust/>
+                      
+                    </div>
+                    <div className="analysis-item">
+                        <AnalysisUnderstandable/>
+                      
+                    </div>
+                
+        </div>
             <AnalysisDetail/>
         </div>
     )

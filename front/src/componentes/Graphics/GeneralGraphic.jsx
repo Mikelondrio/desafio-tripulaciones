@@ -65,6 +65,15 @@ function AnalysisGeneral() {
             legend: {
               display: false
             },
+            title: {
+              display: true,
+              text: 'Analisis general',
+              position: 'bottom',
+              font: {
+                size: '20'
+              },
+              
+            },
             datalabels: {
               color: '#000',
               formatter: (value, context) => {
