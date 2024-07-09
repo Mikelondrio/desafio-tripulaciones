@@ -1,3 +1,27 @@
 .scaners-container{
-    margin-top: 50px;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#history-div-data {
+    display: flex;
+    flex-direction: column;
+}
+
+#history-article {
+    margin: 12px 0;
+}
+
+.history-data {
+    padding: 2px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#history-div-graphic {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
