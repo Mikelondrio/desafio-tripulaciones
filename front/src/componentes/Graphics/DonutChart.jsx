@@ -35,20 +35,15 @@ getLastResearch();
       chartRef.current = new Chart(ctx, {
         type: "doughnut",
         data: {
-          labels: [ 'Operable' ],
           datasets: [
             {
-              label: "# of Votes",
               data: [number, number-100],
               borderRadius: 50,
               backgroundColor: [
                 color,
-                '#ffffff',
-              
+                '#ffffff',            
               ],
-          
-
-              borderWidth: 1
+              borderWidth: 10
             }
           ]
         },
