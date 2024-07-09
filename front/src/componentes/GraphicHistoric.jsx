@@ -11,7 +11,7 @@ const GraphicHistoric = () => {
             const userId = localStorage.getItem('userId');
             let response = await scanerByProperty('userId',userId);
             response = response.data;
-            const filteredData = response.filter((data) => data.userId===userId);
+            const filteredData = response.filter((data) => data.userID===userId);
             const responseData = filteredData.map((data) =>
 
                 <article key={data._id}>
@@ -19,7 +19,7 @@ const GraphicHistoric = () => {
                   <p>Url: {data.url}</p>
                 </article>
              
-);
+            );
             setData(responseData);
 
 
@@ -32,10 +32,9 @@ const GraphicHistoric = () => {
  
     return(
         <>
-        <div className="scaners-container">
-            {data}
-        </div>
-
+          <div className="scaners-container">
+              {data}
+          </div>
         </>
       
     );
