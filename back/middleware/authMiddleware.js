@@ -25,7 +25,7 @@ const verifyToken = async (req, res, next) => {
 
 
 const isAuthenticated = (req, res, next) => {
-  if (req.user === undefined || req.user === null) {
+  if (req.user == undefined || req.user == null) {
     next()
   } else {
     verifyToken(req, res, next);
