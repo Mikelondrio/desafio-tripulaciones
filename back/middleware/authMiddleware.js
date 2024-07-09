@@ -25,7 +25,6 @@ const verifyToken = async (req, res, next) => {
 
 
 const isAuthenticated = (req, res, next) => {
-  console.log('Este es el del midelware:  ' + req.user)
   if (req.user === undefined || req.user === null) {
     next()
   } else {

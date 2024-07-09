@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/mongo.js";
 import router from "./routes/router.js";
 import cors from "cors"
+import bodyParser from 'body-parser'
 
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(express.static("public")); // permite mostrar archivos en la carpeta pub
 
 app.set("views","./src/views");
 
+app.use(bodyParser.json())
 app.use(express.json()); // permite leer el body de llamadas POST y PUT tipo JSON
 app.use(express.urlencoded({extended:true})); // permite leer el body de llamadas POST y PUT tipo URL Encoded
 

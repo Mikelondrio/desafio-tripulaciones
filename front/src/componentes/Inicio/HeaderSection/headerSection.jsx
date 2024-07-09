@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import styles from './headerSection.module.css'; 
-import { NavLink } from "react-router-dom";
+import { scanerCreate, scraperAPI } from '../../../api/scanerAPI.js'
+import { Navbar } from '../../../componentes/Header/Navbar.jsx'
+import { Navigate, useNavigate } from "react-router-dom";
 
 function HeaderSection() {
+    const navigate = useNavigate()
     const [url, setUrl] = useState('');
     const [isValid, setIsValid] = useState(false);
 
@@ -15,6 +18,18 @@ function HeaderSection() {
         setIsValid(urlRegex.test(value));
     };
 
+
+
+
+    async function buttonWebSend(e) {
+        const URL = e.target.parentElement.children[0].value
+        const webArraySend = {'url': URL}
+        const sendURLScraper = await scraperAPI(webArraySend)
+    }
+
+
+
+
     return (
         <div className={styles.headerSection}>
             <div className={styles.headerContent}>
@@ -26,7 +41,7 @@ function HeaderSection() {
                         onChange={handleChange}
                         placeholder="Introducir una URL aquí"
                     />
-                    <NavLink to="/resultados"><button className={styles.analyzeButton}>Analizar</button></NavLink>
+                    <button className={styles.analyzeButton} onClick={buttonWebSend}>Analizar</button>
                 </div>
             </div>
         </div>
