@@ -41,7 +41,7 @@ function HeaderSection() {
                         onChange={handleChange}
                         placeholder="Introducir una URL aquí"
                     />
-                    <button className={styles.analyzeButton} onClick={buttonWebSend}>Analizar</button>
+                    <button className={styles.analyzeButton}>Analizar</button>
                 </div>
             </div>
         </div>
