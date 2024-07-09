@@ -1,0 +1,13 @@
+#perfil-cuerpo {
+    padding: 20px;
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

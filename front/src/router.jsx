@@ -9,7 +9,7 @@ import UserPage from "./pages/user.jsx";
 import {ListRegisteredUsers} from "./pages/userlist.jsx"
 import { GraphicHistory } from "./pages/history.jsx"
 import UserManagement from "./componentes/users/UserManagement.jsx";
-
+import { Perfil } from "./pages/perfil.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +51,10 @@ const router = createBrowserRouter([
         path: "/registro/gestionusuarios",
         element: <UserManagement />,
       },
+      {
+        path: "/perfil",
+        element: <Perfil />,
+      }
     ],
   },
 ]);
