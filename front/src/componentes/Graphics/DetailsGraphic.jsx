@@ -9,15 +9,6 @@ function AnalysisDetail() {
   const chartRef = useRef(null);
 
   // Función para determinar el color basado en el puntaje
-  const getColorBasedOnScore = (score) => {
-    if (score >= 0.75) {
-      return '#3fb58f'; // Verde
-    } else if (score >= 0.5) {
-      return '#ffcc00'; // Amarillo
-    } else {
-      return '#ff0000'; // Rojo
-    }
-  };
 
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
@@ -141,6 +132,14 @@ function AnalysisDetail() {
             legend: {
               display: false
             },
+            title: {
+              display: true,
+              text: 'Detalles de la evaluación',
+              position: 'bottom',
+              font: {
+                size: '20'
+              }
+            },
             datalabels: {
               color: '#000',
               formatter: (value, context) => {
@@ -156,7 +155,7 @@ function AnalysisDetail() {
                 size: '16'
               },
               anchor: 'center', // Mueve la etiqueta a la parte externa
-              align: 'start' // Alinea la etiqueta al inicio
+              align: 'center' // Alinea la etiqueta al inicio
             }
           }
         }

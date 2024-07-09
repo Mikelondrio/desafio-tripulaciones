@@ -65,6 +65,13 @@ getLastResearch();
               legend: {
                 display: false
               },
+              title: {
+                display: true,
+                text: 'Robusta',
+                position: 'bottom',
+                font: {
+                  size: '20'
+                }},
           scales: {
             y: {
               beginAtZero: true,
