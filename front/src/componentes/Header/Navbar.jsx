@@ -15,7 +15,7 @@ export const Navbar = ({ className }) => {
 
     async function logout() {
       const localToken = localStorage.getItem('token')
-      const localUserID = localStorage.getItem('userID')
+      const localUserID = localStorage.getItem('userId')
 
       if (localToken || localUserID) {
         localStorage.removeItem('token')
@@ -26,7 +26,7 @@ export const Navbar = ({ className }) => {
 
     async function buttonLog() {
       const localToken = localStorage.getItem('token')
-      const localUserID = localStorage.getItem('userID')
+      const localUserID = localStorage.getItem('userId')
 
       if (localToken || localUserID) {
         setButtonClass(styles.salirBtn)

@@ -55,9 +55,11 @@ async function scanerCreate(data) {
 
 
       // Guardar en MongoDB
-      const userID = localStorage.getItem('userId')
+      let userID = localStorage.getItem('userId')
       const token = localStorage.getItem('token')
       const resultData = await result
+      
+      userID == null || userID == undefined? userID='Usuario Visitante' : userID
 
       const URLArraySave = {'url': resultData.data.critical_index.url,
                           'data': resultData,
