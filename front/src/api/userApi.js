@@ -53,7 +53,11 @@ async function getAllUsers() {
   dato = await dato.json();
   return (dato)
 }
-
+async function remove(id) {
+  let dato = await fetch(`${API_URL}/user/remove/${id}`);
+  dato = await dato.json();
+  return (dato)
+}
 
 async function getDatoByID(id) {
   let dato = await fetch(`${API_URL}/${id}`);
@@ -137,6 +141,7 @@ async function datoCreate(data) {
     register,
     login,
     getAllUsers,
+    remove,
     getDatoByID,
     datoCreate,
     datoDelete,

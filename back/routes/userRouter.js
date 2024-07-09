@@ -7,7 +7,7 @@ const router  = Router();
 
 
 router.post("/",userAPIController.create);
-router.post("/remove/:id",userAPIController.remove);
+router.get("/remove/:id",userAPIController.remove);
 router.post("/update/:id",userAPIController.update);
 router.post("/register",userAPIController.register);
 router.post("/login",userAPIController.login);
