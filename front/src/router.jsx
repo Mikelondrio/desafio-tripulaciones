@@ -5,6 +5,8 @@ import Contactar from "./pages/Contactar.jsx";
 import Results from "./pages/Results.jsx";
 import Registro from "./pages/Registro.jsx";
 import  {Perfil}  from "./pages/perfil.jsx";
+import Formaciones from "./pages/Formaciones.jsx";
+import Recursos from "./pages/Recursos.jsx";
 
 
 const router = createBrowserRouter([
@@ -22,12 +24,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/formaciones",
-        element: <Inicio />,
+        element: <Formaciones />,
         // element: <Formaciones />, hay que crear el componente
       },
       {
         path: "/recursos",
-        element: <Inicio />,
+        element: <Recursos />,
         // element: <Resources />, hay que crear el componente
       },
       {
@@ -46,6 +48,7 @@ const router = createBrowserRouter([
         path: "/registro/gestionusuarios",
         element: <Perfil/>,
       },
+      
     ],
   },
 ]);
