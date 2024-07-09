@@ -4,6 +4,7 @@ import { saveToken, saveUserId } from "../utils/local";
 import { useNavigate } from "react-router-dom";
 import Joi from "joi";
 import UserContext from "../context/UserContext";
+import styles from "./FormRegister.module.css";
 
 const initialUserData = {
     username: "",
@@ -14,7 +15,7 @@ const initialUserData = {
     sector: "",
 }
 
-const Register = () => {
+const FormRegister = () => {
     const [isRegister, setIsRegister] = useState(false);
     const [error, setError] = useState("");
     const [userData, setUserData] = useState(initialUserData);
@@ -24,18 +25,8 @@ const Register = () => {
     const schema = Joi.object({
         username: isRegister ? Joi.string().required() : Joi.string().allow(''),
         email: Joi.string().email({ tlds: { allow: false } }).required(),
-        password: isRegister ? Joi.string()
-            .min(8)
-            .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
-            .required()
-            .messages({
-                'string.min': 'Password must be at least {#limit} characters long',
-                'string.pattern.base': 'Password must contain only alphanumeric characters',
-                'any.required': 'Password is required'
-            }) : Joi.string().allow(''),
-        passwordRepeat: isRegister ? Joi.string().valid(Joi.ref('password')).required().messages({
-            'any.only': 'Passwords do not match',
-        }) : Joi.string().allow(''),
+        password: Joi.string().required(),
+        passwordRepeat: isRegister ? Joi.string().valid(Joi.ref('password')).required() : Joi.string().allow(''),
         company: isRegister ? Joi.string().required() : Joi.string().allow(''),
         sector: isRegister ? Joi.string().required() : Joi.string().allow(''),
     });
@@ -90,7 +81,6 @@ const Register = () => {
     }
 
     const handleUserData = (e) => {
-        e.preventDefault();
         const { name, value } = e.target;
         setUserData(prevUserData => ({
             ...prevUserData,
@@ -99,57 +89,62 @@ const Register = () => {
     }
 
     return (
-        <section className="register-login">
-            {error && <p className="error">{error}</p>}
-            <form onSubmit={handleSubmit}>
-                {isRegister && (
-                    <div>
-                        <h2>¡Te damos la bienvenida a Silver Site!
-
-                        </h2>
-                        <p>Nos gustaría saber un poco sobre ti.</p>
-                        <p>De esta forma garantizamos la seguridad de las personas que confían en Senority.</p>
-                        <br></br>
-                    </div>
-                )}
-                <label htmlFor="email">Email</label>
-                <input name="email" type="text" value={userData.email} onChange={handleUserData} required />
-                {isRegister && (
-                    <>
-                        <label htmlFor="username">Username</label>
-                        <input name="username" type="text" value={userData.username} onChange={handleUserData} required />
-                    </>
-                )}
-                <label htmlFor="password">Password</label>
-                <input name="password" type="password" value={userData.password} onChange={handleUserData} required />
-                {isRegister && (
-                    <>
-                        <label htmlFor="passwordRepeat">Repeat Password</label>
-                        <input name="passwordRepeat" type="password" value={userData.passwordRepeat} onChange={handleUserData} required />
-                        <label htmlFor="company">Company</label>
-                        <input name="company" type="text" value={userData.company} onChange={handleUserData} />
-                        <label htmlFor="sector">Sector</label>
-                        <select name="sector" type="text" value={userData.sector} onChange={handleUserData} >
-                            <option value="it">Tecnología de la Información</option>
-                            <option value="finance">Finanzas</option>
-                            <option value="healthcare">Cuidado de la Salud</option>
-                            <option value="education">Educación</option>
-                            <option value="engineering">Ingeniería</option>
-                            <option value="government">Gobierno</option>
-                            <option value="media">Medios de Comunicación</option>
-                            <option value="retail">Venta al por Menor</option>
-                            <option value="manufacturing">Manufactura</option>
-                            <option value="transportation">Transporte</option>
-                        </select>
-                    </>
-                )}
-                <button type="submit">{isRegister ? "Register" : "Login"}</button>
-            </form>
-            <button onClick={() => setIsRegister(!isRegister)}>
-                {isRegister ? "Go to Login" : "Go to Register"}
-            </button>
-        </section>
+        <div className={`${styles.container} ${isRegister ? styles.registerBackground : styles.loginBackground}`}>
+            <div className={styles.formContainer}>
+                <form onSubmit={handleSubmit}>
+                    <h2 className={styles.title}>¡Te damos la bienvenida a Silver Test!</h2>
+                    <p className={styles.description}>Nos gustaría saber un poco sobre ti.</p>
+                    <p className={styles.description}>De esta forma garantizamos la seguridad de las personas que confían en Seniority.</p>
+                    
+                    {error && <p className={styles.error}>{error}</p>}
+                    
+                    <label className={styles.label} htmlFor="email">Email</label>
+                    <input className={styles.input} name="email" type="text" value={userData.email} onChange={handleUserData} required />
+                    
+                    <label className={styles.label} htmlFor="password">Contraseña</label>
+                    <input className={styles.input} name="password" type="password" value={userData.password} onChange={handleUserData} required />
+                    
+                    {isRegister && (
+                        <>
+                            <label className={styles.label} htmlFor="username">Nombre</label>
+                            <input className={styles.input} name="username" type="text" value={userData.username} onChange={handleUserData} required />
+                            
+                            <label className={styles.label} htmlFor="passwordRepeat">Confirmar contraseña</label>
+                            <input className={styles.input} name="passwordRepeat" type="password" value={userData.passwordRepeat} onChange={handleUserData} required />
+                            
+                            <label className={styles.label} htmlFor="company">Nombre de empresa</label>
+                            <input className={styles.input} name="company" type="text" value={userData.company} onChange={handleUserData} required />
+                            
+                            <label className={styles.label} htmlFor="sector">Sector</label>
+                            <select className={styles.select} name="sector" value={userData.sector} onChange={handleUserData} required>
+                                <option value="">Selecciona un sector</option>
+                                <option value="it">Tecnología de la Información</option>
+                                <option value="finance">Finanzas</option>
+                                <option value="healthcare">Cuidado de la Salud</option>
+                                <option value="education">Educación</option>
+                                <option value="engineering">Ingeniería</option>
+                                <option value="government">Gobierno</option>
+                                <option value="media">Medios de Comunicación</option>
+                                <option value="retail">Venta al por Menor</option>
+                                <option value="manufacturing">Manufactura</option>
+                                <option value="transportation">Transporte</option>
+                            </select>
+                        </>
+                    )}
+                    
+                    <button type="submit" className={styles.submitButton}>
+                        {isRegister ? "Registrar" : "Acceder"}
+                    </button>
+                </form>
+                <p className={styles.toggleForm}>
+                    {isRegister ? "¿Ya tienes cuenta? " : "¿No tienes cuenta todavía? "}
+                    <button className={styles.toggleButton} onClick={() => setIsRegister(!isRegister)}>
+                        {isRegister ? "Inicia sesión" : "Regístrate"}
+                    </button>
+                </p>
+            </div>
+        </div>
     )
 }
 
-export default Register;
+export default FormRegister;
