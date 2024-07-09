@@ -11,8 +11,6 @@ function Escaner() {
     const navigate = useNavigate()
     
 
-
-
     async function webSendAPI(data) {
         fetch('http://unema.es:5000/api/analyze', data)
         .then(data => {
@@ -49,10 +47,7 @@ function Escaner() {
 
             const webSend = await scanerCreate(URLData)
             navigate('/analisis');
-         
       }
-
-
 
 
       async function buttonWebSend(e) {
@@ -72,10 +67,6 @@ function Escaner() {
             const webSend = await webSendAPI(data)
             return webSend;
     }
-
-
-
-
 
     return (
         <div id='index-cuerpo'>
