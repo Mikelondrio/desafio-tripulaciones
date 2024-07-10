@@ -43,7 +43,7 @@ export const Navbar = ({ className }) => {
       <div className={styles.container}>
         <div className={styles.navbar}>
           <NavLink to="/inicio" className={styles.link}>Inicio</NavLink>
-          <NavLink to="/analisis" className={styles.link}>Analisis</NavLink>
+          {/* <NavLink to="/analisis" className={styles.link}>Analisis</NavLink> */}
           <NavLink to="/formaciones" className={styles.link}>Formaciones</NavLink>
           <NavLink to="/recursos" className={styles.link}>Recursos</NavLink>
           <NavLink to="/contactar" className={styles.link}>Contactar</NavLink>
