@@ -32,7 +32,9 @@ function HeaderSection() {
         const webArraySend = { 'url': URL }
         const sendURLScraper = await scraperAPI(webArraySend)
         setAnalysisIsDone(true)
-        navigate("/analisis")
+        setTimeout(() => {
+            navigate("/analisis")
+        }, 2000);
     }
 
 
