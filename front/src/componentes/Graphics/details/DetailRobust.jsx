@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { scanerGetAll } from "../../../api/scanerAPI.js";
+import styles from "./DetailRobust.module.css";
 
-function RobustDetail() {
+function DetailRobust() {
   const [criticalIndexCatcher, setCriticalIndexCatcher] = useState(null);
 
   useEffect(() => {
@@ -20,69 +21,88 @@ function RobustDetail() {
     return <div>Loading...</div>;
   }
 
+  const items = [
+    {
+      title: "broken_link",
+      percentage: parseFloat(criticalIndexCatcher.broken_link_total_percentage) * 100,
+      description: "Enlaces rotos que no llevan a ninguna parte."
+    },
+    {
+      title: "fragment_or_non_http_link",
+      percentage: parseFloat(criticalIndexCatcher.fragment_or_non_http_link_total_percentage) * 100,
+      description: "Enlaces que son fragmentos o no usan el protocolo HTTP."
+    },
+    {
+      title: "hidden_element",
+      percentage: parseFloat(criticalIndexCatcher.hidden_element_total_percentage) * 100,
+      description: "Elementos ocultos que pueden ser problemáticos para ciertos usuarios."
+    },
+    {
+      title: "meta_refresh",
+      percentage: parseFloat(criticalIndexCatcher.meta_refresh_total_percentage) * 100,
+      description: "Uso de meta refresh que puede redirigir automáticamente a los usuarios."
+    },
+    {
+      title: "missing_h1",
+      percentage: parseFloat(criticalIndexCatcher.missing_h1_total_percentage) * 100,
+      description: "Falta de encabezado H1 en la página, afectando la estructura y SEO."
+    },
+    {
+      title: "missing_h2",
+      percentage: parseFloat(criticalIndexCatcher.missing_h2_total_percentage) * 100,
+      description: "Falta de encabezado H2, afectando la estructura del contenido."
+    },
+    {
+      title: "missing_href",
+      percentage: parseFloat(criticalIndexCatcher.missing_href_total_percentage) * 100,
+      description: "Falta de atributo href en los enlaces, lo que los hace inoperantes."
+    },
+    {
+      title: "missing_label",
+      percentage: parseFloat(criticalIndexCatcher.missing_label_total_percentage) * 100,
+      description: "Falta de etiquetas en los formularios, afectando la accesibilidad."
+    },
+    {
+      title: "missing_suggestion_or_help",
+      percentage: parseFloat(criticalIndexCatcher.missing_suggestion_or_help_total_percentage) * 100,
+      description: "Falta de sugerencias o ayuda contextual."
+    },
+    {
+      title: "no_intermediate_screens",
+      percentage: parseFloat(criticalIndexCatcher.no_intermediate_screens_total_percentage) * 100,
+      description: "Ausencia de pantallas intermedias para guiar al usuario."
+    },
+  ];
+
   return (
-    <>
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.broken_link_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>broken_link:</h4>
-        <p>Enlaces rotos que no llevan a ninguna parte.</p>
-      </div>
+    <div className={styles.container}>
+      {items.map((item, index) => {
+        let barColor;
+        if (item.percentage < 50) {
+          barColor = '#F44336'; // Rojo
+        } else if (item.percentage < 75) {
+          barColor = '#FFEB3B'; // Amarillo
+        } else {
+          barColor = '#4CAF50'; // Verde
+        }
 
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.fragment_or_non_http_link_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>fragment_or_non_http_link:</h4>
-        <p>Enlaces que son fragmentos o no usan el protocolo HTTP.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.hidden_element_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>hidden_element:</h4>
-        <p> Elementos ocultos que pueden ser problemáticos para ciertos usuarios.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.meta_refresh_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>meta_refresh:</h4>
-        <p>Uso de meta refresh que puede redirigir automáticamente a los usuarios.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.missing_h1_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>missing_h1:</h4>
-        <p>Falta de encabezado H1 en la página, afectando la estructura y SEO.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.missing_h2_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>missing_h2:</h4>
-        <p>Falta de encabezado H2, afectando la estructura del contenido.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.missing_href_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>missing_href:</h4>
-        <p>Falta de atributo href en los enlaces, lo que los hace inoperantes.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.missing_label_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>missing_label:</h4>
-        <p>Falta de etiquetas en los formularios, afectando la accesibilidad.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.missing_suggestion_or_help_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>missing_suggestion_or_help:</h4>
-        <p>Falta de sugerencias o ayuda contextual.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.no_intermediate_screens_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>no_intermediate_screens:</h4>
-        <p>Ausencia de pantallas intermedias para guiar al usuario.</p>
-      </div>
-    </>
+        return (
+          <div key={index} className={styles.item}>
+            <h4 className={styles.title}>{item.title}:</h4>
+            <div className={styles.barChart}>
+              <div 
+                className={styles.bar} 
+                style={{width: `${item.percentage}%`, backgroundColor: barColor}}
+              >
+                {item.percentage.toFixed(2)}%
+              </div>
+            </div>
+            <p className={styles.description}>{item.description}</p>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
-export default RobustDetail;
+export default DetailRobust;
