@@ -85,10 +85,6 @@ getLastResearch();
     }
 
 
-
-
-
-
     // Limpiar el gráfico al desmontar el componente
     return () => {
       if (chartRef.current) {

@@ -1,17 +1,11 @@
-import React, { useEffect, useRef, useContext, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { scanerGetAll } from "../../api/scanerAPI.js";
-//import GeneralContext from '../../utils/GeneralContext.jsx'
 
 function AnalysisGeneral() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
-
-
-  
-//const { analysisIsDone, setanalysIsDone } = useContext(GeneralContext)
-
 
   // Función para determinar el color basado en el puntaje
   const getColorBasedOnScore = (score) => {
@@ -28,15 +22,13 @@ function AnalysisGeneral() {
     const ctx = canvasRef.current.getContext("2d");
 
     async function getLastResearch() {
-
       let response = await scanerGetAll();
-
-      let data = await response.data;
+      let data = response.data;
       data.reverse();
-      let latestData = await data[0];
+      let latestData = data[0];
       console.log(latestData);
 
-      let categoryCatcher = await latestData.data.data.evaluation;
+      let categoryCatcher = latestData.data.data.evaluation;
 
       if (chartRef.current) {
         chartRef.current.destroy();
@@ -68,7 +60,7 @@ function AnalysisGeneral() {
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          cutout: '80%', // Hace el doughnut más fino
+          cutout: '70%', // Hace el doughnut más fino
           plugins: {
             legend: {
               display: false
@@ -78,9 +70,8 @@ function AnalysisGeneral() {
               text: 'Analisis general',
               position: 'bottom',
               font: {
-                size: '20'
-              },
-              
+                size: 20
+              }
             },
             datalabels: {
               color: '#000',
@@ -94,19 +85,18 @@ function AnalysisGeneral() {
               },
               font: {
                 weight: 'bold',
-                size: '16'
+                size: 32 // Tamaño de fuente mayor
               },
-              anchor: 'center', // Mueve la etiqueta a la parte externa
-              align: 'start' // Alinea la etiqueta al inicio
+              anchor: 'start', // Centra la etiqueta
+              align: 'start', // Centra la etiqueta
+              offset: 10 // Asegura que la etiqueta esté exactamente en el centro
             }
           }
         }
       });
     }
 
-      getLastResearch();
-
-    
+    getLastResearch();
 
     // Limpiar el gráfico al desmontar el componente
     return () => {
@@ -117,12 +107,10 @@ function AnalysisGeneral() {
   }, []);
 
   return (
-    <div>
+    <div style={{ position: 'relative', width: '50%', height: '50%' }}>
       <canvas ref={canvasRef} id="myChart"></canvas>
     </div>
   );
 }
 
 export default AnalysisGeneral;
-
-
