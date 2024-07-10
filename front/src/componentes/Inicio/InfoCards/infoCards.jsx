@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './infoCards.module.css';
 import { NavLink } from "react-router-dom";
+import { useSpring, animated } from '@react-spring/web';
 
 const infoCardsData = [
     {
@@ -30,7 +31,6 @@ const infoCardsData = [
         buttonLink: '#',
         backgroundColor: '#3A4683',
         textcolor: '#3A4683'
-
     }
 ];
 
@@ -38,23 +38,76 @@ function InfoCards() {
     return (
         <div className={styles.InfoCards}>
             {infoCardsData.map((card, index) => (
-                <div 
-                    key={index} 
-                    className={styles.infoCard}
-                    style={{ backgroundColor: card.backgroundColor }}
-                >
-                    <img src={card.image} alt={card.title} className={styles.infoCardImage} />
-                    <div className={styles.infoCardContent}>
-                        <h2 className={styles.infoCardTitle}>{card.title}</h2>
-                        <p className={styles.infoCardDescription}>{card.description}</p>
-                        <NavLink to={card.buttonLink} style={{ color: card.textcolor }} >
-                            <button className={styles.infoCardButton}>{card.buttonText}</button>
-                        </NavLink>
-                    </div>
-                </div>
+                <InfoCard key={index} card={card} index={index} />
             ))}
         </div>
     );
 }
+
+const InfoCard = ({ card, index }) => {
+    const [style, api] = useSpring(() => ({
+        transform: 'scale(1)',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        border: '2px solid transparent',
+    }));
+
+    const handleMouseEnter = () => {
+        switch (index) {
+            case 0:
+                api.start({ 
+                    transform: 'scale(1.05)', 
+                    boxShadow: '0 8px 16px rgba(0,0,0,0.2)', 
+                    border: '2px solid #F8A800' 
+                });
+                break;
+            case 1:
+                api.start({ 
+                    transform: 'scale(1.05)', 
+                    boxShadow: '0 8px 16px rgba(0,0,0,0.2)', 
+                    backgroundColor: '#ffbb00',
+                    border: '2px solid #F8A800'
+                });
+                break;
+            case 2:
+                api.start({ 
+                    transform: 'scale(1.05)', 
+                    boxShadow: '0 8px 16px rgba(0,0,0,0.2)', 
+                    rotateZ: '5deg', 
+                    border: '2px solid #F8A800'
+                });
+                break;
+            default:
+                break;
+        }
+    };
+
+    const handleMouseLeave = () => {
+        api.start({ 
+            transform: 'scale(1)', 
+            boxShadow: '0 4px 8px rgba(0,0,0,0.1)', 
+            backgroundColor: card.backgroundColor, 
+            rotateZ: '0deg',
+            border: '2px solid transparent'
+        });
+    };
+
+    return (
+        <animated.div 
+            className={styles.infoCard}
+            style={{ ...style, backgroundColor: card.backgroundColor }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            <img src={card.image} alt={card.title} className={styles.infoCardImage} />
+            <div className={styles.infoCardContent}>
+                <h2 className={styles.infoCardTitle}>{card.title}</h2>
+                <p className={styles.infoCardDescription}>{card.description}</p>
+                <NavLink to={card.buttonLink} style={{ color: card.textcolor }}>
+                    <button className={styles.infoCardButton}>{card.buttonText}</button>
+                </NavLink>
+            </div>
+        </animated.div>
+    );
+};
 
 export default InfoCards;
