@@ -47,8 +47,8 @@ function InfoCards() {
                     <div className={styles.infoCardContent}>
                         <h2 className={styles.infoCardTitle}>{card.title}</h2>
                         <p className={styles.infoCardDescription}>{card.description}</p>
-                        <NavLink to={card.buttonLink} style={{ color: card.textcolor }} className={styles.infoCardButton}>
-                            {card.buttonText}
+                        <NavLink to={card.buttonLink} style={{ color: card.textcolor }} >
+                            <button className={styles.infoCardButton}>{card.buttonText}</button>
                         </NavLink>
                     </div>
                 </div>
