@@ -1,0 +1,4 @@
+main {
+    position: relative;
+    overflow: hidden; /* Asegura que no haya contenido desbordante durante la animación */
+  }

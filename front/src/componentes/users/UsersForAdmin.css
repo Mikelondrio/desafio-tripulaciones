@@ -1,0 +1,42 @@
+.profile-container {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Alinea las tarjetas al centro */
+}
+
+.user-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 250px; /* Ajusta el ancho de la tarjeta a 250px */
+    height: 300px; /* Ajusta la altura de la tarjeta a 300px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px; /* Ajusta el margen entre las tarjetas */
+}
+
+.user-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.user-card p {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.deleteBtn {
+    padding: 10px 20px;
+    margin-bottom: auto;
+    background-color: #f93535;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+}

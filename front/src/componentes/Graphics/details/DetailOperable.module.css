@@ -1,0 +1,40 @@
+.container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .item {
+    margin-bottom: 2rem;
+  }
+  
+  .barChart {
+    background-color: #f0f0f0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    height: 2rem;
+    position: relative;
+  }
+  
+  .bar {
+    background-color: #4CAF50;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    color: white;
+    font-weight: bold;
+    transition: width 1s ease-in-out;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
