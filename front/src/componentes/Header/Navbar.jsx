@@ -19,7 +19,7 @@ export const Navbar = ({ className }) => {
 
       if (localToken || localUserID) {
         localStorage.removeItem('token')
-        localStorage.removeItem('userID')
+        localStorage.removeItem('userId')
       }
     }
 
