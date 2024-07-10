@@ -8,6 +8,8 @@ import linkedinIcon from '../../assets/LogosContacto/SEPE.jpg';
 import emailIcon from '../../assets/LogosContacto/Email.jpg';
 import telephoneIcon from '../../assets/LogosContacto/Telefono.jpg';
 import ubicationIcon from '../../assets/LogosContacto/Ubicacion.jpg';
+import ContactForm from './ContactForm';
+
 
 function Contacto() {
   return (
@@ -32,6 +34,8 @@ function Contacto() {
           </ul>
         </div>
       </div>
+
+      <ContactForm />
     </div>
   );
 }
