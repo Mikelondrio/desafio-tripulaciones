@@ -38,13 +38,52 @@
     font-size: 1rem;
 }
 
+.inputContainer {
+    position: relative;
+    width: 80%;
+    max-width: 25rem;
+}
+
 .urlInput {
     padding: 0.9375rem;
-    width: 80%;
-    max-width: 25rem; 
-    border: 0.0625rem solid #ddd;
+    width: 100%;
+    border: 0.1875rem solid #ff9800;
     border-radius: 0.3125rem;
     font-size: 1.2rem;
+    transform-origin: center;
+    transition: border-color 0.3s ease;
+}
+
+.urlInput:focus {
+    outline: none;
+    border-color: #ff9800;
+}
+
+.urlInput.valid {
+    border-color: rgb(14, 190, 14);
+    padding-right: 2.5rem; /* Make space for the icon */
+}
+
+.urlInput.invalid {
+    border-color: #f44336;
+    padding-right: 2.5rem; /* Make space for the icon */
+}
+
+.icon {
+    position: absolute;
+    right: 0.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.urlInput.valid + .icon {
+    color: rgb(14, 190, 14);
+}
+
+.urlInput.invalid + .icon {
+    color: #f44336;
 }
 
 .analyzeButton {

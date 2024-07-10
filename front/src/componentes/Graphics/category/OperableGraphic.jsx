@@ -49,7 +49,6 @@ getLastResearch();
               backgroundColor: [
                 backgroundColor,
                 '#ffffff', // Blanco para el espacio restante
-              
               ],
           
 

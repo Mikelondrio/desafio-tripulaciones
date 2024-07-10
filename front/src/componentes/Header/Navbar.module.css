@@ -16,7 +16,6 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  
 }
 
 .container {
@@ -63,16 +62,30 @@
   border-radius: 20px;
 }
 
+/* *****+ */
+
 .link {
+  user-select: none;
   color: var(--primary900);
   font-size: 1rem;
   font-weight: 500;
   padding-bottom: 0.5rem;
+  transition: color 0.3s, border-bottom 0.3s;
 }
 
 .link:hover {
-  color: #F8A800;
+  color: #F8A800; /* Dark blue color */
+  /* border-bottom: 2px solid #00008B;  */
+}
+
+.link.active {
+  color: #F8A800; /* Keep the active state orange */
   border-bottom: 2px solid #F8A800;
+}
+
+.link:not(.active) {
+  color: var(--primary900);
+  border-bottom: 2px solid transparent;
 }
 
 .show {
