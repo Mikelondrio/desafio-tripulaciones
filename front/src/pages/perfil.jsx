@@ -37,7 +37,7 @@ function Perfil() {
 
   async function logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('userID');
+    localStorage.removeItem('userId');
     navigate('/inicio');
   }
 

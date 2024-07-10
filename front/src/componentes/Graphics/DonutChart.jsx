@@ -37,7 +37,7 @@ getLastResearch();
         data: {
           datasets: [
             {
-              data: [number, number-100],
+              data: [number, 100-number],
               borderRadius: 50,
               backgroundColor: [
                 color,

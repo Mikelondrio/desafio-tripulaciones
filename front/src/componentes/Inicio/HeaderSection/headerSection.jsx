@@ -1,30 +1,40 @@
-import React, { useState } from 'react';
-import styles from './headerSection.module.css'; 
+import React, { useState, useContext } from 'react';
+import styles from './headerSection.module.css';
 import { scanerCreate, scraperAPI } from '../../../api/scanerAPI.js'
 import { Navbar } from '../../../componentes/Header/Navbar.jsx'
 import { Navigate, useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import GeneralContext from '../../../utils/GeneralContext.jsx';
+import { NavLink } from 'react-router-dom';
 
 function HeaderSection() {
     const navigate = useNavigate()
     const [url, setUrl] = useState('');
     const [isValid, setIsValid] = useState(false);
 
+    const { analysisIsDone, setAnalysisIsDone } = useContext(GeneralContext)
+    const [buttonSend, setButtonSend] = useState(false)
+
     const urlRegex = new RegExp(/^(?:(ftp|http|https):\/\/)?(?:www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(?:\/[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]*)?$/);
-   
+
     const handleChange = (e) => {
         const value = e.target.value;
         setUrl(value);
         setIsValid(urlRegex.test(value));
+        setButtonSend(true)
     };
 
 
 
 
     async function buttonWebSend(e) {
+        setButtonSend(false)
         const URL = e.target.parentElement.children[0].value
-        const webArraySend = {'url': URL}
+        const webArraySend = { 'url': URL }
         const sendURLScraper = await scraperAPI(webArraySend)
+        setAnalysisIsDone(true)
+        setTimeout(() => {
+            navigate("/analisis")
+        }, 2000);
     }
 
 
@@ -44,9 +54,7 @@ function HeaderSection() {
                         onChange={handleChange}
                         placeholder="Introducir una URL aquí"
                     />
-                    <NavLink to="/analisis" className={styles.link}>
-                        <button className={styles.analyzeButton} onClick={buttonWebSend}>Analizar</button>
-                    </NavLink>
+                    {buttonSend ? <button className={styles.analyzeButton} onClick={buttonWebSend}>Analizar</button> : <></>}
                 </div>
             </div>
         </div>

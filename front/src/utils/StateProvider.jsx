@@ -5,17 +5,19 @@ import GeneralContext from './GeneralContext';
 
 function StatesProvider({children}){
  
+  
     const [burgerMenuIsOpen, setburgerMenuIsOpen] = useState(false);
     const [viewportWidth, setviewportWidth] = useState(window.innerWidth);
-    const [analysisIsDone, setanalysIsDone] = useState(false);
+    const [analysisIsDone, setAnalysisIsDone] = useState(false)
     
+
     const contextValue = {
         viewportWidth,
         setviewportWidth,
         burgerMenuIsOpen,
         setburgerMenuIsOpen,
         analysisIsDone,
-        setanalysIsDone
+        setAnalysisIsDone
     };
   
     return(

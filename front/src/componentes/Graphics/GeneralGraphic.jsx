@@ -1,11 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext, useState } from "react";
 import { Chart } from "chart.js/auto";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { scanerGetAll } from "../../api/scanerAPI.js";
+//import GeneralContext from '../../utils/GeneralContext.jsx'
 
 function AnalysisGeneral() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
+
+
+  
+//const { analysisIsDone, setanalysIsDone } = useContext(GeneralContext)
+
 
   // Función para determinar el color basado en el puntaje
   const getColorBasedOnScore = (score) => {
@@ -22,13 +28,15 @@ function AnalysisGeneral() {
     const ctx = canvasRef.current.getContext("2d");
 
     async function getLastResearch() {
+
       let response = await scanerGetAll();
-      let data = response.data;
+
+      let data = await response.data;
       data.reverse();
-      let latestData = data[0];
+      let latestData = await data[0];
       console.log(latestData);
 
-      let categoryCatcher = latestData.data.data.evaluation;
+      let categoryCatcher = await latestData.data.data.evaluation;
 
       if (chartRef.current) {
         chartRef.current.destroy();
@@ -96,7 +104,9 @@ function AnalysisGeneral() {
       });
     }
 
-    getLastResearch();
+      getLastResearch();
+
+    
 
     // Limpiar el gráfico al desmontar el componente
     return () => {
