@@ -1,11 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext, useState } from "react";
 import { Chart } from "chart.js/auto";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { scanerGetAll } from "../../api/scanerAPI.js";
+import GeneralContext from '../../utils/GeneralContext.jsx'
 
 function AnalysisGeneral() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
+
+  
+const { analysisIsDone, setanalysIsDone } = useContext(GeneralContext)
+
+console.log(analysisIsDone)
+
 
   // Función para determinar el color basado en el puntaje
   const getColorBasedOnScore = (score) => {
