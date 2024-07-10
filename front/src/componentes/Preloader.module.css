@@ -1,19 +1,29 @@
-/* Preloader.module.css */
-.preloader-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  .preloader {
-    width: 100px; /* Ancho del GIF */
-    height: 100px; /* Alto del GIF */
-  }
-  
+.preloaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.preloaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preloader {
+  width: 200px; /* Ancho del GIF, doble del tamaño original */
+  height: 200px; /* Alto del GIF, doble del tamaño original */
+}
+
+.loadingText {
+  margin-top: 10px;
+  font-size: 2.2rem;
+  color: #333;
+}
