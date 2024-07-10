@@ -47,7 +47,6 @@ function HeaderSection() {
                     <NavLink to="/analisis" className={styles.link}>
                         <button className={styles.analyzeButton} onClick={buttonWebSend}>Analizar</button>
                     </NavLink>
-
                 </div>
             </div>
         </div>

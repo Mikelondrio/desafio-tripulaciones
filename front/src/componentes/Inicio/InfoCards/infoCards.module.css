@@ -47,6 +47,10 @@
 }
 
 .infoCardButton {
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    border: none;
     padding: 0.625rem 1.25rem; /* 10px 20px */
     background-color: white;
     color: #007bff;
@@ -57,5 +61,6 @@
 }
 
 .infoCardButton:hover {
-    background-color: #0056b3;
+    color: white;
+    background-color: #c98900;
 }
