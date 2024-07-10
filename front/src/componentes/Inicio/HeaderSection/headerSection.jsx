@@ -3,6 +3,7 @@ import styles from './headerSection.module.css';
 import { scanerCreate, scraperAPI } from '../../../api/scanerAPI.js'
 import { Navbar } from '../../../componentes/Header/Navbar.jsx'
 import { Navigate, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function HeaderSection() {
     const navigate = useNavigate()
@@ -43,7 +44,10 @@ function HeaderSection() {
                         onChange={handleChange}
                         placeholder="Introducir una URL aquí"
                     />
-                    <button className={styles.analyzeButton} onClick={buttonWebSend}>Analizar</button>
+                    <NavLink to="/analisis" className={styles.link}>
+                        <button className={styles.analyzeButton} onClick={buttonWebSend}>Analizar</button>
+                    </NavLink>
+
                 </div>
             </div>
         </div>
