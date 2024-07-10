@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { scanerGetAll } from "../../../api/scanerAPI.js";
+import styles from "./DetailUnderstandable.module.css";
 
-function UnderstandableDetail() {
+function DetailUnderstandable() {
   const [criticalIndexCatcher, setCriticalIndexCatcher] = useState(null);
 
   useEffect(() => {
@@ -20,39 +21,63 @@ function UnderstandableDetail() {
     return <div>Loading...</div>;
   }
 
+  const items = [
+    {
+      title: "justified_text",
+      percentage: parseFloat(criticalIndexCatcher.justified_text_total_percentage) * 100,
+      description: "Uso de texto justificado que puede dificultar la lectura."
+    },
+    {
+      title: "large_text_blocks",
+      percentage: parseFloat(criticalIndexCatcher.large_text_blocks_total_percentage) * 100,
+      description: "Bloques grandes de texto sin separación clara."
+    },
+    {
+      title: "short_alt_text",
+      percentage: parseFloat(criticalIndexCatcher.short_alt_text_total_percentage) * 100,
+      description: "Texto alternativo demasiado corto o insuficiente en las imágenes."
+    },
+    {
+      title: "missing_help_section",
+      percentage: parseFloat(criticalIndexCatcher.missing_help_section_total_percentage) * 100,
+      description: "La ausencia de una sección de ayuda en el sitio."
+    },
+    {
+      title: "unexplained_acronyms",
+      percentage: parseFloat(criticalIndexCatcher.unexplained_acronyms_total_percentage) * 100,
+      description: "Acrónimos que no están explicados en el texto."
+    },
+  ];
+
   return (
-    <>
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.justified_text_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>justified_text:</h4>
-        <p>Uso de texto justificado que puede dificultar la lectura.</p>
-      </div>
+    <div className={styles.container}>
+      {items.map((item, index) => {
+        let barColor;
+        if (item.percentage < 50) {
+          barColor = '#F44336'; // Rojo
+        } else if (item.percentage < 75) {
+          barColor = '#FFEB3B'; // Amarillo
+        } else {
+          barColor = '#4CAF50'; // Verde
+        }
 
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.large_text_blocks_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>large_text_blocks:</h4>
-        <p>Bloques grandes de texto sin separación clara.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.short_alt_text_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>short_alt_text:</h4>
-        <p>Texto alternativo demasiado corto o insuficiente en las imágenes.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.missing_help_section_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>missing_help_section:</h4>
-        <p>La ausencia de una sección de ayuda en el sitio.</p>
-      </div>
-
-      <div>
-        <h2>{(parseFloat(criticalIndexCatcher.unexplained_acronyms_total_percentage) * 100).toFixed(2)}%</h2>
-        <h4>unexplained_acronyms:</h4>
-        <p>Acrónimos que no están explicados en el texto.</p>
-      </div>
-    </>
+        return (
+          <div key={index} className={styles.item}>
+            <h4 className={styles.title}>{item.title}:</h4>
+            <div className={styles.barChart}>
+              <div 
+                className={styles.bar} 
+                style={{width: `${item.percentage}%`, backgroundColor: barColor}}
+              >
+                {item.percentage.toFixed(2)}%
+              </div>
+            </div>
+            <p className={styles.description}>{item.description}</p>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
-export default UnderstandableDetail;
+export default DetailUnderstandable;

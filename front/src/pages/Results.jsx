@@ -5,10 +5,10 @@ import AnalysisPerceptible from "../componentes/Graphics/category/PerceptibleGra
 import AnalysisRobust from "../componentes/Graphics/category/RobustGraphic"
 import AnalysisUnderstandable from "../componentes/Graphics/category/UnderstandableGraphic"
 import './Results.css'
-import OperableDetail from "../componentes/Graphics/details/DetailOperable"
-import PerceptibleDetail from "../componentes/Graphics/details/DetailPerceptible"
+import DetailOperable from "../componentes/Graphics/details/DetailOperable"
+import DetailPerceptible from "../componentes/Graphics/details/DetailPerceptible"
 import RobustDetail from "../componentes/Graphics/details/DetailRobust"
-import UnderstandableDetail from "../componentes/Graphics/details/DetailUnderstandable"
+import DetailUnderstandable from "../componentes/Graphics/details/DetailUnderstandable"
 
 
 export function Results() {
@@ -44,12 +44,12 @@ export function Results() {
                 <div>
                     <h2>Operable</h2>
                     <h5>Los componentes de la interfaz de usuario y la navegación deben ser manejables.</h5>
-                    <OperableDetail/>
+                    <DetailOperable/>
                 </div>
                 <div>
                     <h2>Perceptible</h2>
                     <h5>La información y los componentes de la interfaz de usuario deben ser mostrados a los usuarios en formas que ellos puedan entender.</h5>
-                    <PerceptibleDetail/>
+                    <DetailPerceptible/>
                 </div>
                 <div>
                     <h2>Robusto</h2>
@@ -59,7 +59,7 @@ export function Results() {
                 <div>
                     <h2>Entendible</h2>
                     <h5>La información y las operaciones de usuarios deben ser comprensibles.</h5>
-                    <UnderstandableDetail/>
+                    <DetailUnderstandable/>
                 </div>
             </article>
 

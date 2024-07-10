@@ -61,7 +61,7 @@ function AnalysisGeneral() {
                 backgroundColor,
                 '#ffffff', // Blanco para el espacio restante
               ],
-              borderWidth: 1
+              borderWidth: 2
             }
           ]
         },
