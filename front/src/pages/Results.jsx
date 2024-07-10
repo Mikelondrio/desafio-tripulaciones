@@ -6,6 +6,7 @@ import AnalysisPerceptible from "../componentes/Graphics/category/PerceptibleGra
 import AnalysisRobust from "../componentes/Graphics/category/RobustGraphic"
 import AnalysisUnderstandable from "../componentes/Graphics/category/UnderstandableGraphic"
 import './Results.css'
+import OperableDetail from "../componentes/Graphics/details/DetailOperable"
 
 
 export function Results() {
@@ -37,6 +38,9 @@ export function Results() {
                 
         </div>
             <AnalysisDetail/>
+            <div>
+                <OperableDetail/>
+            </div>
         </div>
     )
 }
