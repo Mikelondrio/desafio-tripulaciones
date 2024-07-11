@@ -33,7 +33,7 @@ const Profile = () => {
         
         <main className={styles.mainContent}>
           <section className={styles.userDataSection}>
-            <h3>TUS DATOS DE USUARIO <FaEdit className={styles.editIcon} /></h3>
+            <h3>TUS DATOS DE USUARIO {/* <FaEdit className={styles.editIcon} /> */}</h3>
             <div className={styles.dataField}>
               <label>Nombre</label>
               <p>{user.username}</p>
@@ -48,7 +48,7 @@ const Profile = () => {
             </div>
           </section>
           <section className={styles.companyDataSection}>
-            <h3>DATOS DE LA EMPRESA <FaEdit className={styles.editIcon} /></h3>
+            <h3>DATOS DE LA EMPRESA {/* <FaEdit className={styles.editIcon} /> */}</h3>
             <div className={styles.dataField}>
               <label>Nombre</label>
               <p>{user.company}</p>

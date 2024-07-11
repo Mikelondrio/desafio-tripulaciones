@@ -24,6 +24,15 @@
     justify-content: center;
 }
 
+#history-score {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 7.3rem;
+    margin-left: 14.8rem;
+}
+
 #history-div-graphic {
     display: flex;
     justify-content: center;
