@@ -116,7 +116,7 @@ function AnalysisGeneral() {
 
     <div id="div-general">
       <div id="score-graphic">
-        <p>{scoreGraphic}%</p>
+        <p>{Math.floor(scoreGraphic)}%</p>
       </div>
       <div style={{ position: 'relative', width: '50%', height: '50%' }}>
         <canvas ref={canvasRef} id="myChart"></canvas>
