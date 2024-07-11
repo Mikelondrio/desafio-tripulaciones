@@ -51,6 +51,10 @@ function DetailUnderstandable() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.titleContainer}>
+      
+      <p className={styles.descriptionDescription}>La información y las operaciones de usuarios deben ser comprensibles.</p>
+      </div>
       {items.map((item, index) => {
         let barColor;
         if (item.percentage < 50) {

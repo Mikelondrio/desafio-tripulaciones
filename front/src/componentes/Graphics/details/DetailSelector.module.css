@@ -1,53 +1,65 @@
-
 .container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Montserrat;
-    background-color: #f8f9fa;
-  }
-  
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Montserrat;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 8rem;
+}
 
-  .selector {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    background-color: white;
-    color: #333;
-    margin-bottom: 20px;
-    transition: border-color 0.3s ease;
+.section {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.button {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.2rem;
+  text-align: left;
+  background-color: #F3F3F3;
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #F3F3F3;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.componentContainer {
+  padding: 20px;
+  background-color: #F3F3F3;
+}
+
+@media (max-width: 600px) {
+  .container {
+      padding: 10px;
   }
-  
-  .selector:focus {
-    outline: none;
-    border-color: #0056b3;
+
+  .button {
+      font-size: 1rem;
+      padding: 10px;
+      
   }
-  
-  .selector:hover {
-    border-color: #0056b3;
-  }
-  
+
   .componentContainer {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  @media (max-width: 600px) {
-    .container {
       padding: 10px;
-    }
-    
-    .selector {
-      font-size: 14px;
-    }
-    
-    .componentContainer {
-      padding: 10px;
-    }
   }
+}

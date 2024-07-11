@@ -37,3 +37,17 @@
     color: #666;
     margin-top: 0.5rem;
 }
+
+
+
+  /* css titulo */
+
+  .titleContainer {
+   
+    margin-bottom: 5rem;
+  }
+ 
+  .titleContainer p  {
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+  }
