@@ -78,7 +78,7 @@ function AnalysisGeneral() {
               text: 'Analisis general',
               position: 'bottom',
               font: {
-                size: '20'
+                size: '0'
               },
               
             },
@@ -97,7 +97,8 @@ function AnalysisGeneral() {
                 size: '16'
               },
               anchor: 'center', // Mueve la etiqueta a la parte externa
-              align: 'start' // Alinea la etiqueta al inicio
+              align: 'start', // Alinea la etiqueta al inicio
+              offset: 105
             }
           }
         }
