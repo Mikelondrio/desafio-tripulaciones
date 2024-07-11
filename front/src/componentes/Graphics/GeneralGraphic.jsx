@@ -89,8 +89,8 @@ function AnalysisGeneral() {
               },
               position: 'center',
               anchor: 'center', // Mueve la etiqueta a la parte externa
-              align: 'start', // Alinea la etiqueta al inicio
-              offset: '50',
+              align: '-115', // Alinea la etiqueta al inicio
+              offset: '55',
               display: 'true',
               textAlign: 'start',
             },

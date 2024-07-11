@@ -83,11 +83,11 @@ getLastResearch();
                   },
                   font: {
                     weight: 'bold',
-                    size: '32'
+                    size: '40'
                   },
                   anchor: 'start', // Mueve la etiqueta a la parte externa
-                  align: 'start', // Alinea la etiqueta al inicio
-                  offset: '10'
+                  align: '-125', // Alinea la etiqueta al inicio
+                  offset: '15'
                 },
           scales: {
             y: {
