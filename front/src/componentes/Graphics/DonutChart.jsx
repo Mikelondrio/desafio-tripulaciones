@@ -54,13 +54,22 @@ getLastResearch();
               legend: {
                 display: false
               },
-          scales: {
-            y: {
-              beginAtZero: true,
-              grid: {
-                display: false // Oculta las líneas horizontales
-              }
-            }
+              tooltip: {
+                display: false
+              },
+              title: {
+                display: false,
+                font: {
+                  size: 0
+                }
+              },
+              scales: {
+                y: {
+                  display: false, // Oculta las etiquetas del eje Y
+                },
+                x: {
+                  display: false, // Oculta las etiquetas del eje X
+                }
           }
         }
       }

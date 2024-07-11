@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { scanerGetAll } from "../../api/scanerAPI.js";
+import './GeneralGraphic.css'
 
 function AnalysisGeneral() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
+  const [scoreGraphic, setScoreGraphic] = useState()
 
   // Función para determinar el color basado en el puntaje
   const getColorBasedOnScore = (score) => {
@@ -29,6 +31,7 @@ function AnalysisGeneral() {
       console.log(latestData);
 
       let categoryCatcher = latestData.data.data.evaluation;
+      setScoreGraphic(categoryCatcher.score*100)
 
       if (chartRef.current) {
         chartRef.current.destroy();
@@ -51,9 +54,9 @@ function AnalysisGeneral() {
               borderRadius: 50,
               backgroundColor: [
                 backgroundColor,
-                '#ffffff', // Blanco para el espacio restante
+                '#F3F3F3', // Color para el espacio restante
               ],
-              borderWidth: 2
+              borderWidth: 0
             }
           ]
         },
@@ -85,7 +88,7 @@ function AnalysisGeneral() {
               },
               font: {
                 weight: 'bold',
-                size: '40'
+                size: '0'
               },
               position: 'center',
               anchor: 'center', // Mueve la etiqueta a la parte externa
@@ -110,9 +113,16 @@ function AnalysisGeneral() {
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '50%', height: '50%' }}>
-      <canvas ref={canvasRef} id="myChart"></canvas>
+
+    <div id="div-general">
+      <div id="score-graphic">
+        <p>{scoreGraphic}%</p>
+      </div>
+      <div style={{ position: 'relative', width: '50%', height: '50%' }}>
+        <canvas ref={canvasRef} id="myChart"></canvas>
+      </div>
     </div>
+
   );
 }
 
