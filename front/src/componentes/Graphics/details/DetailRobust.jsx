@@ -76,6 +76,10 @@ function DetailRobust() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.titleContainer}>
+        <h2 className={styles.titleDescription}>Robusto: </h2>
+        <p className={styles.descriptionDescription}>El contenido deber ser suficientemente robusto para que pueda ser bien interpretado por una gran variedad de agentes de usuario, incluyendo tecnologías de asistencia.</p>
+      </div>
       {items.map((item, index) => {
         let barColor;
         if (item.percentage < 50) {
@@ -90,9 +94,9 @@ function DetailRobust() {
           <div key={index} className={styles.item}>
             <h4 className={styles.title}>{item.title}:</h4>
             <div className={styles.barChart}>
-              <div 
-                className={styles.bar} 
-                style={{width: `${item.percentage}%`, backgroundColor: barColor}}
+              <div
+                className={styles.bar}
+                style={{ width: `${item.percentage}%`, backgroundColor: barColor }}
               >
                 {item.percentage.toFixed(2)}%
               </div>

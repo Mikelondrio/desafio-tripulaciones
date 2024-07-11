@@ -33,8 +33,8 @@ function DetailSelector() {
       >
         <option value="perceptible">Perceptible</option>
         <option value="operable">Operable</option>
-        <option value="understandable">Understandable</option>
-        <option value="robust">Robust</option>
+        <option value="understandable">Entendible</option>
+        <option value="robust">Robusto</option>
       </select>
       <div className={styles.componentContainer}>
         {renderComponent()}
