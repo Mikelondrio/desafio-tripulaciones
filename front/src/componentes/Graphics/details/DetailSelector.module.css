@@ -1,0 +1,53 @@
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Montserrat;
+    background-color: #f8f9fa;
+  }
+  
+
+  .selector {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .selector:focus {
+    outline: none;
+    border-color: #0056b3;
+  }
+  
+  .selector:hover {
+    border-color: #0056b3;
+  }
+  
+  .componentContainer {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+    
+    .selector {
+      font-size: 14px;
+    }
+    
+    .componentContainer {
+      padding: 10px;
+    }
+  }
