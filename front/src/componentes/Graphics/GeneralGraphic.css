@@ -13,3 +13,9 @@
     border-radius: 25px;
     padding: 25px;
 }
+
+#div-completo {
+    display: flex;
+    justify-content: center;
+    width: 32rem;
+}

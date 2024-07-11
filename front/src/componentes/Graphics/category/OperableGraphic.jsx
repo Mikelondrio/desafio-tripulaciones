@@ -87,7 +87,7 @@ getLastResearch();
                   },
                   font: {
                     weight: 'bold',
-                    size: '40'
+                    size: '0'
                   },
                   anchor: 'start', // Mueve la etiqueta a la parte externa
                   align: 'start', // Alinea la etiqueta al inicio
@@ -117,14 +117,14 @@ getLastResearch();
 
   return (
 
-    <>
+    <div id="div-completo">
         <div id="score-graphic">
           <p>{scoreGraphic}%</p>
         </div>
         <div style={{ position: 'relative', width: '50%', height: '50%' }}>
           <canvas ref={canvasRef} id="myChart"></canvas>
         </div>
-    </>
+    </div>
 
   );
 }

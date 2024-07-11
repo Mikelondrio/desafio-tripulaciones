@@ -54,6 +54,15 @@ getLastResearch();
               legend: {
                 display: false
               },
+              tooltip: {
+                display: false
+              },
+              title: {
+                display: false,
+                font: {
+                  size: 0
+                }
+              },
           scales: {
             y: {
               beginAtZero: true,

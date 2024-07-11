@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
 import { scanerGetAll} from "../../../api/scanerAPI.js";
 
 function AnalysisRobust() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
+  const [scoreGraphic, setScoreGraphic] = useState()
 
   const getColorBasedOnScore = (score) => {
     if (score >= 0.75) {
@@ -29,6 +30,7 @@ getLastResearch();
       console.log(latestData);
 
       let categoryCatcher = latestData.data.data.category;
+      setScoreGraphic(categoryCatcher.robust*100)
      
       if (chartRef.current) {
         chartRef.current.destroy();
@@ -84,7 +86,7 @@ getLastResearch();
                   },
                   font: {
                     weight: 'bold',
-                    size: '40'
+                    size: '0'
                   },
                   anchor: 'start', // Mueve la etiqueta a la parte externa
                   align: 'start', // Alinea la etiqueta al inicio
@@ -119,10 +121,14 @@ getLastResearch();
 
   return (
 
-      <div>
-        <canvas ref={canvasRef} id="myChart"></canvas>
-      </div>
-
+    <div id="div-completo">
+        <div id="score-graphic">
+          <p>{scoreGraphic}%</p>
+        </div>
+        <div style={{ position: 'relative', width: '50%', height: '50%' }}>
+          <canvas ref={canvasRef} id="myChart"></canvas>
+        </div>
+    </div>
   );
 }
 
