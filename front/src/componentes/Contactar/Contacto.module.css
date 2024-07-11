@@ -10,6 +10,12 @@
   padding-inline-start: 0;
   font-family: Montserrat;
 }
+.nostylelink {
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Hace que el color del texto sea el mismo que el del elemento padre */
+  display: flex; /* Asegura que el contenido dentro del enlace se alinee correctamente */
+  align-items: center; /* Centra verticalmente el contenido */
+}
  .contacto {
   background-image: url('../../assets/Contacto.jpg');
   background-size: cover;
