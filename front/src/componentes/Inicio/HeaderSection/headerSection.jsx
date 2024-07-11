@@ -31,6 +31,8 @@ function HeaderSection() {
     };
 
     async function buttonWebSend(e) {
+        const url = e.target.parentElement.children[0].firstChild.value
+        console.log(url)
         setButtonSend(false);
         setLoading(true);  // Muestra el preloader
         const webArraySend = { 'url': url };
