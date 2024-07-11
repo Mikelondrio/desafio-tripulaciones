@@ -5,6 +5,8 @@ import { scraperAPI } from '../../../api/scanerAPI.js';
 import { useNavigate } from "react-router-dom";
 import GeneralContext from "../../../utils/GeneralContext.jsx";
 
+import InfoModal from './InfoModal.jsx';
+
 function HeaderSection() {
     const navigate = useNavigate();
     const [url, setUrl] = useState('');
@@ -12,6 +14,7 @@ function HeaderSection() {
     const { setAnalysisIsDone } = useContext(GeneralContext);
     const [buttonSend, setButtonSend] = useState(false);
     const [animationComplete, setAnimationComplete] = useState(false);
+    const [loading, setLoading] = useState(false);  // Estado para controlar el preloader
 
     const urlRegex = new RegExp(/^(?:(ftp|http|https):\/\/)?(?:www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(?:\/[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]*)?$/);
 
@@ -29,10 +32,12 @@ function HeaderSection() {
 
     async function buttonWebSend(e) {
         setButtonSend(false);
+        setLoading(true);  // Muestra el preloader
         const webArraySend = { 'url': url };
         await scraperAPI(webArraySend);
         setAnalysisIsDone(true);
         setTimeout(() => {
+            setLoading(false);  // Oculta el preloader
             navigate("/analisis");
         }, 2000);
     }
@@ -51,6 +56,7 @@ function HeaderSection() {
 
     return (
         <div className={styles.headerSection}>
+            {loading && <InfoModal />}  {/* Muestra el preloader si loading es true */}
             <div className={styles.headerContent}>
                 <h1>¿Tu web es accesible?</h1>
                 <p>Analiza la accesibilidad en un solo click</p>
