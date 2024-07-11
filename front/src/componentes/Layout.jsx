@@ -47,7 +47,8 @@ const Layout = () => {
   });
 
   return (
-    <>
+    <div className="layout">
+
       <Header />
       <main style={{ position: 'relative' }}>
         {transitions((props, item) => (
@@ -57,7 +58,7 @@ const Layout = () => {
         ))}
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

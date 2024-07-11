@@ -1,0 +1,32 @@
+.InfoModalOverlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.89);
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+}
+
+.InfoModalContainer {
+  text-align: center;
+}
+
+.InfoModalContainer p {
+  text-align: center;
+  font-size: 2.25rem;
+  font-family: Montserrat;
+
+}
+.InfoModal {
+  width: 100px;
+  height: 100px;
+  
+}
+
+.loadingText {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
