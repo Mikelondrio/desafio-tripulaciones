@@ -1,7 +1,7 @@
 .scaners-container{
     margin-top: 25px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin-bottom: 50px;
 }
 
@@ -15,7 +15,7 @@
     margin: 12px 0;
     border: solid 5px beige;
     border-radius: 25px;
-    margin: 15px;
+    margin: 10px;
 }
 
 .history-data {
@@ -30,4 +30,13 @@
     margin-top: 10px;
     margin-bottom: 25px;
     height: 10rem;
+}
+
+#div-score {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    font-weight: 600;
+    margin-top: 7.5rem;
+    margin-left: 24.2rem;
 }

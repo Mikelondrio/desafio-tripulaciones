@@ -22,7 +22,10 @@ const GraphicHistoric = () => {
                 <div id="history-div-data">
                   <h4 className="history-data">Url: {data.url}</h4>
                   <p className="history-data">Fecha: {data.date}</p>
-                  <p className="history-data">Score: {data.data.data.evaluation.score * 100}%</p>
+                  <div id="div-score">
+                    <p className="history-data">Score:</p>
+                    <p className="history-data">{data.data.data.evaluation.score * 100}%</p>
+                  </div>
                 </div>
                 <div id="history-div-graphic">
                   <AnalysisGeneral number={data.data.data.evaluation.score * 100} />

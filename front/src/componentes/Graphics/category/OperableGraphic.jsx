@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
 import { scanerGetAll} from "../../../api/scanerAPI.js";
+import '../GeneralGraphic.css'
 
 function AnalysisOperable() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
+  const [scoreGraphic, setScoreGraphic] = useState()
 
   const getColorBasedOnScore = (score) => {
     if (score >= 0.75) {
@@ -18,6 +20,7 @@ function AnalysisOperable() {
 
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
+    
 
     
 getLastResearch();
@@ -29,6 +32,7 @@ getLastResearch();
       console.log(latestData);
 
       let categoryCatcher = latestData.data.data.category;
+      setScoreGraphic(categoryCatcher.operable*100)
      
       if (chartRef.current) {
         chartRef.current.destroy();
@@ -113,9 +117,14 @@ getLastResearch();
 
   return (
 
-      <div>
-        <canvas ref={canvasRef} id="myChart"></canvas>
-      </div>
+    <>
+        <div id="score-graphic">
+          <p>{scoreGraphic}%</p>
+        </div>
+        <div style={{ position: 'relative', width: '50%', height: '50%' }}>
+          <canvas ref={canvasRef} id="myChart"></canvas>
+        </div>
+    </>
 
   );
 }
