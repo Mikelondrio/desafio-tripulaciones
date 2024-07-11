@@ -19,18 +19,26 @@ function Contacto() {
         <div className={styles.contactoSeccion}>
           <h2>Encuéntranos en</h2>
           <ul>
-            <li><img src={emailIcon}></img> Email: email@email.com</li>
-            <li><img src={telephoneIcon}></img> Teléfono: +34 666666666</li>
-            <li><img src={ubicationIcon}></img> Dirección: La dirección blablabla</li>
+            <li><img src={emailIcon}></img> <strong>Email:</strong>&nbsp; info@seniorityai.com</li>
+            <li><img src={telephoneIcon}></img> <strong>Teléfono:</strong>&nbsp; +34 603180484</li>
+            <li><img src={ubicationIcon}></img> <strong>Dirección:</strong>&nbsp; Parque Tecnológico de &nbsp;&nbsp;Málaga-CADE</li>
           </ul>
         </div>
         <div className={styles.contactoSeccion}>
           <h2>Redes Sociales</h2>
           <ul>
-            <li><img src={facebookIcon} alt="Facebook" /> Facebook</li>
-            <li><img src={instagramIcon} alt="Instagram" /> Instagram</li>
-            <li><img src={youtubeIcon} alt="Youtube" /> Youtube</li>
-            <li><img src={linkedinIcon} alt="LinkedIn" /> LinkedIn</li>
+            <a href="https://www.facebook.com/people/Seniorityai/100089844576324/" target="_blank" rel="noopener noreferrer" className={styles.nostylelink}>
+              <li><img src={facebookIcon} alt="Facebook" /> Facebook</li>
+            </a>
+            <a href="https://www.instagram.com/seniority_ai?igsh=bHY5ZWhiY294NWpn" target="_blank" rel="noopener noreferrer" className={styles.nostylelink}>  
+              <li><img src={instagramIcon} alt="Instagram" /> Instagram</li>
+            </a>
+            <a href="https://www.youtube.com/@seniority_ai" target="_blank" rel="noopener noreferrer" className={styles.nostylelink}>
+              <li><img src={youtubeIcon} alt="Youtube" /> Youtube</li>
+            </a>
+            <a href="https://www.linkedin.com/company/seniorityai/" target="_blank" rel="noopener noreferrer" className={styles.nostylelink}>
+              <li><img src={linkedinIcon} alt="LinkedIn" /> LinkedIn</li>
+            </a>
           </ul>
         </div>
       </div>
