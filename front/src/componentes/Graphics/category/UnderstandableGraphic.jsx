@@ -71,6 +71,24 @@ getLastResearch();
                 font: {
                   size: '20'
                 }},
+                datalabels: {
+                  color: '#000',
+                  formatter: (value, context) => {
+                    // Mostrar solo la etiqueta del primer segmento (score)
+                    if (context.dataIndex === 0) {
+                      let percentage = (value * 100).toFixed(2) + '%';
+                      return percentage;
+                    }
+                    return null;
+                  },
+                  font: {
+                    weight: 'bold',
+                    size: '40'
+                  },
+                  anchor: 'start', // Mueve la etiqueta a la parte externa
+                  align: '-125', // Alinea la etiqueta al inicio
+                  offset: '15'
+                },
           scales: {
             y: {
               beginAtZero: true,

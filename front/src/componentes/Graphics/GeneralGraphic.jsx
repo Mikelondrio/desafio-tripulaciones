@@ -85,12 +85,15 @@ function AnalysisGeneral() {
               },
               font: {
                 weight: 'bold',
-                size: 32 // Tamaño de fuente mayor
+                size: '40'
               },
-              anchor: 'start', // Centra la etiqueta
-              align: 'start', // Centra la etiqueta
-              offset: 10 // Asegura que la etiqueta esté exactamente en el centro
-            }
+              position: 'center',
+              anchor: 'center', // Mueve la etiqueta a la parte externa
+              align: '-115', // Alinea la etiqueta al inicio
+              offset: '55',
+              display: 'true',
+              textAlign: 'start',
+            },
           }
         }
       });
