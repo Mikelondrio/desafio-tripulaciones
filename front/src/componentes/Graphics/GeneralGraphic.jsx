@@ -1,27 +1,20 @@
-import React, { useEffect, useRef, useContext, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { scanerGetAll } from "../../api/scanerAPI.js";
-//import GeneralContext from '../../utils/GeneralContext.jsx'
 
 function AnalysisGeneral() {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
 
-
-
-  
-//const { analysisIsDone, setanalysIsDone } = useContext(GeneralContext)
-
-
   // Función para determinar el color basado en el puntaje
   const getColorBasedOnScore = (score) => {
     if (score >= 0.75) {
-      return '#3fb58f'; // Verde
+      return '#4CAF50'; // Verde
     } else if (score >= 0.5) {
-      return '#ffcc00'; // Amarillo
+      return '#FFEB3B'; // Amarillo
     } else {
-      return '#ff0000'; // Rojo
+      return '#F44336'; // Rojo
     }
   };
 
@@ -29,16 +22,13 @@ function AnalysisGeneral() {
     const ctx = canvasRef.current.getContext("2d");
 
     async function getLastResearch() {
-
       let response = await scanerGetAll();
-
-      let data = await response.data;
+      let data = response.data;
       data.reverse();
-      let latestData = await data[0];
+      let latestData = data[0];
       console.log(latestData);
 
-      let categoryCatcher = await latestData.data.data.evaluation;
-    
+      let categoryCatcher = latestData.data.data.evaluation;
 
       if (chartRef.current) {
         chartRef.current.destroy();
@@ -80,9 +70,8 @@ function AnalysisGeneral() {
               text: 'Analisis general',
               position: 'bottom',
               font: {
-                size: '20'
-              },
-              
+                size: 20
+              }
             },
             datalabels: {
               color: '#000',
@@ -110,9 +99,7 @@ function AnalysisGeneral() {
       });
     }
 
-      getLastResearch();
-
-    
+    getLastResearch();
 
     // Limpiar el gráfico al desmontar el componente
     return () => {
@@ -123,12 +110,10 @@ function AnalysisGeneral() {
   }, []);
 
   return (
-    <div>
+    <div style={{ position: 'relative', width: '50%', height: '50%' }}>
       <canvas ref={canvasRef} id="myChart"></canvas>
     </div>
   );
 }
 
 export default AnalysisGeneral;
-
-

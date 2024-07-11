@@ -8,11 +8,11 @@ function AnalysisOperable() {
 
   const getColorBasedOnScore = (score) => {
     if (score >= 0.75) {
-      return '#3fb58f'; // Verde
+      return '#4CAF50'; // Verde
     } else if (score >= 0.5) {
-      return '#ffcc00'; // Amarillo
+      return '#FFEB3B'; // Amarillo
     } else {
-      return '#ff0000'; // Rojo
+      return '#F44336'; // Rojo
     }
   };
 
@@ -101,10 +101,6 @@ getLastResearch();
       }
   })
     }
-
-
-
-
 
 
     // Limpiar el gráfico al desmontar el componente

@@ -6,7 +6,7 @@ const Preloader = () => {
     <div className={styles.preloaderOverlay}>
       <div className={styles.preloaderContainer}>
         <img src="/Logo_animado.gif" alt="Cargando Silver Site" className={styles.preloader} />
-        <p className={styles.loadingText}>Cargando Silver Site</p>
+        <p className={styles.loadingText}>Cargando Silver Site . . .</p>
       </div>
     </div>
   );
