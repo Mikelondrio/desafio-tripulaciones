@@ -9,6 +9,7 @@ function AnalysisGeneral() {
   const chartRef = useRef(null);
 
 
+
   
 //const { analysisIsDone, setanalysIsDone } = useContext(GeneralContext)
 
@@ -37,6 +38,7 @@ function AnalysisGeneral() {
       console.log(latestData);
 
       let categoryCatcher = await latestData.data.data.evaluation;
+    
 
       if (chartRef.current) {
         chartRef.current.destroy();
@@ -68,7 +70,7 @@ function AnalysisGeneral() {
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          cutout: '80%', // Hace el doughnut más fino
+          cutout: '70%', // Hace el doughnut más fino
           plugins: {
             legend: {
               display: false
@@ -94,11 +96,15 @@ function AnalysisGeneral() {
               },
               font: {
                 weight: 'bold',
-                size: '16'
+                size: '40'
               },
+              position: 'center',
               anchor: 'center', // Mueve la etiqueta a la parte externa
-              align: 'start' // Alinea la etiqueta al inicio
-            }
+              align: 'start', // Alinea la etiqueta al inicio
+              offset: '50',
+              display: 'true',
+              textAlign: 'start',
+            },
           }
         }
       });
