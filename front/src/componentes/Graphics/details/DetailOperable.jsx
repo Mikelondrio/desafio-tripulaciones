@@ -52,7 +52,7 @@ function DetailOperable() {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
-      <h2 className={styles.titleDescription}>Operable: </h2>
+      
       <p className={styles.descriptionDescription}>Los componentes de la interfaz de usuario y la navegación deben ser manejables.</p>
       </div>
       {items.map((item, index) => {

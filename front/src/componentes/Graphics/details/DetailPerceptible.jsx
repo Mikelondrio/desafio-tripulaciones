@@ -87,7 +87,7 @@ function DetailPerceptible() {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
-      <h2 className={styles.titleDescription}>Perceptible: </h2>
+      
       <p className={styles.descriptionDescription}>La información y los componentes de la interfaz de usuario deben ser mostrados a los usuarios en formas que ellos puedan entender.</p>
       </div>
       {items.map((item, index) => {

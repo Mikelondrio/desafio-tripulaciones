@@ -52,7 +52,7 @@ function DetailUnderstandable() {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
-      <h2 className={styles.titleDescription}>Comprensible: </h2>
+      
       <p className={styles.descriptionDescription}>La información y las operaciones de usuarios deben ser comprensibles.</p>
       </div>
       {items.map((item, index) => {

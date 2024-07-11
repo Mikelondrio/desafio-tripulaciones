@@ -77,7 +77,7 @@ function DetailRobust() {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
-        <h2 className={styles.titleDescription}>Robusto: </h2>
+        
         <p className={styles.descriptionDescription}>El contenido deber ser suficientemente robusto para que pueda ser bien interpretado por una gran variedad de agentes de usuario, incluyendo tecnologías de asistencia.</p>
       </div>
       {items.map((item, index) => {
