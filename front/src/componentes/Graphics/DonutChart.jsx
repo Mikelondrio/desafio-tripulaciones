@@ -63,13 +63,13 @@ getLastResearch();
                   size: 0
                 }
               },
-          scales: {
-            y: {
-              beginAtZero: true,
-              grid: {
-                display: false // Oculta las líneas horizontales
-              }
-            }
+              scales: {
+                y: {
+                  display: false, // Oculta las etiquetas del eje Y
+                },
+                x: {
+                  display: false, // Oculta las etiquetas del eje X
+                }
           }
         }
       }
